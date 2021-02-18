@@ -16,7 +16,7 @@ As stated in this repository's [CONTRIBUTING](https://github.com/oasis-tcs/openc
 
 ## Licensing
 
-Please see the [LICENSE](https://github.com/oasis-tcs/openc2-ap-pf/blob/master/LICENSE.md) file for description of the license terms and OASIS policies applicable to the TC's work in this GitHub project. Content in this repository is intended to be part of the OpenC2 TC's permanent record of activity, visible and freely available for all to use, subject to applicable OASIS policies, as presented in the repository [LICENSE](https://github.com/oasis-tcs/openc2-ap-pf/blob/master/LICENSE.md). 
+Please see the [LICENSE](https://github.com/oasis-tcs/openc2-ap-pf/master/LICENSE.md) file for description of the license terms and OASIS policies applicable to the TC's work in this GitHub project. Content in this repository is intended to be part of the OpenC2 TC's permanent record of activity, visible and freely available for all to use, subject to applicable OASIS policies, as presented in the repository [LICENSE](https://github.com/oasis-tcs/openc2-ap-pf/blob/master/LICENSE.md). 
 
 ## Further Description of this Repository
 
