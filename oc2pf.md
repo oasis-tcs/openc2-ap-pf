@@ -1,10 +1,12 @@
-![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg)
 
+![OASIS Logo](http://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 -------
 
 # OpenC2 Actuator Profile for Packet Filtering Version 1.0
-## Working Draft 01
-## 10 March 2021
+
+## Committee Specification Draft 01
+
+## 3 May 2021
 
 #### This version:
 https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.md (Authoritative) \
@@ -17,9 +19,9 @@ https://docs.oasis-open.org/openc2/oc2slpf/v1.0/csprd02/oc2slpf-v1.0-csprd02.htm
 https://docs.oasis-open.org/openc2/oc2slpf/v1.0/csprd02/oc2slpf-v1.0-csprd02.pdf
 
 #### Latest version:
-https://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.md (Authoritative) \
-https://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html \
-https://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.pdf
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.md (Authoritative) \
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html \
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.pdf
 
 #### Technical Committee:
 [OASIS Open Command and Control (OpenC2) TC](https://www.oasis-open.org/committees/openc2/)
@@ -29,7 +31,15 @@ Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfra
 
 #### Editors:
 Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](http://www.unc.edu/)
+Vasileios Mavroeidis (vasileim@ifi.uio.no), [University of Oslo](https://www.uio.no/english/) \
 
+#### Additional artifacts:
+None
+
+#### Related work:
+This specification replaces or supersedes:
+None
+ 
 #### Abstract:
 
 Open Command and Control (OpenC2) is a concise and extensible language to enable the command and control of cyber defense components, subsystems and/or systems in a manner that is agnostic of the underlying products, technologies, transport mechanisms or other aspects of the implementation. Packet filtering is a cyber defense mechanism that denies or allows traffic based on static or dynamic properties of the traffic, such as address, port, protocol, etc. This profile defines the Actions, Targets, Specifiers and Options that are consistent with the version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)) in the context of packet filtering (PF).
@@ -43,32 +53,25 @@ This specification is provided under the [Non-Assertion](https://www.oasis-open.
 
 Note that any machine-readable content ([Computer Language Definitions](https://www.oasis-open.org/policies-guidelines/tc-process#wpComponentsCompLang)) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
+#### Key words:
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [[RFC2119](#rfc2119)] and [[RFC8174](#rfc8174)] when, and only when, they appear in all capitals, as shown here.
+
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
 **[OpenC2-PF-v1.0]**
-_Open Command and Control (OpenC2) Profile for Packet Filtering Version 1.0_. Edited by Joe Brule, Duncan Sparrell and Alex Everett. 10 March 2020. Committee Specification 01. https://docs.oasis-open.org/openc2/oc2slpf/v1.0/cs01/oc2slpf-v1.0-cs01.html. Latest version: https://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html.
+_Open Command and Control (OpenC2) Profile for Packet Filtering Version 1.0_. Edited by Alex Everett. 10 May 2021. Committee Specification 01. https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html. Latest version: https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html.
 
 -------
 
 ## Notices
-Copyright © OASIS Open 2019. All Rights Reserved.
+Copyright © OASIS Open 2021. All Rights Reserved.
 
-All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full [Policy](https://www.oasis-open.org/policies-guidelines/ipr) may be found at the OASIS website.
+Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr).
 
-This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.
+The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the owner and developer of this specification, and should be used only to refer to the organization and its official outputs.
 
-The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.
-
-This document and the information contained herein is provided on an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-
-OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Committee Specification or OASIS Standard, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this specification.
-
-OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this specification by a patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this specification. OASIS may include such claims on its website, but disclaims any obligation to do so.
-
-OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS' procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Committee Specification or OASIS Standard, can be obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will at any time be complete, or that any claims in such list are, in fact, Essential Claims.
-
-The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the owner and developer of this specification, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, specifications, while reserving the right to enforce its marks against misleading uses. Please see https://www.oasis-open.org/policies-guidelines/trademark for above guidance.
+For complete copyright information please see the Notices section in the Appendix.
 
 -------
 
@@ -76,14 +79,12 @@ The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the own
 -   [1 Introduction](#1-introduction)
     -   [1.1 IPR Policy](#11-ipr-policy)
     -   [1.2 Terminology](#12-terminology)
-    -   [1.3 Normative References](#13-normative-references)
-    -   [1.4 Non-Normative References](#14-non-normative-references)
-    -   [1.5 Document Conventions](#15-document-conventions)
-        -   [1.5.1 Naming Conventions](#151-naming-conventions)
-        -   [1.5.2 Font Colors and Style](#152-font-colors-and-style)
-    -   [1.6 Overview](#16-overview)
-    -   [1.7 Goal](#17-goal)
-    -   [1.8 Purpose and Scope](#18-purpose-and-scope)
+    -   [1.3 Document Conventions](#15-document-conventions)
+        -   [1.3.1 Naming Conventions](#151-naming-conventions)
+        -   [1.3.2 Font Colors and Style](#152-font-colors-and-style)
+    -   [1.4 Overview](#16-overview)
+    -   [1.5 Goal](#17-goal)
+    -   [1.6 Purpose and Scope](#18-purpose-and-scope)
 -   [2 OpenC2 Language Binding](#2-openc2-language-binding)
     -   [2.1 OpenC2 Command Components](#21-openc2-command-components)
         -   [2.1.1 Actions](#211-actions)
@@ -203,50 +204,14 @@ _This section is normative._
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[RFC2119]](#rfc2119) and [[RFC8174]](#rfc8174) when, and only when, they appear in all capitals, as shown here.
 
-## 1.3 Normative References
-
-###### [RFC1034]
-Mockapetris, P., "Domain names - concepts and facilities", STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987, <https://www.rfc-editor.org/info/rfc1034>.
-###### [RFC1123]
-Braden, R., Ed., "Requirements for Internet Hosts - Application and Support", STD 3, RFC 1123, DOI 10.17487/RFC1123, October 1989, <https://www.rfc-editor.org/info/rfc1123>.
-###### [RFC2119]
-Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997, <https://www.rfc-editor.org/info/rfc2119>.
-###### [RFC2780]
-Bradner, S. and V. Paxson, "IANA Allocation Guidelines For Values In the Internet Protocol and Related Headers", BCP 37, RFC 2780, DOI 10.17487/RFC2780, March 2000, <https://www.rfc-editor.org/info/rfc2780>.
-###### [RFC4443]
-Conta, A., Deering, S., and M. Gupta, Ed., "Internet Control Message Protocol (ICMPv6) for the Internet Protocol Version 6 (IPv6) Specification", STD 89, RFC 4443, DOI 10.17487/RFC4443, March 2006, <https://www.rfc-editor.org/info/rfc4443>.
-###### [RFC8174]
-Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-###### [RFC8259]
-Bray, T., Ed., "The JavaScript Object Notation (JSON) Data Interchange Format", STD 90, RFC 8259, DOI 10.17487/RFC8259, December 2017, <https://www.rfc-editor.org/info/rfc8259>.
-###### [OpenC2-Lang-v1.0]
-_Open Command and Control (OpenC2) Language Specification Version 1.0_. Edited by Jason Romano and Duncan Sparrell. November 2018, <http://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html>.
-
-## 1.4 Non-Normative References
-
-###### [RFC3339]
-Klyne, G. and C. Newman, "Date and Time on the Internet: Timestamps", RFC 3339, DOI 10.17487/RFC3339, July 2002, <https://www.rfc-editor.org/info/rfc3339>.
-###### [RFC4291]
-Hinden, R. and S. Deering, "IP Version 6 Addressing Architecture", RFC 4291, DOI 10.17487/RFC4291, February 2006, <https://www.rfc-editor.org/info/rfc4291>.
-###### [RFC6891]
-Damas, J., Graff, M., and P. Vixie, "Extension Mechanisms for DNS (EDNS(0))", STD 75, RFC 6891, DOI 10.17487/RFC6891, April 2013, <https://www.rfc-editor.org/info/rfc6891>..
-###### [RFC5237]
-Arkko, J. and S. Bradner, "IANA Allocation Guidelines for the Protocol Field", BCP 37, RFC 5237, DOI 10.17487/RFC5237, February 2008, <https://www.rfc-editor.org/info/rfc5237>.
-###### [OpenC2-HTTPS-v1.0]
-Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0. Edited by David Lemire. November, 2018, <http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html>.
-###### [ACD]
-Herring, M.J. and Willett, K.D. "Active Cyber Defense: A Vision for Real-Time Cyber Defense," Journal of Information Warfare, vol. 13, Issue 2, p. 80, April 2014, <https://www.semanticscholar.org/paper/Active-Cyber-Defense-%3A-A-Vision-for-Real-Time-Cyber-Herring-Willett/7c128468ae42584f282578b86439dbe9e8c904a8>.
-###### [IACD]
-Willett, Keith D., "Integrated Adaptive Cyberspace Defense: Secure Orchestration", International Command and Control Research and Technology Symposium, June 2015 <https://www.semanticscholar.org/paper/Integrated-Adaptive-Cyberspace-Defense-%3A-Secure-by-Willett/a22881b8a046e7eab11acf647d530c2a3b03b762>.
-
-## 1.5 Document Conventions
-### 1.5.1 Naming Conventions
+## 1.3 Document Conventions
+### 1.3.1 Naming Conventions
 * [[RFC2119]](#rfc2119)/[[RFC8174]](#rfc8174) key words (see [Section 1.2](#12-terminology)) are in all uppercase.
 * All property names and literals are in lowercase, except when referencing canonical names defined in another standard (e.g., literal values from an IANA registry).
 * Words in property names are separated with an underscore (_), while words in string enumerations and type names are separated with a hyphen (-).
 * The term "hyphen" used here refers to the ASCII hyphen or minus character, which in Unicode is "hyphen-minus", U+002D.
 
-### 1.5.2 Font Colors and Style
+### 1.3.2 Font Colors and Style
 The following color, font and font style conventions are used in this document:
 
 * A fixed width font is used for all type names, property names, and literals.
@@ -269,7 +234,7 @@ Example:
 }
 ```
 
-## 1.6 Overview
+## 1.4 Overview
 In general, there are two types of participants involved in the exchange of OpenC2 Messages, as depicted in Figure 1-1:
 1. **Producers**: A Producer is an entity that creates Commands to provide instruction to one or more systems to act in accordance with the content of the Command. A Producer may receive and process Responses in conjunction with a Command.
 2. **Consumers**: A Consumer is an entity that receives and may act upon a Command. A Consumer may create Responses that provide any information captured or necessary to send back to the Producer.
@@ -316,7 +281,7 @@ The components of a Command are an Action (what is to be done), a Target (what i
 
 The components of a Response are a numerical status code, an optional status text string, and optional results. The format of the results, if included, depend on the type of Response being transferred.
 
-## 1.7 Goal
+## 1.5 Goal
 The goal of the OpenC2 Language Specification is to provide a language for interoperating between functional elements of cyber defense systems. This language used in conjunction with OpenC2 Actuator Profiles and OpenC2 Transfer Specifications allows for vendor-agnostic cybertime response to attacks.
 
 The Integrated Adaptive Cyber Defense (IACD) framework defines a collection of activities, based on the traditional OODA (Observe–Orient–Decide–Act) Loop [[IACD]](#iacd):
@@ -333,7 +298,7 @@ The goal of OpenC2 is to enable coordinated defense in cyber-relevant time betwe
 * **Abstract:**  Commands and Responses are defined abstractly and can be encoded and transferred via multiple schemes as dictated by the needs of different implementation environments
 * **Extensible:**  While OpenC2 defines a core set of Actions and Targets for cyber defense, the language is expected to evolve with cyber defense technologies, and permits extensions to accommodate new cyber defense technologies.
 
-## 1.8 Purpose and Scope
+## 1.6 Purpose and Scope
 A packet filter (PF) is a policy enforcement mechanism that restricts or permits traffic based on static or dynamic values such as source address, destination address, payload, and/or port numbers. A Packet Filter may consider traffic patterns, connection state, data flows, applications, or payload information. The scope of this profile is limited to network Packet Filtering herein referred to as PF.
 
 This Actuator profile specifies the set of Actions, Targets, Specifiers, and Command Arguments that integrates PF functionality with the Open Command and Control (OpenC2) Command set. Through this Command set, cyber security orchestrators may gain visibility into and provide control over the PF functionality in a manner that is independent of the instance of the PF function.
@@ -352,18 +317,18 @@ This PF profile:
 * Does not define or implement Actions beyond those defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10)
 * Is consistent with Version 1.0 of the OpenC2 Language Specification
 
-Cyber defense systems that are utilizing OpenC2 may require the following components to implement the SLPF profile:
+Cyber defense systems that are utilizing OpenC2 may require the following components to implement the PF profile:
 
-* OpenC2 Producers: Devices that send Commands, receive Responses, and manage the execution of Commands involving one or more SLPF or other Actuators with SLPF capability. The OpenC2 Producer needs _a priori_ knowledge of which Commands the Actuator can process and execute, therefore must understand the profiles for any device that it intends to command
-* OpenC2 Consumers: Devices or instances that provide stateless packet filtering functions. Typically these are Actuators that execute the cyber defense function, but could be orchestrators (i.e., a device or instance that forwards Commands to the Actuator)
+* OpenC2 Producers: Devices that send Commands, receive Responses, and manage the execution of Commands involving one or more PF or other Actuators with PF capability. The OpenC2 Producer needs _a priori_ knowledge of which Commands the Actuator can process and execute, therefore must understand the profiles for any device that it intends to command
+* OpenC2 Consumers: Devices or instances that provide packet filtering functions. Typically these are Actuators that execute the cyber defense function, but could be orchestrators (i.e., a device or instance that forwards Commands to the Actuator)
 
-Though cyber defense components, devices, systems and/or instances may implement multiple Actuator profiles, a particular OpenC2 Message may reference at most a single Actuator profile. The scope of this document is limited to SLPF.
+Though cyber defense components, devices, systems and/or instances may implement multiple Actuator profiles, a particular OpenC2 Message may reference at most a single Actuator profile. The scope of this document is limited to PF.
 
 This specification is organized into three major sections.
 
 Section One (this section) provides a non-normative overview of the suite of specifications that realize OpenC2. This section provides references as well as defines the scope and purpose of this specification.
 
-[Section Two](#2-openc2-language-binding) (normative) binds this particular profile to the OpenC2 Language Specification. Section Two enumerates the components of the language specification that are meaningful in the context of SLPF and defines components that are applicable to this distinct profile. Section Two also defines the Commands (i.e., the Action/Target pairs) that are permitted in the context of SLPF.
+[Section Two](#2-openc2-language-binding) (normative) binds this particular profile to the OpenC2 Language Specification. Section Two enumerates the components of the language specification that are meaningful in the context of PF and defines components that are applicable to this distinct profile. Section Two also defines the Commands (i.e., the Action/Target pairs) that are permitted in the context of PF.
 
 [Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with OpenC2.
 
@@ -380,7 +345,7 @@ This section defines the set of Actions, Targets, Specifiers, and Arguments that
 Extensions to the Language Specification are defined in accordance with [[OpenC2-Lang-v1.0]](#openc2-lang-v10), Section 3.1.5, where:
 
 1. The unique name of the PF schema is `oasis-open.org/openc2/v1.0/ap-pf`
-2. The namespace identifier (nsid) referring to the SLPF schema is:  `pf`
+2. The namespace identifier (nsid) referring to the PF schema is:  `pf`
 3. The definitions of and conformance requirements for these types are contained in this document
 
 ## 2.1 OpenC2 Command Components
@@ -415,7 +380,7 @@ Table 2.1.1-1 presents the OpenC2 Actions defined in version 1.0 of the Language
 Table 2.1.2-1 summarizes the Targets defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2-2 summarizes the Targets that are defined in this specification.
 
 #### 2.1.2.1 Common Targets
-Table 2.1.2-1 lists the Targets defined in the OpenC2 Language Specification that are applicable to SLPF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.2-1 lists the Targets defined in the OpenC2 Language Specification that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
 
 **Table 2.1.2-1. Targets Applicable to PF**
 
@@ -444,7 +409,7 @@ The semantics/ requirements as they pertain to common targets:
     * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol
 
 #### 2.1.2.2 PF Targets
-The list of common Targets is extended to include the additional Targets defined in this section and referenced with the slpf namespace.
+The list of common Targets is extended to include the additional Targets defined in this section and referenced with the pf namespace.
 
 **Table 2.1.2-2. Targets Unique to PF**
 
@@ -455,10 +420,10 @@ The list of common Targets is extended to include the additional Targets defined
 | 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted |
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to SLPF functionality. Table 2.1.3-2 summarizes the Command Arguments that are defined in this specification.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 summarizes the Command Arguments that are defined in this specification.
 
 #### 2.1.3.1 Common Arguments
-Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to SLPF.
+Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
 **Table 2.1.3-1. Command Arguments applicable to PF**
 
@@ -512,12 +477,12 @@ Note that direction is required by some packet filters. For a host-based or host
 | :--- | :--- | :--- |
 | **Rule-ID** | Integer | Access rule identifier |
 
-The semantics/requirements as they relate to SLPF arguments:
+The semantics/requirements as they relate to PF arguments:
 
 * insert_rule:
     * The value MUST be immutable - i.e., the identifier assigned to an access rule at creation must not change over the lifetime of that rule
 
-    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of an SLPF
+    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of an PF
 
 * directionality:
     * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code
@@ -526,22 +491,22 @@ The semantics/requirements as they relate to SLPF arguments:
 * persistent:  If absent or not explicitly set, then the value is TRUE and any changes are persistent
 
 ### 2.1.4 Actuator Specifiers
-An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the SLPF and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
+An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the PF and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
 
-Table 2.1.4-1 lists the Specifiers that are applicable to the SLPF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers.
+Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers.
 
-The Actuator Specifiers defined in this document are referenced under the slpf namespace.
+The Actuator Specifiers defined in this document are referenced under the pf namespace.
 
-**Table 2.1.4-1. SLPF Specifiers**
+**Table 2.1.4-1. PF Specifiers**
 
 **_Type: Specifiers (Map)_**
 
 | ID | Name | Type | # | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | **hostname** | String | 0..1 | [[RFC1123]](#rfc1123) hostname (can be a domain name or IP address) for a particular device with SLPF functionality |
-| 2 | **named_group** | String | 0..1 | User defined collection of devices with SLPF functionality |
-| 3 | **asset_id** | String | 0..1 | Unique identifier for a particular SLPF |
-| 4 | **asset_tuple** | String | 0..10 | Unique tuple identifier for a particular SLPF consisting of a list of up to 10 strings |
+| 1 | **hostname** | String | 0..1 | [[RFC1123]](#rfc1123) hostname (can be a domain name or IP address) for a particular device with PF functionality |
+| 2 | **named_group** | String | 0..1 | User defined collection of devices with PF functionality |
+| 3 | **asset_id** | String | 0..1 | Unique identifier for a particular PF |
+| 4 | **asset_tuple** | String | 0..10 | Unique tuple identifier for a particular PF consisting of a list of up to 10 strings |
 
 ## 2.2 OpenC2 Response Components
 Response messages originate from the Actuator as a result of a Command.
@@ -549,9 +514,9 @@ Response messages originate from the Actuator as a result of a Command.
 Responses associated with required Actions MUST be implemented. Implementations that include optional Actions MUST implement the RESPONSE associated with the implemented Action. Additional details regarding the Command and associated Response are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands).
 
 ### 2.2.1 Common Results
-Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to SLPF.
+Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.2.1-1. Response Results Applicable to SLPF**
+**Table 2.2.1-1. Response Results Applicable to PF**
 
 **_Type: Results (Map [1..*])_**
 
@@ -562,10 +527,10 @@ Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang
 | 3 | **pairs** | Action-Targets | 0..* | List of targets applicable to each supported Action |
 | 4 | **rate_limit** | Number | 0..1 | Maximum number of requests per minute supported by design or policy |
 
-### 2.2.2 SLPF Results
-The list of common Response properties is extended to include the additional Response properties defined in this section and referenced with the slpf namespace.
+### 2.2.2 PF Results
+The list of common Response properties is extended to include the additional Response properties defined in this section and referenced with the pf namespace.
 
-**Table 2.2.2-1. SLPF Results**
+**Table 2.2.2-1. PF Results**
 
 **_Type: OpenC2-Response (Map)_**
 
@@ -574,7 +539,7 @@ The list of common Response properties is extended to include the additional Res
 | 1024 | **rule_number** | Rule-ID | Rule identifier returned from allow or deny Command |
 
 ### 2.2.3 Response Status Codes
-Table 2.2.1-2 lists the Response Status Codes defined in the OpenC2 Language Specification that are applicable to SLPF.
+Table 2.2.1-2 lists the Response Status Codes defined in the OpenC2 Language Specification that are applicable to PF.
 
 **Table 2.2.1-2. Response Status Codes**
 
@@ -592,7 +557,7 @@ Table 2.2.1-2 lists the Response Status Codes defined in the OpenC2 Language Spe
 
 An OpenC2 Command consists of an Action/Target pair and associated Specifiers and Arguments. This section enumerates the allowed Commands and presents the associated Responses.
 
-Table 2.3-1 defines the Commands that are valid in the context of the SLPF profile. An Action (the top row in Table 2.3-1) paired with a Target (the first column in Table 2.3-1) defines a valid Command. The subsequent subsections provide the property tables applicable to each OpenC2 Command.
+Table 2.3-1 defines the Commands that are valid in the context of the PF profile. An Action (the top row in Table 2.3-1) paired with a Target (the first column in Table 2.3-1) defines a valid Command. The subsequent subsections provide the property tables applicable to each OpenC2 Command.
 
 **Table 2.3-1. Command Matrix**
 
@@ -604,17 +569,17 @@ Table 2.3-1 defines the Commands that are valid in the context of the SLPF profi
 | **ipv6_net** | valid | valid |   |   |   |
 | **domain_name** | valid | valid |   |   |   |
 | **features** |   |   | valid |   |   |
-| **slpf:rule_number** |   |   | valid | valid |   |
+| **pf:rule_number** |   |   | valid | valid |   |
 | **file** |   |   |   |   | valid |
 
-Table 2.3-2 defines the Command Arguments that are allowed for a particular Command by the SLPF profile. A Command (the top row in Table 2.3-2) paired with an Argument (the first column in Table 2.3-2) defines an allowable combination. The subsection identified at the intersection of the Command/Argument provides details applicable to each Command as influenced by the Argument.
+Table 2.3-2 defines the Command Arguments that are allowed for a particular Command by the PF profile. A Command (the top row in Table 2.3-2) paired with an Argument (the first column in Table 2.3-2) defines an allowable combination. The subsection identified at the intersection of the Command/Argument provides details applicable to each Command as influenced by the Argument.
 
 **Table 2.3-2. Command Arguments Matrix**
 
-|   | Allow _target_ | Deny _target_ | Query features | Query slpf:rule_number | Delete slpf:rule_number | Update file |
+|   | Allow _target_ | Deny _target_ | Query features | Query pf:rule_number | Delete pf:rule_number | Update file |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **response_requested** | [2.3.1](#231-allow) | [2.3.2](#232-deny) | [2.3.3.1](#2331-query-features) | [2.3.4.1](#2341-delete-slpfrule_number) | [2.3.5.1](#2351-update-file) |
-| **start_time** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   | [2.3.4.1](#2341-delete-slpfrule_number) | [2.3.5.1](#2351-update-file) |
+| **response_requested** | [2.3.1](#231-allow) | [2.3.2](#232-deny) | [2.3.3.1](#2331-query-features) | [2.3.4.1](#2341-delete-pfrule_number) | [2.3.5.1](#2351-update-file) |
+| **start_time** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   | [2.3.4.1](#2341-delete-pfrule_number) | [2.3.5.1](#2351-update-file) |
 | **stop_time** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
 | **duration** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
 | **persistent** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
@@ -626,16 +591,16 @@ Table 2.3-2 defines the Command Arguments that are allowed for a particular Comm
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
 
-Upon receipt of an unsupported Command Argument, SLPF Consumers
+Upon receipt of an unsupported Command Argument, PF Consumers
 
 * MUST NOT respond with a OK/200
 * SHOULD respond with the 501 status code.
 * SHOULD respond with "Option not supported" in the status text
 * MAY respond with the 500 status code
 
-OpenC2 Producers that send 'allow target' Commands and support the 'delete slpf:rule_number' Command:
+OpenC2 Producers that send 'allow target' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the slpf:rule_number Target type as defined in [Section 2.1.2.2](#2122-slpf-targets)
+* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
 * SHOULD populate the Command Arguments field with "response_requested" : "complete"
 * MAY populate the Command Arguments field with the "insert_rule" : <integer> option
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
@@ -647,9 +612,9 @@ OpenC2 Consumers that receive and successfully parse 'allow <target>' Commands b
 * SHOULD respond with 'Rule not updated' in the status text
 * MAY respond with the 500 status code
 
-OpenC2 Consumers that receive 'allow <target>' Commands and support the 'delete slpf:rule_number' Command:
+OpenC2 Consumers that receive 'allow <target>' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the slpf:rule_number Target type as defined in [Section 2.1.2.2](#2122-slpf-targets)
+* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
 * Upon successful implementation of the 'allow <target>', MUST return the rule_number associated with the rule if the "response_requested" : "complete" option is populated.
 
 OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_rule' Command Argument:
@@ -665,8 +630,8 @@ The valid Target types, associated Specifiers, and Options are summarized in [Se
 
 #### 2.3.1.1 'Allow ipv4_connection'
 
-The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Producers implementing the SLPF.
-The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Consumers implementing the SLPF.
+The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
+The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF.
 
 The Command permits traffic that is consistent with the specified ipv4_connection. A valid 'allow ipv4_connection' Command has at least one property of the ipv4_connection populated and may have any combination of the five properties populated. An unpopulated property within the ipv4_connection Target MUST be treated as an 'any'.
 
@@ -678,8 +643,8 @@ Products that receive but do not implement the 'allow ipv4_connection' Command:
 * MAY respond with the 500 status code
 
 #### 2.3.1.2 'Allow ipv6_connection'
-The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Producers implementing the SLPF.
-The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Consumers implementing the SLPF.
+The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
+The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF.
 
 The Command permits traffic that is consistent with the specified ipv6_connection. A valid 'allow ipv6_connection' Command has at least one property of the ipv6_connection populated and may have any combination of the five properties populated. An unpopulated property within the the ipv4_connection Target MUST be treated as an 'any'.
 
@@ -691,8 +656,8 @@ Products that receive but do not implement the 'allow ipv6_connection' Command:
 * MAY respond with the 500 status code
 
 #### 2.3.1.3 'Allow ipv4_net'
-The 'allow ipv4_net' Command is OPTIONAL for Openc2 Producers implementing the SLPF.
-The 'allow ipv4_net' Command is OPTIONAL for Openc2 Consumers implementing the SLPF.
+The 'allow ipv4_net' Command is OPTIONAL for Openc2 Producers implementing the PF.
+The 'allow ipv4_net' Command is OPTIONAL for Openc2 Consumers implementing the PF.
 
 The Command permits traffic as specified by the range of IPv4 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv4 address (i.e., an address range of one element). The address range specified in the ipv4_net MUST be treated as a source OR destination address.
 
@@ -703,8 +668,8 @@ Products that receive but do not implement the 'allow ipv4_net' Command:
 * MAY respond with the 500 status code
 
 #### 2.3.1.4 'Allow ipv6_net'
-The 'allow ipv6_net' Command is OPTIONAL for Openc2 Producers implementing the SLPF.
-The 'allow ipv6_net' Command is OPTIONAL for Openc2 Consumers implementing the SLPF.
+The 'allow ipv6_net' Command is OPTIONAL for Openc2 Producers implementing the PF.
+The 'allow ipv6_net' Command is OPTIONAL for Openc2 Consumers implementing the PF.
 
 The Command permits traffic as specified by the range of IPv6 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv6 address (i.e., an address range of one element). The address range specified in the ipv6_net MUST be treated as a source OR destination address.
 
@@ -715,8 +680,8 @@ Products that receive but do not implement the 'allow ipv6_net' Command:
 * MAY respond with the 500 status code
 
 #### 2.3.1.5 'Allow domain_name'
-The 'allow domain_name' Command is OPTIONAL for Openc2 Producers implementing the SLPF.
-The 'allow domain_name' Command is OPTIONAL for Openc2 Consumers implementing the SLPF.
+The 'allow domain_name' Command is OPTIONAL for Openc2 Producers implementing the PF.
+The 'allow domain_name' Command is OPTIONAL for Openc2 Consumers implementing the PF.
 
 The Command permits traffic that is consistent with the specified domain name.
 
@@ -736,17 +701,17 @@ Upon receipt of a Command with an Argument that is not supported by the Actuator
 * SHOULD respond with 'Option not supported' in the status text
 * MAY respond with the 500 status code
 
-OpenC2 Producers that send 'deny target' Commands and support the 'delete slpf:rule_number' Command:
+OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the slpf:rule_number Target type as defined in [Section 2.1.2.2](#2122-slpf-targets)
+* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
 * SHOULD populate the Command Arguments field with '"response_requested" : "complete"
 * MAY populate the Command Arguments field with the "insert_rule" : <integer> option
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
 
-OpenC2 Consumers that receive 'deny <target>' Commands and support the 'delete slpf:rule_number' Command:
+OpenC2 Consumers that receive 'deny <target>' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the slpf:rule_number Target type as defined in [Section 2.1.2.2](#2122-slpf-targets)
-* MUST return the rule number assigned in the slpf object if the "response_requested" : "complete" Argument is populated.
+* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
+* MUST return the rule number assigned in the pf object if the "response_requested" : "complete" Argument is populated.
 
 OpenC2 Consumers that receive 'deny target' Commands and support the 'insert_rule' Command Argument:
 
@@ -763,33 +728,33 @@ The valid Target type, associated Specifiers, and Options are summarized in [Sec
 #### 2.3.3.1 Query features
 The 'query features' Command MUST be implemented in accordance with Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10).
 
-#### 2.3.3.1 Query slpf:rule_number
-The 'query slpf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule Implementation of the 'query slpf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete slpf:rule_number' Command MUST implement the slpf:rule_number Target type described in [Section 2.1.2.2](#2122-slpf-targets).
+#### 2.3.3.1 Query pf:rule_number
+The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
 
 ### 2.3.4 Delete
-The slpf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Options are summarized in [Section 2.3.4.1](#2341-delete-slpfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The pf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Options are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
-#### 2.3.4.1 delete slpf:rule_number
-The 'delete slpf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete slpf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete slpf:rule_number' Command MUST implement the slpf:rule_number Target type described in [Section 2.1.2.2](#2122-slpf-targets).
+#### 2.3.4.1 delete pf:rule_number
+The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
 
-OpenC2 Producers that send the 'delete slpf:rule_number' Command:
+OpenC2 Producers that send the 'delete pf:rule_number' Command:
 
 * MAY populate the Command Arguments field with 'response_requested" : "complete"
 * MUST NOT include other Command Arguments
 * MUST include exactly one rule_number
 
-OpenC2 Consumers that receive the 'delete slpf:rule_number' Command:
+OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 
-* but cannot parse or process the 'delete slpf:rule_number' Command:
+* but cannot parse or process the 'delete pf:rule_number' Command:
     * MUST NOT respond with a OK/200
     * SHOULD respond with status code 400
     * MAY respond with the 500 status code
-* but do not support the slpf:rule_number Target type:
+* but do not support the pf:rule_number Target type:
     * MUST NOT respond with a OK/200
     * SHOULD respond with the 501 status code
     * SHOULD respond with 'target not supported' in the status text
     * MAY respond with the 500 status code
-* MUST respond with Response code 200 upon successful parsing of the 'delete slpf:rule_number' Command and subsequent removal of the corresponding rule
+* MUST respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule
 * upon successful parsing but failure to remove the corresponding rule:
     * MUST NOT respond with OK/200
     * MUST respond with Response code 500
@@ -893,7 +858,7 @@ An OpenC2 Producer satisfies 'Update File Producer' conformance if:
 ### 3.1.8 Conformance Clause 8: delete rule number Producer
 An OpenC2 Producer satisfies 'delete rule Producer' conformance if:
 * 3.1.8.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 1 of this specification
-* 3.1.8.2 **MUST** implement the 'delete slpf:rule_number' in accordance with [Section 2.3.4.1](#2341-delete-slpfrule_number) of this specification
+* 3.1.8.2 **MUST** implement the 'delete pf:rule_number' in accordance with [Section 2.3.4.1](#2341-delete-pfrule_number) of this specification
 
 ### 3.1.9 Conformance Clause 9: Persistent Producer
 An OpenC2 Producer satisfies 'Persistent Producer' conformance if:
@@ -979,7 +944,7 @@ An OpenC2 Consumer satisfies 'Update File Consumer' conformance if:
 ### 3.2.8 Conformance Clause 19: delete rule number Consumer
 An OpenC2 Consumer satisfies 'delete rule Consumer' conformance if:
 * 3.2.8.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.8.2 **MUST** implement the 'delete slpf:rule_number' in accordance with [Section 2.3.4.1](#2341-delete-slpfrule_number) of this specification
+* 3.2.8.2 **MUST** implement the 'delete pf:rule_number' in accordance with [Section 2.3.4.1](#2341-delete-pfrule_number) of this specification
 
 ### 3.2.9 Conformance Clause 20: Persistent Consumer
 An OpenC2 Consumer satisfies 'Persistent Consumer' conformance if:
@@ -1009,11 +974,170 @@ An OpenC2 Consumer satisfies 'Logging Consumer' conformance if:
 
 ---
 
-# Annex A: Sample Commands
+# Appendix A. References
+
+This appendix contains the normative and informative references that are used in this document. Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific.
+
+While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
+
+## A.1 Normative References
+
+The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
+
+###### [RFC1034]
+Mockapetris, P., "Domain names - concepts and facilities", STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987, <https://www.rfc-editor.org/info/rfc1034>.
+###### [RFC1123]
+Braden, R., Ed., "Requirements for Internet Hosts - Application and Support", STD 3, RFC 1123, DOI 10.17487/RFC1123, October 1989, <https://www.rfc-editor.org/info/rfc1123>.
+###### [RFC2119]
+Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997, <https://www.rfc-editor.org/info/rfc2119>.
+###### [RFC2780]
+Bradner, S. and V. Paxson, "IANA Allocation Guidelines For Values In the Internet Protocol and Related Headers", BCP 37, RFC 2780, DOI 10.17487/RFC2780, March 2000, <https://www.rfc-editor.org/info/rfc2780>.
+###### [RFC4443]
+Conta, A., Deering, S., and M. Gupta, Ed., "Internet Control Message Protocol (ICMPv6) for the Internet Protocol Version 6 (IPv6) Specification", STD 89, RFC 4443, DOI 10.17487/RFC4443, March 2006, <https://www.rfc-editor.org/info/rfc4443>.
+###### [RFC8174]
+Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+###### [RFC8259]
+Bray, T., Ed., "The JavaScript Object Notation (JSON) Data Interchange Format", STD 90, RFC 8259, DOI 10.17487/RFC8259, December 2017, <https://www.rfc-editor.org/info/rfc8259>.
+###### [OpenC2-Lang-v1.0]
+_Open Command and Control (OpenC2) Language Specification Version 1.0_. Edited by Jason Romano and Duncan Sparrell. November 2018, <http://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html>.
+
+## A.2 Informative References
+
+###### [RFC3339]
+Klyne, G. and C. Newman, "Date and Time on the Internet: Timestamps", RFC 3339, DOI 10.17487/RFC3339, July 2002, <https://www.rfc-editor.org/info/rfc3339>.
+###### [RFC4291]
+Hinden, R. and S. Deering, "IP Version 6 Addressing Architecture", RFC 4291, DOI 10.17487/RFC4291, February 2006, <https://www.rfc-editor.org/info/rfc4291>.
+###### [RFC6891]
+Damas, J., Graff, M., and P. Vixie, "Extension Mechanisms for DNS (EDNS(0))", STD 75, RFC 6891, DOI 10.17487/RFC6891, April 2013, <https://www.rfc-editor.org/info/rfc6891>..
+###### [RFC5237]
+Arkko, J. and S. Bradner, "IANA Allocation Guidelines for the Protocol Field", BCP 37, RFC 5237, DOI 10.17487/RFC5237, February 2008, <https://www.rfc-editor.org/info/rfc5237>.
+###### [OpenC2-HTTPS-v1.0]
+Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0. Edited by David Lemire. November, 2018, <http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html>.
+###### [ACD]
+Herring, M.J. and Willett, K.D. "Active Cyber Defense: A Vision for Real-Time Cyber Defense," Journal of Information Warfare, vol. 13, Issue 2, p. 80, April 2014, <https://www.semanticscholar.org/paper/Active-Cyber-Defense-%3A-A-Vision-for-Real-Time-Cyber-Herring-Willett/7c128468ae42584f282578b86439dbe9e8c904a8>.
+###### [IACD]
+Willett, Keith D., "Integrated Adaptive Cyberspace Defense: Secure Orchestration", International Command and Control Research and Technology Symposium, June 2015 <https://www.semanticscholar.org/paper/Integrated-Adaptive-Cyberspace-Defense-%3A-Secure-by-Willett/a22881b8a046e7eab11acf647d530c2a3b03b762>.
+
+-------
+
+# Appendix B. Safety, Security and Privacy Considerations
+
+Implementors should understand the topology that will be controlled and take steps to ensure the security of systems generating and accepting commands. This could include steps such as enabling Transport Layer Security and mutual authentication.
+
+-------
+
+# Appendix C. Acknowledgments
+
+## C.1 Special Thanks
+
+Substantial contributions to this document from the following individuals are gratefully acknowledged:
+
+Duncan Sparrell
+
+## C.2 Participants
+
+The following individuals have participated in the creation of this specification and are gratefully acknowledged:
+
+**OpenC2 TC Members:**
+
+| First Name | Last Name | Company |
+| :--- | :--- | :--- |
+Robert | Roll | Arizona Supreme Court
+Michelle | Barry | AT&T
+Blake | Essing | AT&T
+Anthony | Librera | AT&T
+Patrick | Maroney | AT&T
+Dan | Solero | AT&T
+Michael | Stair | AT&T
+Bill | Trost | AT&T
+Sean | Welsh | AT&T
+Radu | Marian | Bank of America
+Wende | Peters | Bank of America
+Alexandre | Dulaunoy | CIRCL
+Andras | Iklody | CIRCL
+Omar | Santos | Cisco Systems
+Sam | Taghavi Zargar | Cisco Systems
+Jyoti | Verma | Cisco Systems
+Tim | Hudson | Cryptsoft Pty Ltd.
+Ryan | Joyce | DarkLight, Inc.
+Paul | Patrick | DarkLight, Inc.
+Juan | Gonzalez | DHS Office of Cybersecurity and Communications (CS&C)
+Raymon | van der Velde | EclecticIQ
+Ben | Sooter | Electric Power Research Institute (EPRI)
+Chris | Ricard | Financial Services Information Sharing and Analysis Center (FS-ISAC)
+Gerald | Stueve | Fornetix
+Charles | White | Fornetix
+Ryusuke | Masuoka | Fujitsu Limited
+Koji | Yamada | Fujitsu Limited
+Jason | Callaway | Google Inc.
+David | Webber | Huawei Technologies Co., Ltd.
+Stephanie | Hazlewood | IBM
+Emily | Ratliff | IBM
+Michele | Drgon | Individual
+Joerg | Eschweiler | Individual
+Terry | MacDonald | Individual
+Anthony | Rutkowski | Individual
+Himanshu | Kesar | LookingGlass
+Paolo | Zaino | LookingGlass
+Sudeep | Das | McAfee
+Kent | Landfield | McAfee
+Jonathan | Baker | Mitre Corporation
+Joe | Brule | National Security Agency
+Jessica | Fitzgerald-McKay | National Security Agency
+Zachary | Gorak | National Security Agency
+David | Kemp | National Security Agency
+David | Lemire | National Security Agency
+Michael | Rosa | National Security Agency
+Daichi | Hasumi | NEC Corporation
+Takahiro | Kakumaru | NEC Corporation
+Lauri | Korts-Pärn | NEC Corporation
+John-Mark | Gurney | New Context Services, Inc.
+Christian | Hunt | New Context Services, Inc.
+Daniel | Riedel | New Context Services, Inc.
+Andrew | Storms | New Context Services, Inc.
+Drew | Varner | NineFX, Inc.
+Stephen | Banghart | NIST
+David | Waltermire | NIST
+James | Crossland | Northrop Grumman
+Jason | Liu | Northrop Grumman
+Duane | Skeen | Northrop Grumman
+Calvin | Smith | Northrop Grumman
+Cheolho | Lee | NSR
+Chet | Ensign | OASIS
+Web | Master | OASIS
+Dee | Schur | OASIS
+David | Bizeul | SEKOIA
+Dan | Johnson | sFractal Consulting LLC
+Duncan | Sparrell | sFractal Consulting LLC
+Marco | Caselli | Siemens AG
+Tom | Maier | Siemens AG
+Andrew | Pendergast | ThreatConnect, Inc.
+Joe | Reese | ThreatConnect, Inc.
+Ryan | Trost | ThreatQuotient, Inc.
+David | Girard | Trend Micro
+Shoko | Honda | Trend Micro
+Takayuki | Tachihara | Trend Micro
+Toby | Considine | University of North Carolina at Chapel Hill
+Alex | Everett | University of North Carolina at Chapel Hill
+Martin | Evandt | University of Oslo
+Vasileios | Mavroeidis | University of Oslo
+Aleksandra | Scalco | US Department of Defense (DoD)
+Randall | Sharo | US Department of Defense
+
+-------
+
+# Appendix D. Revision History
+| Revision | Date | Editor | Changes Made |
+| :--- | :--- | :--- | :--- |
+| openc2-ap-pf-v1.0-wd01 | 2021-05-03 | Alex Everett | Initial working draft |
+
+-------
+
+# Appendix E. Sample Commands
 
 _This section is non-normative_
 
-This section will summarize and provide examples of OpenC2 Commands as they pertain to SLPF firewalls. The sample Commands will be encoded in verbose JSON, however other encodings are possible provided the Command is validated against the property tables defined in [Section 2](#2-openc2-language-binding) of this specification. Examples of corresponding Responses are provided where appropriate.
+This section will summarize and provide examples of OpenC2 Commands as they pertain to packet filters. The sample Commands will be encoded in verbose JSON, however other encodings are possible provided the Command is validated against the property tables defined in [Section 2](#2-openc2-language-binding) of this specification. Examples of corresponding Responses are provided where appropriate.
 
 The samples provided in this section are for illustrative purposes only and are not to be interpreted as operational examples for actual systems.
 
@@ -1032,12 +1156,12 @@ The examples include Integer Date-Time fields; the conversion of Integer values 
 | `1534775460000` | `Monday, August 20, 2018 2:31:00 PM GMT, 2018-08-20T10:31:00-04:00` |
 
 =======
-## A.1 Deny and Allow
+## E.1 Deny and Allow
 
 Deny and allow can be treated as mathematical complements of each other. Unless otherwise stated, the example Targets, Specifiers, Arguments and corresponding Responses are applicable to both Actions.
 
-### A.1.1 Deny a particular connection
-Block a particular connection within the domain and do not send a host unreachable. Note, the "slpf":{"drop_process"} argument does not apply to the allow Action.
+### E.1.1 Deny a particular connection
+Block a particular connection within the domain and do not send a host unreachable. Note, the "pf":{"drop_process"} argument does not apply to the allow Action.
 
 **Command:**
 
@@ -1057,12 +1181,12 @@ Block a particular connection within the domain and do not send a host unreachab
     "start_time": 1534775460000,
     "duration": 500,
     "response_requested": "ack",
-    "slpf": {
+    "pf": {
        "drop_process": "none"
        }
   },
   "actuator": {
-        "slpf": {
+        "pf": {
             "asset_id": "30"
         }
     }
@@ -1077,8 +1201,8 @@ Block a particular connection within the domain and do not send a host unreachab
 }
 ```
 
-### A.1.2 Deny all outbound ftp transfers
-Block all outbound ftp data transfers, send false acknowledgment. Note that the five-tuple is incomplete. Note that the response_requested field was not populated therefore will be 'complete'. Also note that the Actuator called out was SLPF with no additional Specifiers, therefore all endpoints that can execute the Command should. Note, the "slpf":{"drop_process"} argument does not apply to the allow Action.
+### E.1.2 Deny all outbound ftp transfers
+Block all outbound ftp data transfers, send false acknowledgment. Note that the five-tuple is incomplete. Note that the response_requested field was not populated therefore will be 'complete'. Also note that the Actuator called out was PF with no additional Specifiers, therefore all endpoints that can execute the Command should. Note, the "pf":{"drop_process"} argument does not apply to the allow Action.
 
 **Command:**
 
@@ -1092,13 +1216,13 @@ Block all outbound ftp data transfers, send false acknowledgment. Note that the 
     }
   },
   "args": {
-    "slpf": {
+    "pf": {
       "drop_process": "false_ack",
       "direction": "egress"
     }
   },
   "actuator": {
-    "slpf": {}
+    "pf": {}
   }
 }
 ```
@@ -1130,7 +1254,7 @@ Case Three: the Command failed because an Argument was not supported.
 }
 ```
 
-### A.1.3 Block all inbound traffic from a particular source.
+### E.1.3 Block all inbound traffic from a particular source.
 Block all inbound traffic from the specified ipv6 network and do not respond. In this case the ipv6_net Target and the direction argument was used. In this case only the perimeter filters should update the rule.
 
 **Command:**
@@ -1143,19 +1267,19 @@ Block all inbound traffic from the specified ipv6 network and do not respond. In
   },
   "args": {
     "response_requested": "none",
-    "slpf": {
+    "pf": {
       "direction": "ingress"
     }
   },
   "actuator": {
-    "slpf": {
+    "pf": {
       "named_group": "perimeter"
     }
   }
 }
 ```
 
-### A.1.4 Permit ftp transfers to a particular destination.
+### E.1.4 Permit ftp transfers to a particular destination.
 Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any source. (Note that an actual application would also need to allow ftp-data (port 20) in order for transfers to be permitted).
 
 
@@ -1172,7 +1296,7 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any source. (
     }
   },
   "actuator": {
-    "slpf": {}
+    "pf": {}
   }
 }
 ```
@@ -1185,15 +1309,15 @@ In this case the Actuator returned a rule number associated with the allow.
 {
   "status": 200,
   "results": {
-    "slpf": {
+    "pf": {
       "rule_number": 1234
     }
   }
 }
 ```
 
-## A.2 Delete Rule
-Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete slpf:rule_number' Command is OPTIONAL.
+## E.2 Delete Rule
+Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL.
 
 In this case the rule number assigned in a previous allow will be removed (refer to the final example in [Annex A.1](#a1-deny-and-allow)
 
@@ -1203,18 +1327,18 @@ In this case the rule number assigned in a previous allow will be removed (refer
 {
   "action": "delete",
   "target": {
-    "slpf:rule_number": 1234
+    "pf:rule_number": 1234
   },
   "args": {
     "response_requested": "complete"
   },
   "actuator": {
-    "slpf": {}
+    "pf": {}
   }
 }
 ```
 
-## A.3 Update file
+## E.3 Update file
 Implementation of the Update Action is optional. Update is intended for the device to process new configuration files. The update Action is a compound Action in that all of the steps required for a successful update (such as download the new file, install the file, reboot etc.) are implied. File is the only valid Target type for Update.
 
 Instructs the firewalls to acquire a new configuration file. Note that all network based firewalls will install the new update because no particular firewall was identified. Host based firewalls will not act on this because network firewalls were identified as the Actuator.
@@ -1231,7 +1355,7 @@ Instructs the firewalls to acquire a new configuration file. Note that all netwo
     }
   },
   "actuator": {
-    "slpf": {
+    "pf": {
       "named_group": "network"
     }
   }
@@ -1266,10 +1390,10 @@ This Actuator could not access the file
 }
 ```
 
-## A.4 Query features
+## E.4 Query features
 Implementation of query Openc2 is required. The query features Command is intended to enable the Openc2 Producer to determine the capabilities of the Actuator. The query features Command can also be used to check the status of the Actuator.
 
-### A.4.1 No query items set
+### E.4.1 No query items set
 This Command uses query features with no query items to verify that the Actuator is functioning.
 
 **Command:**
@@ -1293,7 +1417,7 @@ The Actuator is alive.
 }
 ```
 
-### A.4.2 Version of Language specification supported
+### E.4.2 Version of Language specification supported
 This Command queries the Actuator to determine which version(s) of the language specification are supported. The language specifications use semantic versioning ("major.minor"); for each supported major version the Actuator need only report the highest supported minor version.
 
 **Command:**
@@ -1320,7 +1444,7 @@ The Actuator supports language specification version 1.0.
 }
 ```
 
-### A.4.3 Actuator profiles supported
+### E.4.3 Actuator profiles supported
 This Command queries the Actuator to determine both the language versions and the profiles supported.
 
 **Command:**
@@ -1336,19 +1460,19 @@ This Command queries the Actuator to determine both the language versions and th
 
 **Response:**
 
-The Actuator device is apparently a smart front-door-lock for which an extension profile has been written. The device supports both the standard slpf functions and whatever Commands are defined in the extension profile.
+The Actuator device is apparently a smart front-door-lock for which an extension profile has been written. The device supports both the standard pf functions and whatever Commands are defined in the extension profile.
 
 ```json
 {
   "status": 200,
   "results": {
     "versions": ["1.3"],
-    "profiles": ["slpf", "iot-front-door-lock"]
+    "profiles": ["pf", "iot-front-door-lock"]
   }
 }
 ```
 
-### A.4.4 Specific Commands Supported
+### E.4.4 Specific Commands Supported
 This Command queries the Actuator to determine which Action/Target pairs are supported. Not all Targets are meaningful in the context of a specific Action, and although a Command such as "update ipv4_connection" may be syntactically valid, the combination does not specify an operation supported by the Actuator.
 
 **Command:**
@@ -1376,14 +1500,14 @@ The Actuator supports all Action/Target pairs shown in Table 2.3-1 - Command Mat
       "allow": ["ipv6_net", "ipv6_connection"],
       "deny": ["ipv6_net", "ipv6_connection"],
       "query": ["features"],
-      "delete": ["slpf:rule_number"],
+      "delete": ["pf:rule_number"],
       "update": ["file"]
     }
   }
 }
 ```
 
-### A.4.5 Rule Details
+### E.4.5 Rule Details
 This Command queries the Actuator to determine the Target and Argument values for a particular rule. 
 
 **Command:**
@@ -1394,10 +1518,10 @@ For each supported Action list the Targets supported by this Actuator.
 {
   "action": "query",
   "target": {
-    "slpf:rule_number": 20
+    "pf:rule_number": 20
   }
   "actuator": {
-    "slpf": {
+    "pf": {
      "asset_id": "30"
     }
   }
@@ -1412,7 +1536,7 @@ The Actuator returns information that could be used to reconstruct the rule.
 {
   "status": 200,
   "results": {
-    "slpf": {
+    "pf": {
       "rule_number": 20,
       "ipv4_connection": {
       "protocol": "tcp",
@@ -1429,82 +1553,3 @@ The Actuator returns information that could be used to reconstruct the rule.
   }
 }
 ```
-
----
-
-# Annex B: Acronyms
-_This section is non-normative_
-
-| Term | Expansion |
-|:---|:---|
-| CoAP | Constrained Application Protocol |
-| FTP | File Transfer Protocol |
-| HTTPS | Hyper Text Transfer Protocol Secure |
-| IACD | Integrated Adaptive Cyber Defense |
-| IPR | Intellectual Property Rights |
-| JADN | JSON Abstract Data Notation |
-| JSON | JavaScript Object Notation |
-| MQTT | Message Queuing Telemetry Transport |
-| OASIS | Organization for the Advancement of Structured Information Standards |
-| OODA | Observe-Orient-Decide-Act |
-| OpenDXL | Open-source Data Exchange Layer |
-| RFC | Request for Comment |
-| SLPF | Stateless Packet Filter |
-| TC | Technical Committee |
-| URI | Uniform Resource Identifier |
-
----
-
-# Annex C: Acknowledgments
-
-_This section is non-normative_
-
-The Actuator Profile Subcommittee was tasked by the OASIS Open Command and Control Technical Committee (OpenC2 TC) which at the time of this submission, had 132 members. The editors wish to express their gratitude to the members of the OpenC2 TC.
-
-The following individuals are acknowledged for providing comments, suggested text and/or participation in the SLPF CSD ballots:
-
-* Barry, Michelle- AT&T
-* Berliner, Brian- Symantec
-* Brule, Joseph - National Security Agency
-* Darley, Trey- New Context
-* Darnell, David- North American Energy Standards Board
-* Everett, Alex- University of North Carolina at Chapel Hill
-* Farrel, Travis- Anomali
-* Gray, Anderson- ForeScout
-* Gurney, John-Mark- New Context
-* Hamilton, David- AT&T
-* Hunt, Christian- New Context
-* Jackson, April- G2, Inc.
-* Kakumaru, Takahiro- NEC Corporation
-* Kasavchenko, Kirill- Arbor Networks
-* Kemp, Dave- National Security Agency
-* Lemire, Dave- G2, Inc.
-* MacGregor, Scott- McAfee
-* Martinez, Danny- G2, Inc.
-* Mathews, Lisa- Department of Defense
-* Mavroeidis, Vasileios- University of Oslo
-* Ortiz, Efrain- Symantec
-* Rajarathnam, Nirmal- ForeScout
-* Riedel, Daniel- New Context
-* Romano, Jason- National Security Agency
-* Royer, Phillip- Splunk
-* Skeen, Duane- Northrup Grumman
-* Sparrell, Duncan- sFractal Consulting
-* Stair, Michael- AT&T
-* Storms, Andrew- New Context
-* Stueve, Gerald- Fornetix
-* Trost, Bill- AT&T
-* Voit, Eric- Cisco
-* Webb, Jason- LookingGlass
-* White, Chuck- Fornetix
-* Yu, Sounil- Bank of America
-
----
-
-# Annex D: Revision History
-
-_This section is non-normative_
-
-| Revision | Date | Editor | Changes Made |
-| :--- | :--- | :--- | :--- |
-| Working Draft 01 | 10 MARCH 2021 | Everett, Vasileios | Initial Version. |
