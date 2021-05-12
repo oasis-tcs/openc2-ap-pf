@@ -451,6 +451,9 @@ The list of common Command Arguments is extended to include the additional Comma
 | 1027 | **insert_rule** | Rule-ID | 0..1 | Specifies the identifier of the rule within a list, typically used in a top-down rule list |
 | 1028 | **logged** | Boolean | 0..1 | Specifies if a log entry should be recorded as traffic matches the rule. The manner and mechanism for recording these entries is implementation specific and not defined by this specification. |
 | 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule |
+| 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state when set to TRUE |
+
+Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
 
 **_Type: Drop-Process (Enumerated)_**
 
@@ -587,6 +590,7 @@ Table 2.3-2 defines the Command Arguments that are allowed for a particular Comm
 | **insert_rule** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   |   |   |
 | **drop_process** |   | [2.3.2](#232-deny) |   |   |   |
 | **logged** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
+| **stateful** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
 
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
@@ -1201,7 +1205,7 @@ Block a particular connection within the domain and do not send a host unreachab
 }
 ```
 
-### E.1.2 Deny all outbound ftp transfers
+### E.1.2 Deny all outbound ftp transfers 
 Block all outbound ftp data transfers, send false acknowledgment. Note that the five-tuple is incomplete. Note that the response_requested field was not populated therefore will be 'complete'. Also note that the Actuator called out was PF with no additional Specifiers, therefore all endpoints that can execute the Command should. Note, the "pf":{"drop_process"} argument does not apply to the allow Action.
 
 **Command:**
@@ -1279,8 +1283,8 @@ Block all inbound traffic from the specified ipv6 network and do not respond. In
 }
 ```
 
-### E.1.4 Permit ftp transfers to a particular destination.
-Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any source. (Note that an actual application would also need to allow ftp-data (port 20) in order for transfers to be permitted).
+### E.1.4 Statefully permit ftp transfers to a particular destination.
+Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiating source and allow needed return traffic. (Note that an actual application may also need to allow ftp-data (port 20) in order for transfers to be permitted depending on the ftp connection type and the firewall technology).
 
 
 **Command:**
@@ -1296,7 +1300,9 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any source. (
     }
   },
   "actuator": {
-    "pf": {}
+    "pf": {
+       "stateful": true
+    }
   }
 }
 ```
