@@ -452,6 +452,7 @@ The list of common Command Arguments is extended to include the additional Comma
 | 1028 | **logged** | Boolean | 0..1 | Specifies if a log entry should be recorded as traffic matches the rule. The manner and mechanism for recording these entries is implementation specific and not defined by this specification. |
 | 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule |
 | 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state when set to TRUE |
+| 1031 | **priority** | Integer | 0..1 | Specifies the location of a specific firewall rule for firewalls that assign a numeric priority used to determine which firewall rule takes precedence |
 
 Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
 
