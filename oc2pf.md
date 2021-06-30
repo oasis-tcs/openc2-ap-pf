@@ -418,6 +418,10 @@ The list of common Targets is extended to include the additional Targets defined
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
 | 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted |
+| 1025 | **advanced_connection** | Array | An advanced connection is a six tuple intended to support newer and more advanced packet filters. See description below|
+
+* advanced_connection
+    * The six-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network. Any component, excluding network, not specified or specified as null shall be treated as 'any'. src_port and dst_port must be an integer between 0 and 65535. src_addr and dst_addr may specify either an IPv4 address or a tag of type string. Network shall be of type string and reference the name of logical network to which the rule SHALL apply.
 
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 summarizes the Command Arguments that are defined in this specification.
