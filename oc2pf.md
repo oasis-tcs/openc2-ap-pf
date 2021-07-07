@@ -418,6 +418,10 @@ The list of common Targets is extended to include the additional Targets defined
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
 | 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted |
+| 1025 | **advanced_connection** | Array | An advanced connection MUST be a seven tuple intended to support newer and more advanced packet filters. See description below|
+
+* advanced_connection
+    * The six-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. src_port and dst_port must be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls SHALL be of type string. Network SHALL be of type string being the reference to the name of logical network to which the rule applies.
 
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 summarizes the Command Arguments that are defined in this specification.
@@ -452,6 +456,7 @@ The list of common Command Arguments is extended to include the additional Comma
 | 1028 | **logged** | Boolean | 0..1 | Specifies if a log entry should be recorded as traffic matches the rule. The manner and mechanism for recording these entries is implementation specific and not defined by this specification. |
 | 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule |
 | 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state when set to TRUE |
+| 1031 | **priority** | Integer | 0..1 | Specifies the location of a specific firewall rule for firewalls that assign a numeric priority used to determine which firewall rule takes precedence |
 
 Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
 
