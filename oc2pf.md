@@ -595,7 +595,8 @@ Table 2.3-2 defines the Command Arguments that are allowed for a particular Comm
 | **drop_process** |   | [2.3.2](#232-deny) |   |   |   |  |
 | **logged** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  |
 | **stateful** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  | 
-
+| **priority** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  | 
+ 
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
 
