@@ -584,17 +584,17 @@ Table 2.3-2 defines the Command Arguments that are allowed for a particular Comm
 **Table 2.3-2. Command Arguments Matrix**
 
 |   | Allow _target_ | Deny _target_ | Query features | Query pf:rule_number | Delete pf:rule_number | Update file |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **response_requested** | [2.3.1](#231-allow) | [2.3.2](#232-deny) | [2.3.3.1](#2331-query-features) | [2.3.4.1](#2341-delete-pfrule_number) | [2.3.5.1](#2351-update-file) |
-| **start_time** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   | [2.3.4.1](#2341-delete-pfrule_number) | [2.3.5.1](#2351-update-file) |
-| **stop_time** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
-| **duration** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
-| **persistent** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
-| **direction** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
-| **insert_rule** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   |   |   |
-| **drop_process** |   | [2.3.2](#232-deny) |   |   |   |
-| **logged** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
-| **stateful** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **response_requested** | [2.3.1](#231-allow) | [2.3.2](#232-deny) | [2.3.3.1](#2331-query-features) | [2.3.4.1](#2341-delete-pfrule_number) | [2.3.5.1](#2351-update-file) |  |
+| **start_time** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   | [2.3.4.1](#2341-delete-pfrule_number) | [2.3.5.1](#2351-update-file) |  |
+| **stop_time** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   | |
+| **duration** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  |
+| **persistent** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  |
+| **direction** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  |
+| **insert_rule** | [2.3.1](#231-allow)| [2.3.2](#232-deny) |   |   |   |  |
+| **drop_process** |   | [2.3.2](#232-deny) |   |   |   |  |
+| **logged** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  |
+| **stateful** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  | 
 
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
