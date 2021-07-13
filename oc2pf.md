@@ -1031,7 +1031,7 @@ Willett, Keith D., "Integrated Adaptive Cyberspace Defense: Secure Orchestration
 
 # Appendix B. Safety, Security and Privacy Considerations
 
-Implementors should understand the topology that will be controlled and take steps to ensure the security of systems generating and accepting commands. This could include steps such as enabling Transport Layer Security and mutual authentication.
+Implementors should understand the topology that will be controlled and take steps to ensure the security of systems generating and accepting commands. The technical committee recommends taking steps such as enabling both Transport Layer Security and mutual authentication. Additionally, implementing consumer-side checks such as type enforcement and length are recommended.
 
 -------
 
@@ -1042,6 +1042,7 @@ Implementors should understand the topology that will be controlled and take ste
 Substantial contributions to this document from the following individuals are gratefully acknowledged:
 
 Duncan Sparrell
+David Lemire
 
 ## C.2 Participants
 
