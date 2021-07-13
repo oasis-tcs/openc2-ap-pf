@@ -4,24 +4,22 @@
 
 # OpenC2 Actuator Profile for Packet Filtering Version 1.0
 
-## Committee Specification Draft 01
+## Working Draft 01
 
-## 3 May 2021
+## 13 June 2021
 
 #### This version:
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.md (Authoritative) \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.pdf
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.md (Authoritative) \
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.html \
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.pdf
 
 #### Previous version:
-https://docs.oasis-open.org/openc2/oc2slpf/v1.0/csprd02/oc2slpf-v1.0-csprd02.md (Authoritative) \
-https://docs.oasis-open.org/openc2/oc2slpf/v1.0/csprd02/oc2slpf-v1.0-csprd02.html \
-https://docs.oasis-open.org/openc2/oc2slpf/v1.0/csprd02/oc2slpf-v1.0-csprd02.pdf
+N/A
 
 #### Latest version:
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.md (Authoritative) \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.pdf
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.md (Authoritative) \
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.html \
+https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.pdf
 
 #### Technical Committee:
 [OASIS Open Command and Control (OpenC2) TC](https://www.oasis-open.org/committees/openc2/)
@@ -30,7 +28,7 @@ https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.pdf
 Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)
 
 #### Editors:
-Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](http://www.unc.edu/)
+Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](https://www.unc.edu/)
 Vasileios Mavroeidis (vasileim@ifi.uio.no), [University of Oslo](https://www.uio.no/english/) \
 
 #### Additional artifacts:
