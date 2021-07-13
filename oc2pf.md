@@ -575,6 +575,7 @@ Table 2.3-1 defines the Commands that are valid in the context of the PF profile
 | **ipv6_connection** | valid | valid |   |   |   |
 | **ipv4_net** | valid | valid |   |   |   |
 | **ipv6_net** | valid | valid |   |   |   |
+| **pf:advanced_connection** | valid | valid |   |   |   |
 | **domain_name** | valid | valid |   |   |   |
 | **features** |   |   | valid |   |   |
 | **pf:rule_number** |   |   | valid | valid |   |
