@@ -1305,9 +1305,13 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiatin
       "src_port": 21
     }
   },
+  "args": {
+    "pf": {
+      "stateful": true
+    }
+  },
   "actuator": {
     "pf": {
-       "stateful": true
     }
   }
 }
