@@ -1305,9 +1305,13 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiatin
       "src_port": 21
     }
   },
+  "args": {
+    "pf": {
+      "stateful": true
+    }
+  },
   "actuator": {
     "pf": {
-       "stateful": true
     }
   }
 }
@@ -1328,6 +1332,38 @@ In this case the Actuator returned a rule number associated with the allow.
 }
 ```
 
+### E.1.5 Deny outbound Network Time Protocol (NTP)
+From a tagged set of webservers in the default virtual network traffic requests from these servers to timekeeping services will be denied.
+
+
+**Command:**
+
+```json
+{
+  "action": "deny",
+  "target": {
+    "pf": {
+      "advanced_connection": {
+        "src_addr": "webservers",
+        "network": "default",
+        "protocol": "udp",
+        "dst_port": 123
+      }
+    }
+  },
+  "args": {
+    "pf": {
+      "direction": "egress",
+      "priority": 500
+    }
+  },
+  "actuator": {
+    "pf": {
+    }
+  }
+}
+
+```
 ## E.2 Delete Rule
 Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL.
 
