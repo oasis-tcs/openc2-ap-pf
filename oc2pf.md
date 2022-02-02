@@ -1,51 +1,47 @@
 
 ![OASIS Logo](http://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
+
 -------
 
 # OpenC2 Actuator Profile for Packet Filtering Version 1.0
 
-## Working Draft 01
+## Committee Specification Draft 01
 
-## 13 June 2021
+## 21 July 2021
 
-#### This version:
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.md (Authoritative) \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.html \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.pdf
+&nbsp;
 
-#### Previous version:
+#### This stage:
+https://docs.oasis-open.org/openc2/ap-pf/v1.0/csd01/ap-pf-v1.0-csd01.md (Authoritative) \
+https://docs.oasis-open.org/openc2/ap-pf/v1.0/csd01/ap-pf-v1.0-csd01.html \
+https://docs.oasis-open.org/openc2/ap-pf/v1.0/csd01/ap-pf-v1.0-csd01.pdf
+
+#### Previous stage:
 N/A
 
-#### Latest version:
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.md (Authoritative) \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.html \
-https://docs.oasis-open.org/openc2/oc2pf/v1.0/wd01/oc2pf-v1.0-wd01.pdf
+#### Latest stage:
+https://docs.oasis-open.org/openc2/ap-pf/v1.0/ap-pf-v1.0.md (Authoritative) \
+https://docs.oasis-open.org/openc2/ap-pf/v1.0/ap-pf-v1.0.html \
+https://docs.oasis-open.org/openc2/ap-pf/v1.0/ap-pf-v1.0.pdf
 
 #### Technical Committee:
 [OASIS Open Command and Control (OpenC2) TC](https://www.oasis-open.org/committees/openc2/)
 
-#### Chairs:
+#### Chair:
 Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)
 
 #### Editors:
-Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](https://www.unc.edu/)\
+Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](https://www.unc.edu/) \
 Vasileios Mavroeidis (vasileim@ifi.uio.no), [University of Oslo](https://www.uio.no/english/)
 
-#### Additional artifacts:
-None
-
-#### Related work:
-This specification replaces or supersedes:
-None
- 
 #### Abstract:
 
-Open Command and Control (OpenC2) is a concise and extensible language to enable the command and control of cyber defense components, subsystems and/or systems in a manner that is agnostic of the underlying products, technologies, transport mechanisms or other aspects of the implementation. Packet filtering is a cyber defense mechanism that denies or allows traffic based on static or dynamic properties of the traffic, such as address, port, protocol, etc. This profile defines the Actions, Targets, Specifiers and Options that are consistent with the version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)) in the context of packet filtering (PF).
+Open Command and Control (OpenC2) is a concise and extensible language to enable the command and control of cyber defense components, subsystems and/or systems in a manner that is agnostic of the underlying products, technologies, transport mechanisms or other aspects of the implementation. Packet filtering is a cyber defense mechanism that denies or allows traffic based on static or dynamic properties of the traffic, such as address, port, protocol, etc. This profile defines the Actions, Targets, Specifiers and Options that are consistent with the Version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)) in the context of packet filtering (PF).
 
 #### Status:
-This document was last revised or approved by the OASIS Open Command and Control (OpenC2) TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical.
+This document was last revised or approved by the OASIS Open Command and Control (OpenC2) TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical.
 
-TC members should send comments on this specification to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at https://www.oasis-open.org/committees/openc2/.
+TC members should send comments on this specification to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "[Send A Comment](https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=)" button on the TC's web page at https://www.oasis-open.org/committees/openc2/.
 
 This specification is provided under the [Non-Assertion](https://www.oasis-open.org/policies-guidelines/ipr#Non-Assertion-Mode) Mode of the OASIS IPR Policy, the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the TC's web page (https://www.oasis-open.org/committees/openc2/ipr.php).
 
@@ -58,11 +54,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 When referencing this specification the following citation format should be used:
 
 **[OpenC2-PF-v1.0]**
-_Open Command and Control (OpenC2) Profile for Packet Filtering Version 1.0_. Edited by Alex Everett. 10 May 2021. Committee Specification 01. https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html. Latest version: https://docs.oasis-open.org/openc2/oc2pf/v1.0/cs01/oc2pf-v1.0-cs01.html.
+_OpenC2 Actuator Profile for Packet Filtering Version 1.0_. Edited by Alex Everett and Vasileios Mavroeidis. 21 July 2021. OASIS Committee Specification Draft 01. https://docs.oasis-open.org/openc2/ap-pf/v1.0/csd01/ap-pf-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/openc2/ap-pf/v1.0/ap-pf-v1.0.html.
 
--------
-
-## Notices
+#### Notices:
 Copyright © OASIS Open 2021. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr).
@@ -354,13 +348,13 @@ This specification identifies the applicable components of an OpenC2 Command. Th
 * Action:  A subset of the Actions defined in the OpenC2 Language Specification that are meaningful in the context of a PF.
     * This profile SHALL NOT define Actions that are external to Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10)
     * This profile MAY augment the definition of the Actions in the context of a PF
-    * This profile SHALL NOT define Actions in a manner that is inconsistent with version 1.0 of the OpenC2 Language Specification
+    * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the OpenC2 Language Specification
 * Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the OpenC2 Language Specification that are meaningful in the context of PF and one Target (and its associated Specifier) that is defined in this specification
 * Arguments:  A subset of the Arguments defined in the Language Specification and a set of Arguments defined in this specification
 * Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF
 
 ### 2.1.1 Actions
-Table 2.1.1-1 presents the OpenC2 Actions defined in version 1.0 of the Language Specification which are meaningful in the context of an PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language Specification which are meaningful in the context of an PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
 
 **Table 2.1.1-1. Actions Applicable to PF**
 
@@ -475,6 +469,7 @@ Note that if stateful is not explicitly set and the actuator only operates in ei
 | 3 | **egress** | Apply rules to outgoing traffic only |
 
 Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
+
 ![packet directions](images/openc2_apsc_dir.png)
 
 **_Type: Rule-ID_**
@@ -905,7 +900,7 @@ An OpenC2 Consumer satisfies Baseline OpenC2 Consumer conformance if:
 * 3.2.1.3 **MUST** support the use of a Transfer Specification that is capable of delivering authenticated, ordered, lossless and uniquely identified OpenC2 messages
 * 3.2.1.4 **SHOULD** support the use of one or more published OpenC2 Transfer Specifications which identify underlying transport protocols such that an authenticated, ordered, lossless, delivery of uniquely identified OpenC2 messages is provided as referenced in [Section 1](#1-introduction) of this specification
 * 3.2.1.5 **MUST** be conformant with Version 1.0 of the OpenC2 Language Specification
-* 3.2.1.6 **MUST** implement the 'query features' Command in accordance with the normative text provided in version 1.0 of the OpenC2 Language Specification
+* 3.2.1.6 **MUST** implement the 'query features' Command in accordance with the normative text provided in Version 1.0 of the OpenC2 Language Specification
 * 3.2.1.7 **MUST** implement the 'response_requested' Command Argument as a valid option for any Command
     * 3.2.1.7.1 All Commands received with a 'response_requested' argument set to 'none' **MUST** process the Command and **MUST NOT** send a Response. This criteria supersedes all other normative text as it pertains to Responses
     * 3.2.1.7.2 All Commands received without the 'response_requested' argument **MUST** process the Command and Response in a manner that is consistent with "response_requested":"complete"
@@ -985,7 +980,7 @@ An OpenC2 Consumer satisfies 'Logging Consumer' conformance if:
 
 # Appendix A. References
 
-This appendix contains the normative and informative references that are used in this document. Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific.
+This appendix contains the normative and informative references that are used in this document.
 
 While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
 
@@ -1008,7 +1003,7 @@ Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, 
 ###### [RFC8259]
 Bray, T., Ed., "The JavaScript Object Notation (JSON) Data Interchange Format", STD 90, RFC 8259, DOI 10.17487/RFC8259, December 2017, <https://www.rfc-editor.org/info/rfc8259>.
 ###### [OpenC2-Lang-v1.0]
-_Open Command and Control (OpenC2) Language Specification Version 1.0_. Edited by Jason Romano and Duncan Sparrell. November 2018, <http://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html>.
+_Open Command and Control (OpenC2) Language Specification Version 1.0_. Edited by Jason Romano and Duncan Sparrell. Latest stage: <https://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html>.
 
 ## A.2 Informative References
 
@@ -1017,11 +1012,11 @@ Klyne, G. and C. Newman, "Date and Time on the Internet: Timestamps", RFC 3339, 
 ###### [RFC4291]
 Hinden, R. and S. Deering, "IP Version 6 Addressing Architecture", RFC 4291, DOI 10.17487/RFC4291, February 2006, <https://www.rfc-editor.org/info/rfc4291>.
 ###### [RFC6891]
-Damas, J., Graff, M., and P. Vixie, "Extension Mechanisms for DNS (EDNS(0))", STD 75, RFC 6891, DOI 10.17487/RFC6891, April 2013, <https://www.rfc-editor.org/info/rfc6891>..
+Damas, J., Graff, M., and P. Vixie, "Extension Mechanisms for DNS (EDNS(0))", STD 75, RFC 6891, DOI 10.17487/RFC6891, April 2013, <https://www.rfc-editor.org/info/rfc6891>.
 ###### [RFC5237]
 Arkko, J. and S. Bradner, "IANA Allocation Guidelines for the Protocol Field", BCP 37, RFC 5237, DOI 10.17487/RFC5237, February 2008, <https://www.rfc-editor.org/info/rfc5237>.
 ###### [OpenC2-HTTPS-v1.0]
-Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0. Edited by David Lemire. November, 2018, <http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html>.
+Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0. Edited by David Lemire. Latest stage: <https://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html>.
 ###### [ACD]
 Herring, M.J. and Willett, K.D. "Active Cyber Defense: A Vision for Real-Time Cyber Defense," Journal of Information Warfare, vol. 13, Issue 2, p. 80, April 2014, <https://www.semanticscholar.org/paper/Active-Cyber-Defense-%3A-A-Vision-for-Real-Time-Cyber-Herring-Willett/7c128468ae42584f282578b86439dbe9e8c904a8>.
 ###### [IACD]
@@ -1113,9 +1108,6 @@ Jason | Liu | Northrop Grumman
 Duane | Skeen | Northrop Grumman
 Calvin | Smith | Northrop Grumman
 Cheolho | Lee | NSR
-Chet | Ensign | OASIS
-Web | Master | OASIS
-Dee | Schur | OASIS
 David | Bizeul | SEKOIA
 Dan | Johnson | sFractal Consulting LLC
 Duncan | Sparrell | sFractal Consulting LLC
@@ -1305,13 +1297,9 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiatin
       "src_port": 21
     }
   },
-  "args": {
-    "pf": {
-      "stateful": true
-    }
-  },
   "actuator": {
     "pf": {
+       "stateful": true
     }
   }
 }
@@ -1332,38 +1320,6 @@ In this case the Actuator returned a rule number associated with the allow.
 }
 ```
 
-### E.1.5 Deny outbound Network Time Protocol (NTP)
-From a tagged set of webservers in the default virtual network traffic requests from these servers to timekeeping services will be denied.
-
-
-**Command:**
-
-```json
-{
-  "action": "deny",
-  "target": {
-    "pf": {
-      "advanced_connection": {
-        "src_addr": "webservers",
-        "network": "default",
-        "protocol": "udp",
-        "dst_port": 123
-      }
-    }
-  },
-  "args": {
-    "pf": {
-      "direction": "egress",
-      "priority": 500
-    }
-  },
-  "actuator": {
-    "pf": {
-    }
-  }
-}
-
-```
 ## E.2 Delete Rule
 Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL.
 
@@ -1601,3 +1557,27 @@ The Actuator returns information that could be used to reconstruct the rule.
   }
 }
 ```
+
+-------
+
+# Appendix F. Notices
+
+Copyright © OASIS Open 2021. All Rights Reserved.
+
+All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full [Policy](https://www.oasis-open.org/policies-guidelines/ipr) may be found at the OASIS website.
+
+This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.
+
+The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.
+
+This document and the information contained herein is provided on an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+As stated in the OASIS IPR Policy, the following three paragraphs in brackets apply to OASIS Standards Final Deliverable documents (Committee Specification, Candidate OASIS Standard, OASIS Standard, or Approved Errata).
+
+\[OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this deliverable.\]
+
+\[OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include such claims on its website, but disclaims any obligation to do so.\]
+
+\[OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final Deliverable or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS' procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will at any time be complete, or that any claims in such list are, in fact, Essential Claims.\]
+
+The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the owner and developer of this specification, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, specifications, while reserving the right to enforce its marks against misleading uses. Please see https://www.oasis-open.org/policies-guidelines/trademark for above guidance.
