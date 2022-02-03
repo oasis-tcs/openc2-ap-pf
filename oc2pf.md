@@ -27,8 +27,9 @@ https://docs.oasis-open.org/openc2/ap-pf/v1.0/ap-pf-v1.0.pdf
 #### Technical Committee:
 [OASIS Open Command and Control (OpenC2) TC](https://www.oasis-open.org/committees/openc2/)
 
-#### Chair:
-Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)
+#### Chairs:
+Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)\
+Michael Rosa (mjrosa@cyber.nsa.gov), [National Security Agency](https://www.nsa.gov/)
 
 #### Editors:
 Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](https://www.unc.edu/) \
