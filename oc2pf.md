@@ -267,7 +267,7 @@ This specification identifies the applicable components of an OpenC2 Command. Th
 * Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
-Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language Specification which are meaningful in the context of an PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language Specification which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
 
 **Table 2.1.1-1. Actions Applicable to PF**
 
@@ -275,11 +275,11 @@ Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language
 
 | ID | Name | Description |
 | :--- | :--- | :--- |
-| 3 | **query** | Initiate a request for information. Used to communicate the supported options and determine the state or settings |
-| 6 | **deny** | Prevent traffic or access |
-| 8 | **allow** | Permit traffic or access |
-| 16 | **update** | Instructs the Actuator to update its configuration by retrieving and processing a configuration file and update |
-| 20 | **delete** | Remove an access rule |
+| 3 | **query** | Initiate a request for information. Used to communicate the supported options and determine the state or settings of the Actuator. |
+| 6 | **deny** | Prevent traffic or access. |
+| 8 | **allow** | Permit traffic or access. |
+| 16 | **update** | Instructs the Actuator to update its configuration by retrieving and processing a configuration file. |
+| 20 | **delete** | Remove an access rule. |
 
 ### 2.1.2 Targets
 Table 2.1.2-1 summarizes the Targets defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2-2 summarizes the Targets that are defined in this specification.
