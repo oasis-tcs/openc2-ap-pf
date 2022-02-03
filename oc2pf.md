@@ -183,6 +183,8 @@ Though cyber defense components, devices, systems and/or instances may implement
 
 The rest of the specification is organized as follows: 
 
+The remaining of [Section One](#1-introduction) includes infomation about the IPR policy, terminology used, and document conventions pertinent to this Actuator profile specification.
+
 [Section Two](#2-openc2-language-binding) (normative) binds this particular profile to the OpenC2 Language Specification. Section Two enumerates the components of the language specification that are meaningful in the context of PF and defines components that are applicable to this distinct profile. Section Two also defines the Commands (i.e., the Action/Target pairs) that are permitted in the context of PF.
 
 [Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with OpenC2.
@@ -946,13 +948,16 @@ Implementors should understand the topology that will be controlled and take ste
 ## C.1 Special Thanks
 
 Substantial contributions to this document from the following individuals are gratefully acknowledged:
-
-Duncan Sparrell
-David Lemire
+    
+| First Name | Last Name | Company |
+| :--- | :--- | :--- |
+Duncan | Sparrell | todo
+David | Lemire | todo
+ 
 
 ## C.2 Participants
 
-The following individuals have participated in the creation of this specification and are gratefully acknowledged:
+The following individuals were members of the OASIS OpenC2 Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
 **OpenC2 TC Members:**
 
@@ -1040,9 +1045,11 @@ Randall | Sharo | US Department of Defense
 -------
 
 # Appendix D. Revision History
-| Revision | Date | Editor | Changes Made |
+| Revision | Date | Editors | Changes Made |
 | :--- | :--- | :--- | :--- |
-| openc2-ap-pf-v1.0-wd01 | 2021-05-03 | Alex Everett | Initial working draft |
+| 01 | 2021-05-03 | Alex Everett and Vasileios Mavroeidis| Populated Initial working draft |
+| 02 | -- | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar
+fixes.|
 
 -------
 
