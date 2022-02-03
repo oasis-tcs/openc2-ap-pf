@@ -245,26 +245,26 @@ Example:
 
 _This section is normative_
 
-This section defines the set of Actions, Targets, Specifiers, and Arguments that are meaningful in the context of an PF. This section also describes the appropriate format for the status and properties of a Response frame. This section is organized into three major subsections; Command Components, Response Components and Commands.
+This section defines the set of Actions, Targets, Arguments, and Actuator Specifiers that are meaningful in the context of PF. This section also describes the appropriate format for the status and properties of a Response message. This section is organized into three major subsections; Command Components, Response Components and Commands.
 
 Extensions to the Language Specification are defined in accordance with [[OpenC2-Lang-v1.0]](#openc2-lang-v10), Section 3.1.5, where:
 
-1. The unique name of the PF schema is `oasis-open.org/openc2/v1.0/ap-pf`
+1. The unique name of the PF schema is: `oasis-open.org/openc2/v1.0/ap-pf`
 2. The namespace identifier (nsid) referring to the PF schema is:  `pf`
-3. The definitions of and conformance requirements for these types are contained in this document
+3. The definitions of and conformance requirements for these types are contained in this document.
 
 ## 2.1 OpenC2 Command Components
-The components of an OpenC2 Command include Actions, Targets, Actuators and associated Arguments and Specifiers. Appropriate aggregation of the components will define a Command-body that is meaningful in the context of an PF.
+The components of an OpenC2 Command include Actions, Targets, Actuators and associated Arguments and Specifiers. Appropriate aggregation of the components will define a Command-body that is meaningful in the context of PF.
 
 This specification identifies the applicable components of an OpenC2 Command. The components of an OpenC2 Command include:
 
-* Action:  A subset of the Actions defined in the OpenC2 Language Specification that are meaningful in the context of a PF.
-    * This profile SHALL NOT define Actions that are external to Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10)
-    * This profile MAY augment the definition of the Actions in the context of a PF
-    * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the OpenC2 Language Specification
-* Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the OpenC2 Language Specification that are meaningful in the context of PF and one Target (and its associated Specifier) that is defined in this specification
-* Arguments:  A subset of the Arguments defined in the Language Specification and a set of Arguments defined in this specification
-* Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF
+* Action:  A subset of the Actions defined in in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of a packet filter.
+    * This profile SHALL NOT define Actions that are external to Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
+    * This profile MAY augment the definition of the Actions in the context of PF.
+    * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
+* Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of PF and one Target (and its associated Specifier) that is defined in this specification.
+* Arguments:  A subset of the Arguments defined in in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) and a set of Arguments defined in this specification.
+* Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
 Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language Specification which are meaningful in the context of an PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
