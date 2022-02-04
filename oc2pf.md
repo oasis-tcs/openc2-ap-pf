@@ -267,7 +267,7 @@ This specification identifies the applicable components of an OpenC2 Command. Th
     * This profile MAY augment the definition of the Actions in the context of PF.
     * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
 * Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of PF and one Target (and its associated Specifier) that is defined in this specification.
-* Arguments:  A subset of the Arguments defined in in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) and a set of Arguments defined in this specification.
+* Arguments:  A subset of the Arguments defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) and a set of Arguments defined in this specification.
 * Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
