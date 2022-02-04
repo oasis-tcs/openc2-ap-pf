@@ -171,13 +171,15 @@ For complete copyright information please see the Notices section in the Appendi
 
 _The content in this section is non-normative, except where it is marked normative._
 
+**Note:** This Actuator profile is consistent with Version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)).
+
 OpenC2 is a suite of specifications that enables command and control of cyber defense systems and components. OpenC2 typically uses a request-response paradigm where a  Command is encoded by a  Producer  (managing application) and transferred to a  Consumer (managed device or virtualized function) using a secure transfer protocol, and the Consumer acts on the request and responds with status and any other requested information.
 
-This specification defines an Actuator profile for **Packet Filtering (PF)**. In particular, the specification comprises a set of Actions, Targets and Target Specifiers, Command Arguments, and Actuator Specifiers that integrates PF functionality with the OpenC2 Command set. Through this Command set, cyber security orchestrators may gain visibility into and provide control over PF functionality in a manner that is independent of the instance of the PF function. All components, devices, and systems that provide PF functionality MUST implement the identified OpenC2 Actions, Targets, Specifiers, and Arguments as specified in the Conformance section of this specification. 
+This specification defines an Actuator profile for **Packet Filtering (PF)**. In particular, the specification comprises a set of Actions, Targets and Target Specifiers, Command Arguments, and Actuator Specifiers that integrates PF functionality with the OpenC2 Command set. Through this Command set, cyber security orchestrators may gain visibility into and provide control over PF functionality in a manner that is independent of the instance of the PF function. 
+
+All components, devices, and systems that provide PF functionality MUST implement the identified OpenC2 Actions, Targets, Specifiers, and Arguments as specified in the Conformance section of this specification. 
 
 Though cyber defense components, devices, systems and/or instances may implement multiple Actuator profiles, a particular OpenC2 Message may reference at most a single Actuator profile. The scope of this document is limited to PF. 
-
-**Note:** This Actuator profile is consistent with Version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)).
 
 ---
 
@@ -190,6 +192,8 @@ The remaining of [Section One](#1-introduction) includes infomation about the IP
 [Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with OpenC2.
 
 [Annex A](#annex-a-sample-commands) (non-normative) provides multiple examples of Commands and associated Responses (JSON serialization) to facilitate development.
+
+
 
 ## 1.1 IPR Policy
 This specification is provided under the [Non-Assertion](https://www.oasis-open.org/policies-guidelines/ipr#Non-Assertion-Mode) Mode of the [OASIS IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr), the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the TC's web page ([https://www.oasis-open.org/committees/openc2/ipr.php](https://www.oasis-open.org/committees/openc2/ipr.php)).
