@@ -249,13 +249,13 @@ Example:
 
 _This section is normative_
 
-This section defines the set of Actions, Targets, Arguments, and Actuator Specifiers that are meaningful in the context of PF. This section also describes the appropriate format for the status and properties of a Response message. This section is organized into three major subsections; Command Components, Response Components and Commands.
+This section defines the set of Actions, Targets, Arguments, and Actuator Specifiers that are meaningful in the context of PF. This section also describes the appropriate format for the status and properties of a Response message. This section is organized into three major subsections; [Command Components](2.1-openc2-command-components), [Response Components](2.2-openc2-response-components), and [Commands](2.3-openc2-commands).
 
 Extensions to the Language Specification are defined in accordance with [[OpenC2-Lang-v1.0]](#openc2-lang-v10), Section 3.1.5, where:
 
 1. The unique name of the PF schema is: `oasis-open.org/openc2/v1.0/ap-pf`
 2. The namespace identifier (nsid) referring to the PF schema is:  `pf`
-3. The definitions of and conformance requirements for these types are contained in this document.
+3. The conformance requirements for the OpenC2 Packet Filtering Actuator profile are defined and included in this document.
 
 ## 2.1 OpenC2 Command Components
 The components of an OpenC2 Command include Actions, Targets, Actuators and associated Arguments and Specifiers. Appropriate aggregation of the components will define a Command-body that is meaningful in the context of PF.
