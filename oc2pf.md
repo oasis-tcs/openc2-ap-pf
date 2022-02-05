@@ -368,7 +368,22 @@ The list of common Command Arguments is extended to include additional Command A
 | 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state. |
 | 1031 | **priority** | Integer | 0..1 | Specifies the priority of a specific firewall rule for firewalls that assign a numeric priority. It is used to determine which firewall rule takes precedence. |
 
+Usage Requirements:
+* insert_rule:
+    * The value MUST be immutable - i.e., the identifier assigned to an access rule at creation must not change over the lifetime of that rule.
+    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of a PF.
+* directionality:
+    * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code.
+    * If absent or not explicitly set, then the Command MUST apply to both.
+* drop_process: If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet.
+* persistent: If absent or not explicitly set, then the value is TRUE and any changes are persistent.
+
+
 Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
+    
+Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
+
+![packet directions](images/openc2_apsc_dir.png)
 
 **_Type: Drop-Process (Enumerated)_**
 
@@ -386,9 +401,6 @@ Note that if stateful is not explicitly set and the actuator only operates in ei
 | 2 | **ingress** | Apply rules to incoming traffic only |
 | 3 | **egress** | Apply rules to outgoing traffic only |
 
-Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
-
-![packet directions](images/openc2_apsc_dir.png)
 
 **_Type: Rule-ID_**
 
@@ -396,18 +408,6 @@ Note that direction is required by some packet filters. For a host-based or host
 | :--- | :--- | :--- |
 | **Rule-ID** | Integer | Access rule identifier |
 
-The semantics/requirements as they relate to PF arguments:
-
-* insert_rule:
-    * The value MUST be immutable - i.e., the identifier assigned to an access rule at creation must not change over the lifetime of that rule
-
-    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of an PF
-
-* directionality:
-    * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code
-    * If absent or not explicitly set, then the Command MUST apply to both
-* drop_process:  If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet
-* persistent:  If absent or not explicitly set, then the value is TRUE and any changes are persistent
 
 ### 2.1.4 Actuator Specifiers
 An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the PF and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
