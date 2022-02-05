@@ -289,7 +289,7 @@ Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Languag
 Table 2.1.2.1-1 summarizes the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2.2-2 summarizes the Targets that are defined in this specification. Targets that are defined in this specification are referenced using the `pf` namespace.
 
 #### 2.1.2.1 Common Targets Applicable to PF
-Table 2.1.2.1-1 lists the Targets defined in in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.2.1-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
 
 **Table 2.1.2.1-1. Common Targets Applicable to PF**
 
