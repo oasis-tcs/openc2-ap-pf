@@ -262,18 +262,18 @@ The components of an OpenC2 Command include Actions, Targets, Actuators and asso
 
 This specification identifies the applicable components of an OpenC2 Command. The components of an OpenC2 Command include:
 
-* Action:  A subset of the Actions defined in in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of a packet filter.
+* Action:  A subset of the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of a packet filter.
     * This profile SHALL NOT define Actions that are external to Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
     * This profile MAY augment the definition of the Actions in the context of PF.
     * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
-* Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of PF and one Target (and its associated Specifier) that is defined in this specification.
+* Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of PF and two Targets (and their associated Specifiers) that are defined in this specification.
 * Arguments:  A subset of the Arguments defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) and a set of Arguments defined in this specification.
 * Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
-Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language Specification which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
 
-**Table 2.1.1-1. Actions Applicable to PF**
+**Table 2.1.1-1. Common Actions Applicable to PF**
 
 **_Type: Action (Enumerated)_**
 
@@ -282,90 +282,91 @@ Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language
 | 3 | **query** | Initiate a request for information. Used to communicate the supported options and determine the state or settings of the Actuator. |
 | 6 | **deny** | Prevent traffic or access. |
 | 8 | **allow** | Permit traffic or access. |
-| 16 | **update** | Instructs the Actuator to update its configuration by retrieving and processing a configuration file. |
+| 16 | **update** | Instruct the Actuator to update its configuration by retrieving and processing a configuration file. |
 | 20 | **delete** | Remove an access rule. |
 
 ### 2.1.2 Targets
-Table 2.1.2-1 summarizes the Targets defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2-2 summarizes the Targets that are defined in this specification.
+Table 2.1.2.1-1 summarizes the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2.2-2 summarizes the Targets that are defined in this specification. Targets that are defined in this specification are referenced using the `pf` namespace.
 
-#### 2.1.2.1 Common Targets
-Table 2.1.2-1 lists the Targets defined in the OpenC2 Language Specification that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+#### 2.1.2.1 Common Targets Applicable to PF
+Table 2.1.2.1-1 lists the Targets defined in in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
 
-**Table 2.1.2-1. Targets Applicable to PF**
+**Table 2.1.2.1-1. Common Targets Applicable to PF**
 
 **_Type: Target (Choice)_**
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 9 | **features** | Features | A set of items such as Action/Target pairs, profiles versions, options that are supported by the Actuator. The Target is used with the query Action to determine an Actuator's capabilities |
-| 10 | **file** | File | Properties of a file |
-| 13 | **ipv4_net** | IPv4-Net | The representation of one or more IPv4 addresses expressed using CIDR notation |
-| 14 | **ipv6_net** | IPv6-Net | The representation of one or more IPv6 addresses expressed using CIDR notation |
-| 15 | **ipv4_connection** | IPv4-Connection | A network connection as specified by a five-tuple (IPv4) |
-| 16 | **ipv6_connection** | IPv6-Connection | A network connection as specified by a five-tuple (IPv6) |
-| 17 | **domain_name** | Domain-Name | A domain name as defined in [[RFC1034]](#rfc1034) |
+| 9 | **features** | Features | A set of items such as Action/Target pairs, profiles versions, options that are supported by the Actuator. The Target is used with the query Action to determine an Actuator's capabilities. |
+| 10 | **file** | File | Properties of a file. |
+| 13 | **ipv4_net** | IPv4-Net | The representation of one or a block of IPv4 addresses expressed using CIDR notation. |
+| 14 | **ipv6_net** | IPv6-Net | The representation of one or a block of IPv6 addresses expressed using CIDR notation. |
+| 15 | **ipv4_connection** | IPv4-Connection | A network connection as specified by a five-tuple (IPv4). |
+| 16 | **ipv6_connection** | IPv6-Connection | A network connection as specified by a five-tuple (IPv6). |
+| 17 | **domain_name** | Domain-Name | A domain name as defined in [[RFC1034]](#rfc1034). |
 
-The semantics/ requirements as they pertain to common targets:
+Usage Requirements:
 * ipv4_connection
-    * If the protocol = ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
-      where the ICMP types and codes are defined in [[RFC2780]](#rfc2780)
-    * If the protocol = TCP, UDP or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol
-    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol
+    * If the protocol is ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
+      where the ICMP types and codes are defined in [[RFC2780]](#rfc2780).
+    * If the protocol is TCP, UDP, or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol.
+    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol.
 * ipv6_connection
-    * If the protocol = ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
-      where the ICMP types and codes are defined in [[RFC4443]](#rfc4443)
-    * If the protocol = TCP, UDP or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol
-    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol
+    * If the protocol is ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
+      where the ICMP types and codes are defined in [[RFC4443]](#rfc4443).
+    * If the protocol is TCP, UDP, or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol.
+    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol.
 
-#### 2.1.2.2 PF Targets
-The list of common Targets is extended to include the additional Targets defined in this section and referenced with the pf namespace.
+#### 2.1.2.2 Targets Unique to PF
+The list of common Targets is extended to include additional Targets as defined in this section and are referenced with the `pf` namespace.
 
-**Table 2.1.2-2. Targets Unique to PF**
+**Table 2.1.2.2-2. Targets Unique to PF**
 
 **_Type: Target (Choice)_**
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted |
+| 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted. |
 | 1025 | **advanced_connection** | Array | An advanced connection MUST be a seven tuple intended to support newer and more advanced packet filters. See description below|
 
+Usage Requirements:
 * advanced_connection
-    * The six-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. src_port and dst_port must be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls SHALL be of type string. Network SHALL be of type string being the reference to the name of logical network to which the rule applies.
+    * The six-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. src_port and dst_port must be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls, SHALL be of type string. Network SHALL be of type string being the reference to the name (also known as tag) of logical network to which the rule applies.
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 summarizes the Command Arguments that are defined in this specification.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3.1-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3.2-2 summarizes the Command Arguments that are defined in this specification.
 
-#### 2.1.3.1 Common Arguments
+#### 2.1.3.1 Common Command Arguments Applicable to PF
 Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.1.3-1. Command Arguments applicable to PF**
+**Table 2.1.3.1-1. Common Command Arguments Applicable to PF**
 
 **_Type: Args (Map)_**
 
 | ID | Name | Type | # | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | **start_time** | Date-Time | 0..1 | The specific date/time to initiate the Action |
-| 2 | **stop_time** | Date-Time | 0..1 | The specific date/time to terminate the Action|
-| 3 | **duration** | Duration | 0..1 | The length of time for an Action to be in effect |
-| 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Action: `none`, `ack`, `status`, `complete` |
+| 1 | **start_time** | Date-Time | 0..1 | The specific date/time to initiate the Command. |
+| 2 | **stop_time** | Date-Time | 0..1 | The specific date/time to terminate the Command.|
+| 3 | **duration** | Duration | 0..1 | The length of time for a Command to be in effect. |
+| 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Command: `none`, `ack`, `status`, `complete`. |
 
-#### 2.1.3.2 PF Arguments
-The list of common Command Arguments is extended to include the additional Command Arguments defined in this section and referenced with the pf namespace.
+#### 2.1.3.2 Command Arguments Unique to PF
+The list of common Command Arguments is extended to include additional Command Arguments as defined in this section and are referenced with the `pf` namespace.
 
-**Table 2.1.3-2. Command Arguments Unique to PF**
+**Table 2.1.3.2-2. Command Arguments Unique to PF**
 
 **_Type: Args (Map)_**
 
 | ID | Name | Type | # | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| 1024 | **drop_process** | Drop-Process | 0..1 | Specifies how to handle denied packets |
-| 1025 | **persistent** | Boolean | 0..1 | Normal operations assume any changes to a device are to be implemented persistently. Setting the persistent modifier to FALSE results in a change that is not persistent in the event of a reboot or restart |
-| 1026 | **direction** | Direction | 0..1 | Specifies whether to apply rules to incoming or outgoing traffic. If omitted, rules are applied to ingress packets |
-| 1027 | **insert_rule** | Rule-ID | 0..1 | Specifies the identifier of the rule within a list, typically used in a top-down rule list |
+| 1024 | **drop_process** | Drop-Process | 0..1 | Specifies how to handle denied packets. |
+| 1025 | **persistent** | Boolean | 0..1 | Normal operations assume any changes to a device are to be implemented persistently. Setting the persistent modifier to FALSE results in a change that is not persistent in the event of a reboot or restart. |
+| 1026 | **direction** | Direction | 0..1 | Specifies whether to apply rules to incoming or outgoing traffic. If omitted, rules are applied to ingress packets. |
+| 1027 | **insert_rule** | Rule-ID | 0..1 | Specifies the identifier of the rule within a list, typically used in a top-down rule list. |
 | 1028 | **logged** | Boolean | 0..1 | Specifies if a log entry should be recorded as traffic matches the rule. The manner and mechanism for recording these entries is implementation specific and not defined by this specification. |
-| 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule |
-| 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state when set to TRUE |
-| 1031 | **priority** | Integer | 0..1 | Specifies the location of a specific firewall rule for firewalls that assign a numeric priority used to determine which firewall rule takes precedence |
+| 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule. |
+| 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state. |
+| 1031 | **priority** | Integer | 0..1 | Specifies the priority of a specific firewall rule for firewalls that assign a numeric priority. It is used to determine which firewall rule takes precedence. |
 
 Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
 
