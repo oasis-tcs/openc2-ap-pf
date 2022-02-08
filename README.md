@@ -42,7 +42,7 @@ Norms](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.
 
 ###  :left_speech_bubble: Description  :left_speech_bubble:
 
-This repository is for a network packet filtering actuator profile. Actuator profiles identify the aspects of the OpenC2 language specification that are mandatory and/or meaningful in the context of a given actuator. Actuator Profiles also identify specifiers and options that are unique to the actuator. This repository will focus on the use of OpenC2 to issue commands and parse responses to hardware or software that can control administrative policies regarding network packets.
+This repository is for a packet filtering actuator profile. Actuator profiles identify the aspects of the OpenC2 language specification that are mandatory and/or meaningful in the context of a given actuator. Actuator Profiles also identify specifiers and options that are unique to the actuator. This repository will focus on the use of OpenC2 to issue commands and parse responses to hardware or software that can control administrative policies regarding network packets.
 
 Open Command and Control (OpenC2) is a concise and extensible language to enable the command and control of cyber defense components, subsystems and/or systems in a manner that is agnostic of the underlying products, technologies, transport mechanisms or other aspects of the implementation. 
 
