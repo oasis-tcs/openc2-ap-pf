@@ -12,7 +12,7 @@ licensing. For more details, see the
 [Contributions](#contributions) and [Licensing](#licensing)
 sections below. 
 
-## :blue_book: _Specification for Transfer of OpenC2 Messages Via MQTT_ :blue_book:
+## :blue_book: _OpenC2 Actuator Profile for Packet Filtering_ :blue_book:
 
 This specification provides guidance to the OpenC2 implementation
 community for issuing commands and parsing responses to hardware
