@@ -5,9 +5,9 @@
 
 # OpenC2 Actuator Profile for Packet Filtering Version 1.0
 
-## Committee Specification Draft 01
+## Committee Specification Draft 02
 
-## 21 July 2021
+## -- February 2022
 
 &nbsp;
 
@@ -27,8 +27,9 @@ https://docs.oasis-open.org/openc2/ap-pf/v1.0/ap-pf-v1.0.pdf
 #### Technical Committee:
 [OASIS Open Command and Control (OpenC2) TC](https://www.oasis-open.org/committees/openc2/)
 
-#### Chair:
-Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)
+#### Chairs:
+Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)\
+Michael Rosa (mjrosa@cyber.nsa.gov), [National Security Agency](https://www.nsa.gov/)
 
 #### Editors:
 Alex Everett (alex.everett@unc.edu), [University of North Carolina, Chapel Hill](https://www.unc.edu/) \
@@ -36,7 +37,7 @@ Vasileios Mavroeidis (vasileim@ifi.uio.no), [University of Oslo](https://www.uio
 
 #### Abstract:
 
-Open Command and Control (OpenC2) is a concise and extensible language to enable the command and control of cyber defense components, subsystems and/or systems in a manner that is agnostic of the underlying products, technologies, transport mechanisms or other aspects of the implementation. Packet filtering is a cyber defense mechanism that denies or allows traffic based on static or dynamic properties of the traffic, such as address, port, protocol, etc. This profile defines the Actions, Targets, Specifiers and Options that are consistent with the Version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)) in the context of packet filtering (PF).
+Open Command and Control (OpenC2) is a concise and extensible language to enable machine-to-machine communications for purposes of command and control of cyber defense components, subsystems, and systems in a manner that is agnostic of the underlying products, technologies, transport mechanisms, or other aspects of the implementation. This specification defines an Actuator profile for Packet Filtering (PF). Packet filtering is a cyber defense mechanism that denies or allows traffic based on static or dynamic properties. The Actuator profile collects Actions, Targets, Arguments, and Specifiers along with conformance clauses to enable the operation of OpenC2 Producers and Consumers in the context of PF.
 
 #### Status:
 This document was last revised or approved by the OASIS Open Command and Control (OpenC2) TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical.
@@ -71,12 +72,10 @@ For complete copyright information please see the Notices section in the Appendi
 -   [1 Introduction](#1-introduction)
     -   [1.1 IPR Policy](#11-ipr-policy)
     -   [1.2 Terminology](#12-terminology)
-    -   [1.3 Document Conventions](#15-document-conventions)
-        -   [1.3.1 Naming Conventions](#151-naming-conventions)
-        -   [1.3.2 Font Colors and Style](#152-font-colors-and-style)
-    -   [1.4 Overview](#16-overview)
-    -   [1.5 Goal](#17-goal)
-    -   [1.6 Purpose and Scope](#18-purpose-and-scope)
+    -   [1.3 Document Conventions](#13-document-conventions)
+        -   [1.3.1 Naming Conventions](#131-naming-conventions)
+        -   [1.3.2 Font Colors and Style](#132-font-colors-and-style)
+    -   [1.4 Purpose and Scope](#14-purpose-and-scope)
 -   [2 OpenC2 Language Binding](#2-openc2-language-binding)
     -   [2.1 OpenC2 Command Components](#21-openc2-command-components)
         -   [2.1.1 Actions](#211-actions)
@@ -172,9 +171,29 @@ For complete copyright information please see the Notices section in the Appendi
 
 _The content in this section is non-normative, except where it is marked normative._
 
-OpenC2 is a suite of specifications that enables command and control of cyber defense systems and components. OpenC2 typically uses a request-response paradigm where a _Command_ is encoded by a _Producer_ (managing application) and transferred to a _Consumer_ (managed device or virtualized function) using a secure transfer protocol, and the Consumer can respond with status and any requested information.
+**Note:** This Actuator profile is consistent with Version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)).
 
-OpenC2 allows the application producing the commands to discover the set of capabilities supported by the managed devices. These capabilities permit the managing application to adjust its behavior to take advantage of the features exposed by the managed device. The capability definitions can be easily extended in a noncentralized manner, allowing standard and non-standard capabilities to be defined with semantic and syntactic rigor.
+OpenC2 is a suite of specifications that enables command and control of cyber defense systems and components. OpenC2 typically uses a request-response paradigm where a  Command is encoded by a  Producer  (managing application) and transferred to a  Consumer (managed device or virtualized function) using a secure transfer protocol, and the Consumer acts on the request and responds with status and any other requested information.
+
+This specification defines an Actuator profile for **Packet Filtering (PF)**. In particular, the specification comprises a set of Actions, Targets and Target Specifiers, Command Arguments, and Actuator Specifiers that integrates PF functionality with the OpenC2 Command set. Through this Command set, cyber security orchestrators may gain visibility into and provide control over PF functionality in a manner that is independent of the instance of the PF function. 
+
+All components, devices, and systems that provide PF functionality MUST implement the identified OpenC2 Actions, Targets, Specifiers, and Arguments as specified in the Conformance section of this specification. 
+
+Though cyber defense components, devices, systems and/or instances may implement multiple Actuator profiles, a particular OpenC2 Message may reference at most a single Actuator profile. The scope of this document is limited to PF. 
+
+---
+
+The rest of the specification is organized as follows: 
+
+The remaining of [Section One](#1-introduction) includes infomation about the IPR policy, terminology used, and document conventions pertinent to this Actuator profile specification.
+
+[Section Two](#2-openc2-language-binding) (normative) binds this particular profile to the OpenC2 Language Specification. Section Two enumerates the components of the language specification that are meaningful in the context of PF and defines components that are applicable to this distinct profile. Section Two also defines the Commands (i.e., the Action/Target pairs) that are permitted in the context of PF.
+
+[Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with OpenC2.
+
+[Annex A](#annex-a-sample-commands) (non-normative) provides multiple examples of Commands and associated Responses (JSON serialization) to facilitate development.
+
+
 
 ## 1.1 IPR Policy
 This specification is provided under the [Non-Assertion](https://www.oasis-open.org/policies-guidelines/ipr#Non-Assertion-Mode) Mode of the [OASIS IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr), the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the TC's web page ([https://www.oasis-open.org/committees/openc2/ipr.php](https://www.oasis-open.org/committees/openc2/ipr.php)).
@@ -226,231 +245,145 @@ Example:
 }
 ```
 
-## 1.4 Overview
-In general, there are two types of participants involved in the exchange of OpenC2 Messages, as depicted in Figure 1-1:
-1. **Producers**: A Producer is an entity that creates Commands to provide instruction to one or more systems to act in accordance with the content of the Command. A Producer may receive and process Responses in conjunction with a Command.
-2. **Consumers**: A Consumer is an entity that receives and may act upon a Command. A Consumer may create Responses that provide any information captured or necessary to send back to the Producer.
-
-![OpenC2 Message Exchange](images/image_1.png)
-
-**Figure 1-1. OpenC2 Message Exchange**
-
-OpenC2 is a suite of specifications for Producers and Consumers to command and execute cyber defense functions. These specifications include the OpenC2 Language Specification, Actuator Profiles, and Transfer Specifications. The OpenC2 Language Specification and Actuator Profile specifications focus on the language content and meaning at the Producer and Consumer of the Command and Response while the transfer specifications focus on the protocols for their exchange.
-* The **OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10))** provides the semantics for the essential elements of the language, the structure for Commands and Responses, and the schema that defines the proper syntax for the language elements that represents the Command or Response.
-* **OpenC2 Actuator Profiles** specify the subset of the OpenC2 language relevant in the context of specific Actuator functions. Cyber defense components, devices, systems and/or instances may (in fact are likely to) implement multiple Actuator profiles. Actuator profiles extend the language by defining Specifiers that identify the Actuator to the required level of precision. Actuator Profiles may define Command Arguments and Targets that are relevant and/or unique to those Actuator functions.
-* **OpenC2 Transfer Specifications** utilize existing protocols and standards to implement OpenC2 in specific environments. These standards are used for communications and security functions beyond the scope of the language, such as message transfer encoding, authentication, and end-to-end transport of OpenC2 Messages.
-
-The OpenC2 Language Specification defines a language used to compose Messages for command and control of cyber defense systems and components. A Message consists of a header and a payload (_defined_ as a Message body in the OpenC2 Language Specification Version 1.0 and _specified_ in one or more Actuator profiles).
-
-The language defines two payload structures:
-
-1. **Command**: An instruction from one system known as the Producer, to one or more systems, the Consumer(s), to act on the content of the Command.
-2. **Response**: Any information sent back to the Producer as a result of the Command.
-
-OpenC2 implementations integrate the related OpenC2 specifications described above with related industry specifications, protocols, and standards. Figure 1-2 depicts the relationships among OpenC2 specifications, and their relationships to other industry standards and environment-specific implementations of OpenC2. Note that the layering of implementation aspects in the diagram is notional, and not intended to preclude any particular approach to implementing the needed functionality (for example, the use of an application-layer message signature function to provide message source authentication and integrity).
-
-![OpenC2 Documentation and Layering Model](images/image_2.png)
-
-**Figure 1-2. OpenC2 Documentation and Layering Model**
-
-OpenC2 is conceptually partitioned into four layers as shown in Table 1-1.
-
-**Table 1-1. OpenC2 Protocol Layers**
-
-| Layer | Examples |
-| :--- | :--- |
-| Function-Specific Content | Actuator Profiles<br>(standard and extensions) |
-| Common Content | Language Specification<br>[[OpenC2-Lang-v1.0]](#openc2-lang-v10) |
-| Message | Transfer Specifications<br>([[OpenC2-HTTPS-v1.0]](#openc2-https-v10), OpenC2-over-CoAP, ...) |
-| Secure Transport | HTTPS, CoAP, MQTT, OpenDXL, ... |
-
-* The **Secure Transport** layer provides a communication path between the Producer and the Consumer. OpenC2 can be layered over any standard transport protocol.
-* The **Message** layer provides a transfer- and content-independent mechanism for conveying Messages. A transfer specification maps transfer-specific protocol elements to a transfer-independent set of message elements consisting of content and associated metadata.
-* The **Common Content** layer defines the structure of Commands and Responses and a set of common language elements used to construct them.
-* The **Function-specific Content** layer defines the language elements used to support a particular cyber defense function. An Actuator profile defines the implementation conformance requirements for that function. Producers and Consumers will support one or more profiles.
-
-The components of a Command are an Action (what is to be done), a Target (what is being acted upon), an optional Actuator (what is performing the command), and Command Arguments, which influence how the Command is to be performed. An Action coupled with a Target is sufficient to describe a complete Command. Though optional, the inclusion of an Actuator and/or Command Arguments provides additional precision to a Command.
-
-The components of a Response are a numerical status code, an optional status text string, and optional results. The format of the results, if included, depend on the type of Response being transferred.
-
-## 1.5 Goal
-The goal of the OpenC2 Language Specification is to provide a language for interoperating between functional elements of cyber defense systems. This language used in conjunction with OpenC2 Actuator Profiles and OpenC2 Transfer Specifications allows for vendor-agnostic cybertime response to attacks.
-
-The Integrated Adaptive Cyber Defense (IACD) framework defines a collection of activities, based on the traditional OODA (Observe–Orient–Decide–Act) Loop [[IACD]](#iacd):
-
-* Sensing:  gathering of data regarding system activities
-* Sense Making:  evaluating data using analytics to understand what's happening
-* Decision Making:  determining a course-of-action to respond to system events
-* Acting:  Executing the course-of-action
-
-The goal of OpenC2 is to enable coordinated defense in cyber-relevant time between decoupled blocks that perform cyber defense functions. OpenC2 focuses on the Acting portion of the IACD framework; the assumption that underlies the design of OpenC2 is that the sensing/analytics have been provisioned and the decision to act has been made. This goal and these assumptions guide the design of OpenC2:
-
-* **Technology Agnostic:**  The OpenC2 language defines a set of abstract atomic cyber defense actions in a platform and implementation agnostic manner
-* **Concise:**  A Command is intended to convey only the essential information required to describe the action required and can be represented in a very compact form for communications-constrained environments
-* **Abstract:**  Commands and Responses are defined abstractly and can be encoded and transferred via multiple schemes as dictated by the needs of different implementation environments
-* **Extensible:**  While OpenC2 defines a core set of Actions and Targets for cyber defense, the language is expected to evolve with cyber defense technologies, and permits extensions to accommodate new cyber defense technologies.
-
-## 1.6 Purpose and Scope
-A packet filter (PF) is a policy enforcement mechanism that restricts or permits traffic based on static or dynamic values such as source address, destination address, payload, and/or port numbers. A Packet Filter may consider traffic patterns, connection state, data flows, applications, or payload information. The scope of this profile is limited to network Packet Filtering herein referred to as PF.
-
-This Actuator profile specifies the set of Actions, Targets, Specifiers, and Command Arguments that integrates PF functionality with the Open Command and Control (OpenC2) Command set. Through this Command set, cyber security orchestrators may gain visibility into and provide control over the PF functionality in a manner that is independent of the instance of the PF function.
-
-All components, devices and systems that provide PF functionality will implement the OpenC2 Actions, Targets, Specifiers and Arguments identified as required in this document. Actions that are applicable, but not necessarily required, for PF will be identified as optional.
-
-The purpose of this document is to:
-
-* Identify the required and optional OpenC2 Actions for Actuators with PF functionality
-* Identify the required and optional Target types for each Action in the PF class of Actuators
-* Identify Actuator-Specifiers and Arguments for each Action/Target pair that are applicable and/or unique to the PF class of Actuators
-* Annotate each Action/Target pair with a justification and example, and provide sample OpenC2 Commands to a PF with corresponding Responses
-
-This PF profile:
-
-* Does not define or implement Actions beyond those defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10)
-* Is consistent with Version 1.0 of the OpenC2 Language Specification
-
-Cyber defense systems that are utilizing OpenC2 may require the following components to implement the PF profile:
-
-* OpenC2 Producers: Devices that send Commands, receive Responses, and manage the execution of Commands involving one or more PF or other Actuators with PF capability. The OpenC2 Producer needs _a priori_ knowledge of which Commands the Actuator can process and execute, therefore must understand the profiles for any device that it intends to command
-* OpenC2 Consumers: Devices or instances that provide packet filtering functions. Typically these are Actuators that execute the cyber defense function, but could be orchestrators (i.e., a device or instance that forwards Commands to the Actuator)
-
-Though cyber defense components, devices, systems and/or instances may implement multiple Actuator profiles, a particular OpenC2 Message may reference at most a single Actuator profile. The scope of this document is limited to PF.
-
-This specification is organized into three major sections.
-
-Section One (this section) provides a non-normative overview of the suite of specifications that realize OpenC2. This section provides references as well as defines the scope and purpose of this specification.
-
-[Section Two](#2-openc2-language-binding) (normative) binds this particular profile to the OpenC2 Language Specification. Section Two enumerates the components of the language specification that are meaningful in the context of PF and defines components that are applicable to this distinct profile. Section Two also defines the Commands (i.e., the Action/Target pairs) that are permitted in the context of PF.
-
-[Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with OpenC2.
-
-[Annex A](#annex-a-sample-commands) (non-normative) provides multiple examples of Commands and associated Responses (JSON serialization) to facilitate development.
-
----
-
 # 2 OpenC2 Language Binding
 
 _This section is normative_
 
-This section defines the set of Actions, Targets, Specifiers, and Arguments that are meaningful in the context of an PF. This section also describes the appropriate format for the status and properties of a Response frame. This section is organized into three major subsections; Command Components, Response Components and Commands.
+This section defines the set of Actions, Targets, Arguments, and Actuator Specifiers that are meaningful in the context of PF and the appropriate statuses and properties of a Response message. In addition, this section defines the Commands allowed by the profile. This section is organized into three major subsections; [Command Components](2.1-openc2-command-components), [Response Components](2.2-openc2-response-components), and [Commands](2.3-openc2-commands).
 
 Extensions to the Language Specification are defined in accordance with [[OpenC2-Lang-v1.0]](#openc2-lang-v10), Section 3.1.5, where:
 
-1. The unique name of the PF schema is `oasis-open.org/openc2/v1.0/ap-pf`
+1. The unique name of the PF schema is: `oasis-open.org/openc2/v1.0/ap-pf`
 2. The namespace identifier (nsid) referring to the PF schema is:  `pf`
-3. The definitions of and conformance requirements for these types are contained in this document
+3. The conformance requirements for the OpenC2 Packet Filtering Actuator profile are defined and included in this document.
 
 ## 2.1 OpenC2 Command Components
-The components of an OpenC2 Command include Actions, Targets, Actuators and associated Arguments and Specifiers. Appropriate aggregation of the components will define a Command-body that is meaningful in the context of an PF.
+The components of an OpenC2 Command include Actions, Targets, Actuators and associated Arguments and Specifiers. Appropriate aggregation of the components will define a Command-body that is meaningful in the context of PF.
 
 This specification identifies the applicable components of an OpenC2 Command. The components of an OpenC2 Command include:
 
-* Action:  A subset of the Actions defined in the OpenC2 Language Specification that are meaningful in the context of a PF.
-    * This profile SHALL NOT define Actions that are external to Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10)
-    * This profile MAY augment the definition of the Actions in the context of a PF
-    * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the OpenC2 Language Specification
-* Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the OpenC2 Language Specification that are meaningful in the context of PF and one Target (and its associated Specifier) that is defined in this specification
-* Arguments:  A subset of the Arguments defined in the Language Specification and a set of Arguments defined in this specification
-* Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF
+* Action:  A subset of the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of a packet filter.
+    * This profile SHALL NOT define Actions that are external to Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
+    * This profile MAY augment the definition of the Actions in the context of PF.
+    * This profile SHALL NOT define Actions in a manner that is inconsistent with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
+* Target:  A subset of the Targets and Target-Specifiers defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are meaningful in the context of PF and two Targets (and their associated Specifiers) that are defined in this specification.
+* Arguments:  A subset of the Arguments defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) and a set of Arguments defined in this specification.
+* Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
-Table 2.1.1-1 presents the OpenC2 Actions defined in Version 1.0 of the Language Specification which are meaningful in the context of an PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
 
-**Table 2.1.1-1. Actions Applicable to PF**
+**Table 2.1.1-1. Common Actions Applicable to PF**
 
 **_Type: Action (Enumerated)_**
 
 | ID | Name | Description |
 | :--- | :--- | :--- |
-| 3 | **query** | Initiate a request for information. Used to communicate the supported options and determine the state or settings |
-| 6 | **deny** | Prevent traffic or access |
-| 8 | **allow** | Permit traffic or access |
-| 16 | **update** | Instructs the Actuator to update its configuration by retrieving and processing a configuration file and update |
-| 20 | **delete** | Remove an access rule |
+| 3 | **query** | Initiate a request for information. Used to communicate the supported options and determine the state or settings of the Actuator. |
+| 6 | **deny** | Prevent traffic or access. |
+| 8 | **allow** | Permit traffic or access. |
+| 16 | **update** | Instruct the Actuator to update its configuration by retrieving and processing a configuration file. |
+| 20 | **delete** | Remove an access rule. |
 
 ### 2.1.2 Targets
-Table 2.1.2-1 summarizes the Targets defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2-2 summarizes the Targets that are defined in this specification.
+Table 2.1.2.1-1 summarizes the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2.2-2 summarizes the Targets that are defined in this specification. Targets that are defined in this specification are referenced using the `pf` namespace.
 
-#### 2.1.2.1 Common Targets
-Table 2.1.2-1 lists the Targets defined in the OpenC2 Language Specification that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
+#### 2.1.2.1 Common Targets Applicable to PF
+Table 2.1.2.1-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
 
-**Table 2.1.2-1. Targets Applicable to PF**
+**Table 2.1.2.1-1. Common Targets Applicable to PF**
 
 **_Type: Target (Choice)_**
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 9 | **features** | Features | A set of items such as Action/Target pairs, profiles versions, options that are supported by the Actuator. The Target is used with the query Action to determine an Actuator's capabilities |
-| 10 | **file** | File | Properties of a file |
-| 13 | **ipv4_net** | IPv4-Net | The representation of one or more IPv4 addresses expressed using CIDR notation |
-| 14 | **ipv6_net** | IPv6-Net | The representation of one or more IPv6 addresses expressed using CIDR notation |
-| 15 | **ipv4_connection** | IPv4-Connection | A network connection as specified by a five-tuple (IPv4) |
-| 16 | **ipv6_connection** | IPv6-Connection | A network connection as specified by a five-tuple (IPv6) |
-| 17 | **domain_name** | Domain-Name | A domain name as defined in [[RFC1034]](#rfc1034) |
+| 9 | **features** | Features | A set of items such as Action/Target pairs, profiles versions, options that are supported by the Actuator. The Target is used with the query Action to determine an Actuator's capabilities. |
+| 10 | **file** | File | Properties of a file. |
+| 13 | **ipv4_net** | IPv4-Net | The representation of one or a block of IPv4 addresses expressed using CIDR notation. |
+| 14 | **ipv6_net** | IPv6-Net | The representation of one or a block of IPv6 addresses expressed using CIDR notation. |
+| 15 | **ipv4_connection** | IPv4-Connection | A network connection as specified by a five-tuple (IPv4). |
+| 16 | **ipv6_connection** | IPv6-Connection | A network connection as specified by a five-tuple (IPv6). |
+| 17 | **domain_name** | Domain-Name | A domain name as defined in [[RFC1034]](#rfc1034). |
 
-The semantics/ requirements as they pertain to common targets:
+Usage Requirements:
 * ipv4_connection
-    * If the protocol = ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
-      where the ICMP types and codes are defined in [[RFC2780]](#rfc2780)
-    * If the protocol = TCP, UDP or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol
-    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol
+    * If the protocol is ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
+      where the ICMP types and codes are defined in [[RFC2780]](#rfc2780).
+    * If the protocol is TCP, UDP, or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol.
+    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol.
 * ipv6_connection
-    * If the protocol = ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
-      where the ICMP types and codes are defined in [[RFC4443]](#rfc4443)
-    * If the protocol = TCP, UDP or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol
-    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol
+    * If the protocol is ICMP, the five-tuple is: src_addr, dst_addr, icmp_type, icmp_code, protocol
+      where the ICMP types and codes are defined in [[RFC4443]](#rfc4443).
+    * If the protocol is TCP, UDP, or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol.
+    * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol.
 
-#### 2.1.2.2 PF Targets
-The list of common Targets is extended to include the additional Targets defined in this section and referenced with the pf namespace.
+#### 2.1.2.2 Targets Unique to PF
+The list of common Targets is extended to include additional Targets as defined in this section and are referenced with the `pf` namespace.
 
-**Table 2.1.2-2. Targets Unique to PF**
+**Table 2.1.2.2-2. Targets Unique to PF**
 
 **_Type: Target (Choice)_**
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted |
+| 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted. |
 | 1025 | **advanced_connection** | Array | An advanced connection MUST be a seven tuple intended to support newer and more advanced packet filters. See description below|
 
+Usage Requirements:
 * advanced_connection
-    * The six-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. src_port and dst_port must be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls SHALL be of type string. Network SHALL be of type string being the reference to the name of logical network to which the rule applies.
+    * The six-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. src_port and dst_port must be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls, SHALL be of type string. Network SHALL be of type string being the reference to the name (also known as tag) of logical network to which the rule applies.
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 summarizes the Command Arguments that are defined in this specification.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3.1-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3.2-2 summarizes the Command Arguments that are defined in this specification.
 
-#### 2.1.3.1 Common Arguments
+#### 2.1.3.1 Common Command Arguments Applicable to PF
 Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.1.3-1. Command Arguments applicable to PF**
+**Table 2.1.3.1-1. Common Command Arguments Applicable to PF**
 
 **_Type: Args (Map)_**
 
 | ID | Name | Type | # | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | **start_time** | Date-Time | 0..1 | The specific date/time to initiate the Action |
-| 2 | **stop_time** | Date-Time | 0..1 | The specific date/time to terminate the Action|
-| 3 | **duration** | Duration | 0..1 | The length of time for an Action to be in effect |
-| 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Action: `none`, `ack`, `status`, `complete` |
+| 1 | **start_time** | Date-Time | 0..1 | The specific date/time to initiate the Command. |
+| 2 | **stop_time** | Date-Time | 0..1 | The specific date/time to terminate the Command.|
+| 3 | **duration** | Duration | 0..1 | The length of time for a Command to be in effect. |
+| 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Command: `none`, `ack`, `status`, `complete`. |
 
-#### 2.1.3.2 PF Arguments
-The list of common Command Arguments is extended to include the additional Command Arguments defined in this section and referenced with the pf namespace.
+#### 2.1.3.2 Command Arguments Unique to PF
+The list of common Command Arguments is extended to include additional Command Arguments as defined in this section and are referenced with the `pf` namespace.
 
-**Table 2.1.3-2. Command Arguments Unique to PF**
+**Table 2.1.3.2-2. Command Arguments Unique to PF**
 
 **_Type: Args (Map)_**
 
 | ID | Name | Type | # | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| 1024 | **drop_process** | Drop-Process | 0..1 | Specifies how to handle denied packets |
-| 1025 | **persistent** | Boolean | 0..1 | Normal operations assume any changes to a device are to be implemented persistently. Setting the persistent modifier to FALSE results in a change that is not persistent in the event of a reboot or restart |
-| 1026 | **direction** | Direction | 0..1 | Specifies whether to apply rules to incoming or outgoing traffic. If omitted, rules are applied to ingress packets |
-| 1027 | **insert_rule** | Rule-ID | 0..1 | Specifies the identifier of the rule within a list, typically used in a top-down rule list |
+| 1024 | **drop_process** | Drop-Process | 0..1 | Specifies how to handle denied packets. |
+| 1025 | **persistent** | Boolean | 0..1 | Normal operations assume any changes to a device are to be implemented persistently. Setting the persistent modifier to FALSE results in a change that is not persistent in the event of a reboot or restart. |
+| 1026 | **direction** | Direction | 0..1 | Specifies whether to apply rules to incoming or outgoing traffic. If omitted, rules are applied to ingress packets. |
+| 1027 | **insert_rule** | Rule-ID | 0..1 | Specifies the identifier of the rule within a list, typically used in a top-down rule list. |
 | 1028 | **logged** | Boolean | 0..1 | Specifies if a log entry should be recorded as traffic matches the rule. The manner and mechanism for recording these entries is implementation specific and not defined by this specification. |
-| 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule |
-| 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state when set to TRUE |
-| 1031 | **priority** | Integer | 0..1 | Specifies the location of a specific firewall rule for firewalls that assign a numeric priority used to determine which firewall rule takes precedence |
+| 1029 | **description** | String | 0..1| A note to annotate or provide information regarding the rule. |
+| 1030 | **stateful** | Boolean | 0..1 | Specifies if the actuator should treat the request using state tables or connection state. |
+| 1031 | **priority** | Integer | 0..1 | Specifies the priority of a specific firewall rule for firewalls that assign a numeric priority. It is used to determine which firewall rule takes precedence. |
+
+Usage Requirements:
+* insert_rule:
+    * The value MUST be immutable - i.e., the identifier assigned to an access rule at creation must not change over the lifetime of that rule.
+    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of a PF.
+* directionality:
+    * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code.
+    * If absent or not explicitly set, then the Command MUST apply to both.
+* drop_process: If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet.
+* persistent: If absent or not explicitly set, then the value is TRUE and any changes are persistent.
+
 
 Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
+    
+Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
+
+![packet directions](images/openc2_apsc_dir.png)
 
 **_Type: Drop-Process (Enumerated)_**
 
@@ -468,9 +401,6 @@ Note that if stateful is not explicitly set and the actuator only operates in ei
 | 2 | **ingress** | Apply rules to incoming traffic only |
 | 3 | **egress** | Apply rules to outgoing traffic only |
 
-Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
-
-![packet directions](images/openc2_apsc_dir.png)
 
 **_Type: Rule-ID_**
 
@@ -478,18 +408,6 @@ Note that direction is required by some packet filters. For a host-based or host
 | :--- | :--- | :--- |
 | **Rule-ID** | Integer | Access rule identifier |
 
-The semantics/requirements as they relate to PF arguments:
-
-* insert_rule:
-    * The value MUST be immutable - i.e., the identifier assigned to an access rule at creation must not change over the lifetime of that rule
-
-    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of an PF
-
-* directionality:
-    * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code
-    * If absent or not explicitly set, then the Command MUST apply to both
-* drop_process:  If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet
-* persistent:  If absent or not explicitly set, then the value is TRUE and any changes are persistent
 
 ### 2.1.4 Actuator Specifiers
 An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the PF and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
@@ -1035,13 +953,16 @@ Implementors should understand the topology that will be controlled and take ste
 ## C.1 Special Thanks
 
 Substantial contributions to this document from the following individuals are gratefully acknowledged:
-
-Duncan Sparrell
-David Lemire
+    
+| First Name | Last Name | Company |
+| :--- | :--- | :--- |
+Duncan | Sparrell | todo
+David | Lemire | todo
+ 
 
 ## C.2 Participants
 
-The following individuals have participated in the creation of this specification and are gratefully acknowledged:
+The following individuals were members of the OASIS OpenC2 Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
 **OpenC2 TC Members:**
 
@@ -1129,9 +1050,11 @@ Randall | Sharo | US Department of Defense
 -------
 
 # Appendix D. Revision History
-| Revision | Date | Editor | Changes Made |
+| Revision | Date | Editors | Changes Made |
 | :--- | :--- | :--- | :--- |
-| openc2-ap-pf-v1.0-wd01 | 2021-05-03 | Alex Everett | Initial working draft |
+| 01 | 2021-05-03 | Alex Everett and Vasileios Mavroeidis| Populated Initial working draft |
+| 02 | -- | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar
+fixes.|
 
 -------
 
