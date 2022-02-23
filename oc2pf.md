@@ -251,7 +251,7 @@ This section defines the set of Actions, Targets, Arguments, and Actuator Specif
 
 Extensions to the Language Specification are defined in accordance with [[OpenC2-Lang-v1.0]](#openc2-lang-v10), Section 3.1.5, where:
 
-1. The unique name of the PF schema is: `oasis-open.org/openc2/v1.0/ap-pf`
+1. The unique name of the PF schema is: `http://oasis-open.org/openc2/ap-pf/v1.0` 
 2. The namespace identifier (nsid) referring to the PF schema is:  `pf`
 3. The conformance requirements for the OpenC2 Packet Filtering Actuator profile are defined and included in this document.
 
