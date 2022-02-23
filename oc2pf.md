@@ -325,7 +325,7 @@ The list of common Targets is extended to include additional Targets unique to P
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
 | 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted. |
-| 1025 | **advanced_connection** | Array | An advanced connection MUST be a seven tuple intended to support newer and more advanced packet filters. See description below|
+| 1025 | **advanced_connection** | Array | An advanced connection MUST be a seven tuple intended to support newer and more advanced packet filters. See description below.|
 
 Usage Requirements:
 * advanced_connection
