@@ -284,7 +284,7 @@ Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Languag
 | 20 | **delete** | Remove an access rule. |
 
 ### 2.1.2 Targets
-Table 2.1.2.1-1 summarizes the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2.2-2 summarizes the Targets that are defined in this specification. Targets that are defined in this specification are referenced using the `pf` namespace.
+Table 2.1.2.1-1 summarizes the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2.2-2 summarizes the Targets that are defined in this specification. Targets that are defined in this specification are referenced using the `pf` namespace identifier.
 
 #### 2.1.2.1 Common Targets Applicable to PF
 Table 2.1.2.1-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
@@ -316,7 +316,7 @@ Usage Requirements:
     * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol.
 
 #### 2.1.2.2 Targets Unique to PF
-The list of common Targets is extended to include additional Targets as defined in this section and are referenced with the `pf` namespace.
+The list of common Targets is extended to include additional Targets unique to PF. Targets unique to PF are referenced with the `pf` namespace identifier.
 
 **Table 2.1.2.2-2. Targets Unique to PF**
 
