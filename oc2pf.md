@@ -230,7 +230,7 @@ The following color, font and font style conventions are used in this document:
 
 Example:
 
-```json
+~~~
 {
     "action": "deny",
     "target": {
@@ -241,7 +241,7 @@ Example:
         }
     }
 }
-```
+~~~
 
 # 2 OpenC2 Language Binding
 
@@ -1088,7 +1088,7 @@ Block a particular connection within the domain and do not send a host unreachab
 
 **Command:**
 
-```json
+~~~
 {
   "action": "deny",
   "target": {
@@ -1114,22 +1114,22 @@ Block a particular connection within the domain and do not send a host unreachab
         }
     }
 }
-```
+~~~
 
 **Response:**
 
-```json
+~~~
 {
   "status": 102
 }
-```
+~~~
 
 ### E.1.2 Deny all outbound ftp transfers 
 Block all outbound ftp data transfers, send false acknowledgment. Note that the five-tuple is incomplete. Note that the response_requested field was not populated therefore will be 'complete'. Also note that the Actuator called out was PF with no additional Specifiers, therefore all endpoints that can execute the Command should. Note, the "pf":{"drop_process"} argument does not apply to the allow Action.
 
 **Command:**
 
-```json
+~~~
 {
   "action": "deny",
   "target": {
@@ -1148,41 +1148,41 @@ Block all outbound ftp data transfers, send false acknowledgment. Note that the 
     "pf": {}
   }
 }
-```
+~~~
 
 **Responses:**
 
 Case One: the Actuator successfully issued the deny.
 
-```json
+~~~
 {
   "status": 200
 }
-```
+~~~
 
 Case Two: the Command failed due to a syntax error in the Command. Optional status text is ignored by the Producer, but may be added to provide error details for debugging or logging.
 
-```json
+~~~
 {
   "status": 400,
   "status_text": "Validation Error: Target: ip_conection"
 }
-```
+~~~
 
 Case Three: the Command failed because an Argument was not supported.
 
-```json
+~~~
 {
   "status": 501
 }
-```
+~~~
 
 ### E.1.3 Block all inbound traffic from a particular source.
 Block all inbound traffic from the specified ipv6 network and do not respond. In this case the ipv6_net Target and the direction argument was used. In this case only the perimeter filters should update the rule.
 
 **Command:**
 
-```json
+~~~
 {
   "action": "deny",
   "target": {
@@ -1200,7 +1200,7 @@ Block all inbound traffic from the specified ipv6 network and do not respond. In
     }
   }
 }
-```
+~~~
 
 ### E.1.4 Statefully permit ftp transfers to a particular destination.
 Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiating source and allow needed return traffic. (Note that an actual application may also need to allow ftp-data (port 20) in order for transfers to be permitted depending on the ftp connection type and the firewall technology).
@@ -1208,7 +1208,7 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiatin
 
 **Command:**
 
-```json
+~~~
 {
   "action": "allow",
   "target": {
@@ -1228,13 +1228,13 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiatin
     }
   }
 }
-```
+~~~
 
 In this case the Actuator returned a rule number associated with the allow.
 
 **Response:**
 
-```json
+~~~
 {
   "status": 200,
   "results": {
@@ -1243,14 +1243,15 @@ In this case the Actuator returned a rule number associated with the allow.
     }
   }
 }
-```
+~~~
+    
 ### E.1.5 Deny outbound Network Time Protocol (NTP)
 From a tagged set of webservers in the default virtual network traffic requests from these servers to timekeeping services will be denied.
 
 
 **Command:**
 
-```json
+~~~
 {
   "action": "deny",
   "target": {
@@ -1274,7 +1275,7 @@ From a tagged set of webservers in the default virtual network traffic requests 
     }
   }
 }
-```
+~~~
     
 ## E.2 Delete Rule
 Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL.
@@ -1283,7 +1284,7 @@ In this case the rule number assigned in a previous allow will be removed (refer
 
 **Command:**
 
-```json
+~~~
 {
   "action": "delete",
   "target": {
@@ -1296,7 +1297,7 @@ In this case the rule number assigned in a previous allow will be removed (refer
     "pf": {}
   }
 }
-```
+~~~
 
 ## E.3 Update file
 Implementation of the Update Action is optional. Update is intended for the device to process new configuration files. The update Action is a compound Action in that all of the steps required for a successful update (such as download the new file, install the file, reboot etc.) are implied. File is the only valid Target type for Update.
@@ -1305,7 +1306,7 @@ Instructs the firewalls to acquire a new configuration file. Note that all netwo
 
 **Command:**
 
-```json
+~~~
 {
   "action": "update",
   "target": {
@@ -1320,35 +1321,35 @@ Instructs the firewalls to acquire a new configuration file. Note that all netwo
     }
   }
 }
-```
+~~~
 
 **Responses:**
 
 Successful update of the configuration
 
-```json
+~~~
 {
   "status": 200
 }
-```
+~~~
 
 This Actuator does not support the update file Command
 
-```json
+~~~
 {
   "status": 501,
   "status_text": "Update-File Not Implemented"
 }
-```
+~~~
 
 This Actuator could not access the file
 
-```json
+~~~
 {
   "status": 500,
   "status_text": "Server error, Cannot access file"
 }
-```
+~~~
 
 ## E.4 Query features
 Implementation of query Openc2 is required. The query features Command is intended to enable the Openc2 Producer to determine the capabilities of the Actuator. The query features Command can also be used to check the status of the Actuator.
@@ -1358,71 +1359,71 @@ This Command uses query features with no query items to verify that the Actuator
 
 **Command:**
 
-```json
+~~~
 {
   "action": "query",
   "target": {
     "features": []
   }
 }
-```
+~~~
 
 **Response:**
 
 The Actuator is alive.
 
-```json
+~~~
 {
   "status": 200
 }
-```
+~~~
 
 ### E.4.2 Version of Language specification supported
 This Command queries the Actuator to determine which version(s) of the language specification are supported. The language specifications use semantic versioning ("major.minor"); for each supported major version the Actuator need only report the highest supported minor version.
 
 **Command:**
 
-```json
+~~~
 {
     "action": "query",
     "target": {
         "features": ["versions"]
     }
 }
-```
+~~~
 
 **Response:**
 
 The Actuator supports language specification version 1.0.
 
-```json
+~~~
 {
     "status": 200,
     "results": {
         "versions": ["1.0"]
     }
 }
-```
+~~~
 
 ### E.4.3 Actuator profiles supported
 This Command queries the Actuator to determine both the language versions and the profiles supported.
 
 **Command:**
 
-```json
+~~~
 {
   "action": "query",
   "target": {
     "features": ["versions", "profiles"]
   }
 }
-```
+~~~
 
 **Response:**
 
 The Actuator device is apparently a smart front-door-lock for which an extension profile has been written. The device supports both the standard pf functions and whatever Commands are defined in the extension profile.
 
-```json
+~~~
 {
   "status": 200,
   "results": {
@@ -1430,7 +1431,7 @@ The Actuator device is apparently a smart front-door-lock for which an extension
     "profiles": ["pf", "iot-front-door-lock"]
   }
 }
-```
+~~~
 
 ### E.4.4 Specific Commands Supported
 This Command queries the Actuator to determine which Action/Target pairs are supported. Not all Targets are meaningful in the context of a specific Action, and although a Command such as "update ipv4_connection" may be syntactically valid, the combination does not specify an operation supported by the Actuator.
@@ -1439,20 +1440,20 @@ This Command queries the Actuator to determine which Action/Target pairs are sup
 
 For each supported Action list the Targets supported by this Actuator.
 
-```json
+~~~
 {
   "action": "query",
   "target": {
     "features": ["pairs"]
   }
 }
-```
+~~~
 
 **Response:**
 
 The Actuator supports all Action/Target pairs shown in Table 2.3-1 - Command Matrix.
 
-```json
+~~~
 {
   "status": 200,
   "results": {
@@ -1465,7 +1466,7 @@ The Actuator supports all Action/Target pairs shown in Table 2.3-1 - Command Mat
     }
   }
 }
-```
+~~~
 
 ### E.4.5 Rule Details
 This Command queries the Actuator to determine the Target and Argument values for a particular rule. 
@@ -1474,7 +1475,7 @@ This Command queries the Actuator to determine the Target and Argument values fo
 
 For each supported Action list the Targets supported by this Actuator.
 
-```json
+~~~
 {
   "action": "query",
   "target": {
@@ -1486,13 +1487,13 @@ For each supported Action list the Targets supported by this Actuator.
     }
   }
 }
-```
+~~~
 
 **Response:**
 
 The Actuator returns information that could be used to reconstruct the rule.
 
-```json
+~~~
 {
   "status": 200,
   "results": {
@@ -1512,7 +1513,7 @@ The Actuator returns information that could be used to reconstruct the rule.
     }
   }
 }
-```
+~~~
 
 -------
 
