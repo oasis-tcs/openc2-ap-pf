@@ -420,7 +420,7 @@ Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Anne
 ## 2.2 OpenC2 Response Components
 Response messages originate from the Actuator as a result of a Command.
 
-Responses associated with required Actions MUST be implemented. Implementations that include optional Actions MUST implement the RESPONSE associated with the implemented Action. Additional details regarding the Command and associated Response are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands).
+Responses associated with required Actions MUST be implemented. Implementations that include optional Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands).
 
 ### 2.2.1 Common Results
 Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
