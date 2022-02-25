@@ -269,9 +269,9 @@ This specification identifies the applicable components of an OpenC2 Command. Th
 * Actuator:  A set of specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
-Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
 
-**Table 2.1.1-1. Common Actions Applicable to PF**
+**Table 2.1.1-1 Common Actions Applicable to PF**
 
 **_Type: Action (Enumerated)_**
 
@@ -284,12 +284,9 @@ Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Languag
 | 20 | **delete** | Remove an access rule. |
 
 ### 2.1.2 Targets
-Table 2.1.2.1-1 summarizes the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.2.2-2 summarizes the Targets that are defined in this specification. Targets that are defined in this specification are referenced using the `pf` namespace identifier.
+Table 2.1.2-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.1.2-2 extends the list of common Targets and includes additional Targets unique to PF. Targets that are defined in this specification (Table 2.1.2-2) are referenced using the `pf` namespace identifier.
 
-#### 2.1.2.1 Common Targets Applicable to PF
-Table 2.1.2.1-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. The particular Action/Target pairs that are required or are optional are presented in [Section 2.3](#23-openc2-commands).
-
-**Table 2.1.2.1-1. Common Targets Applicable to PF**
+**Table 2.1.2-1 Common Targets Applicable to PF**
 
 **_Type: Target (Choice)_**
 
@@ -315,10 +312,7 @@ Usage Requirements:
     * If the protocol is TCP, UDP, or SCTP, the five-tuple is: src_addr, src_port, dst_addr, dst_port, protocol.
     * For any other protocol, the five-tuple is: src_addr, unused, dst_addr, unused, protocol.
 
-#### 2.1.2.2 Targets Unique to PF
-The list of common Targets is extended to include additional Targets unique to PF. Targets unique to PF are referenced with the `pf` namespace identifier.
-
-**Table 2.1.2.2-2. Targets Unique to PF**
+**Table 2.1.2-2 Targets Unique to PF**
 
 **_Type: Target (Choice)_**
 
@@ -334,10 +328,10 @@ Usage Requirements:
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3.1-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3.2-2 summarizes the Command Arguments that are defined in this specification.
 
-#### 2.1.3.1 Common Command Arguments Applicable to PF
-Table 2.1.3.1-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
+#### Common Command Arguments Applicable to PF
+Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.1.3.1-1. Common Command Arguments Applicable to PF**
+**Table 2.1.3-1 Common Command Arguments Applicable to PF**
 
 **_Type: Args (Map)_**
 
@@ -348,10 +342,10 @@ Table 2.1.3.1-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](
 | 3 | **duration** | Duration | 0..1 | The length of time for a Command to be in effect. |
 | 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Command: `none`, `ack`, `status`, `complete`. |
 
-#### 2.1.3.2 Command Arguments Unique to PF
+#### Command Arguments Unique to PF
 The list of common Command Arguments is extended to include additional Command Arguments as defined in this section and are referenced with the `pf` namespace identifier.
 
-**Table 2.1.3.2-2. Command Arguments Unique to PF**
+**Table 2.1.3-2. Command Arguments Unique to PF**
 
 **_Type: Args (Map)_**
 
