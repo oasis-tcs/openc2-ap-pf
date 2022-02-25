@@ -331,7 +331,7 @@ Usage Requirements:
 
 | Type Name | Type | Description |
 | :--- | :--- | :--- |
-| **Rule-ID** | Integer | Access control list rule identifier |
+| **Rule-ID** | Integer | Access control list rule identifier. |
 
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this specification. Command Arguments that are defined in this specification (Table 2.1.3-2) are referenced using the `pf` namespace identifier.
@@ -387,17 +387,17 @@ Note that direction is required by some packet filters. For a host-based or host
 
 | ID | Name | Description |
 | :--- | :--- | :--- |
-| 1 | **none** | Drop the packet and do not send a notification to the source of the packet |
-| 2 | **reject** | Drop the packet and send an ICMP host unreachable (or equivalent) to the source of the packet |
-| 3 | **false_ack** | Drop the traffic and send a false acknowledgment |
+| 1 | **none** | Drop the packet and do not send a notification to the source of the packet. |
+| 2 | **reject** | Drop the packet and send an ICMP host unreachable (or equivalent) to the source of the packet. |
+| 3 | **false_ack** | Drop the traffic and send a false acknowledgment. |
 
 **_Type: Direction (Enumerated)_**
 
 | ID | Name | Description |
 | :--- | :--- | :--- |
-| 1 | **both** | Apply rules to all traffic |
-| 2 | **ingress** | Apply rules to incoming traffic only |
-| 3 | **egress** | Apply rules to outgoing traffic only |
+| 1 | **both** | Apply rules to all traffic. |
+| 2 | **ingress** | Apply rules to incoming traffic only. |
+| 3 | **egress** | Apply rules to outgoing traffic only. |
 
 
 
@@ -415,10 +415,10 @@ The Actuator Specifiers defined in this document are referenced under the pf nam
 
 | ID | Name | Type | # | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | **hostname** | String | 0..1 | [[RFC1123]](#rfc1123) hostname (can be a domain name or IP address) for a particular device with PF functionality |
-| 2 | **named_group** | String | 0..1 | User defined collection of devices with PF functionality |
-| 3 | **asset_id** | String | 0..1 | Unique identifier for a particular PF |
-| 4 | **asset_tuple** | String | 0..10 | Unique tuple identifier for a particular PF consisting of a list of up to 10 strings |
+| 1 | **hostname** | String | 0..1 | [[RFC1123]](#rfc1123) hostname (can be a domain name or IP address) for a particular device with PF functionality. |
+| 2 | **named_group** | String | 0..1 | User defined collection of devices with PF functionality. |
+| 3 | **asset_id** | String | 0..1 | Unique identifier for a particular PF. |
+| 4 | **asset_tuple** | String | 0..10 | Unique tuple identifier for a particular PF consisting of a list of up to 10 strings. |
 
 ## 2.2 OpenC2 Response Components
 Response messages originate from the Actuator as a result of a Command.
@@ -434,10 +434,10 @@ Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang
 
 | ID | Name | Type | # | Description |
 | ---: | :--- | :--- | ---: | :--- |
-| 1 | **versions** | Version | 0..* | List of OpenC2 language versions supported by this Actuator |
-| 2 | **profiles** | ArrayOf(Nsid) | 0..1 | List of profiles supported by this Actuator |
-| 3 | **pairs** | Action-Targets | 0..* | List of targets applicable to each supported Action |
-| 4 | **rate_limit** | Number | 0..1 | Maximum number of requests per minute supported by design or policy |
+| 1 | **versions** | Version | 0..* | List of OpenC2 language versions supported by this Actuator. |
+| 2 | **profiles** | ArrayOf(Nsid) | 0..1 | List of profiles supported by this Actuator. |
+| 3 | **pairs** | Action-Targets | 0..* | List of targets applicable to each supported Action. |
+| 4 | **rate_limit** | Number | 0..1 | Maximum number of requests per minute supported by design or policy. |
 
 ### 2.2.2 PF Results
 The list of common Response properties is extended to include the additional Response properties defined in this section and referenced with the pf namespace.
@@ -448,7 +448,7 @@ The list of common Response properties is extended to include the additional Res
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 1024 | **rule_number** | Rule-ID | Rule identifier returned from allow or deny Command |
+| 1024 | **rule_number** | Rule-ID | Rule identifier returned from allow or deny Command. |
 
 ### 2.2.3 Response Status Codes
 Table 2.2.1-2 lists the Response Status Codes defined in the OpenC2 Language Specification that are applicable to PF.
