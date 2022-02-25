@@ -325,6 +325,14 @@ Usage Requirements:
 * advanced_connection
     * The seven-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. When defined, src_port and dst_port MUST be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls, SHALL be of type string. Network SHALL be of type string being the reference to the name (also known as tag) of logical network to which the rule applies.
 
+**2.1.2.1 Data Type Definitions**
+
+**_Type: Rule-ID_**
+
+| Type Name | Type | Description |
+| :--- | :--- | :--- |
+| **Rule-ID** | Integer | Access control list rule identifier |
+
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this specification. Command Arguments that are defined in this specification (Table 2.1.3-2) are referenced using the `pf` namespace identifier.
 
@@ -373,6 +381,7 @@ Note that direction is required by some packet filters. For a host-based or host
 
 
 
+**2.1.3.1 Data Type Definitions**
 
 **_Type: Drop-Process (Enumerated)_**
 
@@ -391,11 +400,6 @@ Note that direction is required by some packet filters. For a host-based or host
 | 3 | **egress** | Apply rules to outgoing traffic only |
 
 
-**_Type: Rule-ID_**
-
-| Type Name | Type | Description |
-| :--- | :--- | :--- |
-| **Rule-ID** | Integer | Access rule identifier |
 
 
 ### 2.1.4 Actuator Specifiers
