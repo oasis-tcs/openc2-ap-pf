@@ -357,7 +357,7 @@ Arguments provide additional precision to a Command by including information suc
 Usage Requirements:
 * insert_rule:
     * The value MUST be immutable - i.e., the identifier assigned to an access rule at creation must not change over the lifetime of that rule.
-    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny <target> or allow <target> for a given instance of a PF.
+    * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny [target] or allow [target] for a given instance of a PF.
 * directionality:
     * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code.
     * If absent or not explicitly set, then the Command MUST apply to both.
