@@ -360,7 +360,7 @@ Usage Requirements:
     * The value MUST be unique within the scope of an Openc2 Producer and an Openc2 Consumer- i.e., the value MUST map to exactly one deny [target] or allow [target] for a given instance of a PF.
 * directionality:
     * Entities that receive but do not support directionality MUST NOT reply with 200 OK and SHOULD return a 501 error code.
-    * If absent or not explicitly set, then the Command MUST apply to both.
+    * If absent or not explicitly set, then the Command MUST apply to ingress packets.
 * drop_process: If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet.
 * persistent: If absent or not explicitly set, then the value is TRUE and any changes are persistent.
 
