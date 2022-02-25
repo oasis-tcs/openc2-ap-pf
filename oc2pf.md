@@ -425,7 +425,7 @@ Responses associated with required Actions MUST be implemented. Implementations 
 ### 2.2.1 Common Results
 Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.2.1-1. Response Results Applicable to PF**
+**Table 2.2.1-1. Common Response Results Applicable to PF**
 
 **_Type: Results (Map [1..*])_**
 
@@ -436,10 +436,10 @@ Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang
 | 3 | **pairs** | Action-Targets | 0..* | List of targets applicable to each supported Action. |
 | 4 | **rate_limit** | Number | 0..1 | Maximum number of requests per minute supported by design or policy. |
 
-### 2.2.2 PF Results
-The list of common Response properties is extended to include the additional Response properties defined in this section and referenced with the pf namespace.
+### 2.2.2 Response Results Unique to PF
+The list of common Response Results properties is extended to include additional properties defined in this profile and are referenced with the `pf` namespace identifier.
 
-**Table 2.2.2-1. PF Results**
+**Table 2.2.2-1. Response Results Unique to PF**
 
 **_Type: OpenC2-Response (Map)_**
 
