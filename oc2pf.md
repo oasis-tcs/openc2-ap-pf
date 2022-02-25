@@ -284,7 +284,7 @@ Table 2.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language 
 | 20 | **delete** | Remove an access rule. |
 
 ### 2.1.2 Targets
-Table 2.1.2-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.1.2-2 extends the list of common Targets and includes additional Targets unique to PF. Targets that are defined in this specification (Table 2.1.2-2) are referenced using the `pf` namespace identifier.
+Table 2.1.2-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.1.2-2 extends the list of common Targets and includes additional Targets unique to PF. Targets that are defined in this profile (see Table 2.1.2-2) are referenced with the `pf` namespace identifier.
 
 **Table 2.1.2-1 Common Targets Applicable to PF**
 
@@ -334,7 +334,7 @@ Usage Requirements:
 | **Rule-ID** | Integer | Access control list rule identifier. |
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this specification. Command Arguments that are defined in this specification (Table 2.1.3-2) are referenced using the `pf` namespace identifier.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this specification. Command Arguments that are defined in this profile (Table 2.1.3-2) are referenced with the `pf` namespace identifier.
 
 **Table 2.1.3-1 Common Command Arguments Applicable to PF**
 
@@ -404,7 +404,7 @@ Note that direction is required by some packet filters. For a host-based or host
 ### 2.1.4 Actuator Specifiers
 An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the PF and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
 
-Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers. The Actuator Specifiers defined in this document are referenced under the `pf` namespace identifier.
+Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers. The Actuator Specifiers defined in this profile are referenced with the `pf` namespace identifier.
 
 **Table 2.1.4-1. PF Specifiers**
 
