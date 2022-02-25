@@ -369,7 +369,10 @@ Usage Requirements:
     
 Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
 
-![packet directions](images/openc2_apsc_dir.png)
+<img src="images/openc2_apsc_dir.png" width="40%">
+
+
+
 
 **_Type: Drop-Process (Enumerated)_**
 
