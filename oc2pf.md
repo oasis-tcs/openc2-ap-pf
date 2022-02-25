@@ -326,10 +326,7 @@ Usage Requirements:
     * The seven-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. When defined, src_port and dst_port MUST be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls, SHALL be of type string. Network SHALL be of type string being the reference to the name (also known as tag) of logical network to which the rule applies.
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3.1-1 summarizes the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3.2-2 summarizes the Command Arguments that are defined in this specification.
-
-#### Common Command Arguments Applicable to PF
-Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this specification. Command Arguments that are defined in this specification (Table 2.1.3-2) are referenced using the `pf` namespace identifier.
 
 **Table 2.1.3-1 Common Command Arguments Applicable to PF**
 
@@ -341,9 +338,6 @@ Table 2.1.3-1 lists the Command Arguments defined in the [[OpenC2-Lang-v1.0]](#o
 | 2 | **stop_time** | Date-Time | 0..1 | The specific date/time to terminate the Command.|
 | 3 | **duration** | Duration | 0..1 | The length of time for a Command to be in effect. |
 | 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Command: `none`, `ack`, `status`, `complete`. |
-
-#### Command Arguments Unique to PF
-The list of common Command Arguments is extended to include additional Command Arguments as defined in this section and are referenced with the `pf` namespace identifier.
 
 **Table 2.1.3-2. Command Arguments Unique to PF**
 
@@ -369,7 +363,6 @@ Usage Requirements:
     * If absent or not explicitly set, then the Command MUST apply to both.
 * drop_process: If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet.
 * persistent: If absent or not explicitly set, then the value is TRUE and any changes are persistent.
-
 
 Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
     
