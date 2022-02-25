@@ -363,8 +363,9 @@ Usage Requirements:
     * If absent or not explicitly set, then the Command MUST apply to ingress packets.
 * drop_process: If absent or not explicitly set, then the Actuator MUST NOT send any notification to the source of the packet.
 * persistent: If absent or not explicitly set, then the value is TRUE and any changes are persistent.
-
-Note that if stateful is not explicitly set and the actuator only operates in either stateful or stateless the command would apply as if this argument was appropriately specified (e.g. stateful for Google Cloud Platform). If the actuator supports both mechanisms and this argument is not set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with the slpf.
+* stateful:
+    * If absent or not explicitly set, and the actuator only operates in either stateful or stateless, the command would apply as if this argument was appropriately specified (e.g., stateful for Google Cloud Platform). 
+    * If the actuator supports both mechanisms and this argument is absent or not explicitly set, then it should treat the command as if the argument was set to stateless in order to be backwards compatible with Version 1.0 of the OpenC2 Stateless Packet Filtering Actuator Profile.
     
 Note that direction is required by some packet filters. For a host-based or host interface-based packet filter, ingress indicates a packet that originated from a different host. For a network-based packet filter, such as a router or a switch, ingress indicates a packet entering a physical or logical interface that your organization controls.
 
