@@ -479,7 +479,7 @@ Table 2.3-1 defines the Commands that are valid in the context of the PF profile
 | **pf:rule_number** |   |   | valid | valid |   |
 | **file** |   |   |   |   | valid |
 
-Table 2.3-2 defines the Command Arguments that are allowed for a particular Command by the PF profile. A Command (the top row in Table 2.3-2) paired with an Argument (the first column in Table 2.3-2) defines an allowable combination. The subsection identified at the intersection of the Command/Argument provides details applicable to each Command as influenced by the Argument.
+Table 2.3-2 defines the Command Arguments that are allowed for a particular Command by the PF profile. A Command (the top row in Table 2.3-2) paired with an Argument (the first column in Table 2.3-2) defines an allowable combination.
 
 **Table 2.3-2. Command Arguments Matrix**
 
