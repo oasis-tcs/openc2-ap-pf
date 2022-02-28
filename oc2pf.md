@@ -517,6 +517,9 @@ OpenC2 Producers that send 'allow target' Commands and support the 'delete pf:ru
 * MAY populate the Command Arguments field with the "insert_rule" : <integer> option
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
 
+OpenC2 Consumers that receive 'allow target' Commands:
+* MUST respond with Response code 200 upon successful parsing of the 'allow target' Command and subsequent imnplementation of the corresponding rule.
+    
 OpenC2 Consumers that receive and successfully parse 'allow target' Commands but cannot implement the 'allow target' :
 
 * MUST NOT respond with a OK/200
@@ -619,7 +622,10 @@ OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rul
 * MAY populate the Command Arguments field with the "insert_rule" : <integer> option
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
 
-OpenC2 Consumers that receive 'deny <target>' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Consumers that receive 'deny target' Commands:
+* MUST respond with Response code 200 upon successful parsing of the 'deny target' Command and subsequent imnplementation of the corresponding rule.    
+    
+OpenC2 Consumers that receive 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
 * MUST return the rule number assigned in the pf object if the "response_requested" : "complete" Argument is populated.
