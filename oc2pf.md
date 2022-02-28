@@ -334,7 +334,7 @@ Usage Requirements:
 | **Rule-ID** | Integer | Access control list rule identifier. |
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this specification. Command Arguments that are defined in this profile (Table 2.1.3-2) are referenced with the `pf` namespace identifier.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this profile. Command Arguments that are defined in this profile (Table 2.1.3-2) are referenced with the `pf` namespace identifier.
 
 **Table 2.1.3-1 Common Command Arguments Applicable to PF**
 
@@ -422,10 +422,10 @@ Response messages originate from the Actuator as a result of a Command.
 
 Responses associated with required Actions MUST be implemented. Implementations that include optional Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands).
 
-### 2.2.1 Common Results
-Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang-v1.0]](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.2.1-1. Common Response Results Applicable to PF**
+Table 2.2-1 lists the Response Results properties defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.2-2 extends the list of common Response Results properties and includes additional Response Result properties unique to PF. Response Results properties that are defined in this profile (Table 2.2-2) are referenced with the `pf` namespace identifier.
+
+**Table 2.2-1. Common Response Results Applicable to PF**
 
 **_Type: Results (Map [1..*])_**
 
@@ -436,10 +436,7 @@ Table 2.2.1-1 lists the Response Results properties defined in the [[OpenC2-Lang
 | 3 | **pairs** | Action-Targets | 0..* | List of targets applicable to each supported Action. |
 | 4 | **rate_limit** | Number | 0..1 | Maximum number of requests per minute supported by design or policy. |
 
-### 2.2.2 Response Results Unique to PF
-The list of common Response Results properties is extended to include additional properties defined in this profile and are referenced with the `pf` namespace identifier.
-
-**Table 2.2.2-1. Response Results Unique to PF**
+**Table 2.2-2. Response Results Unique to PF**
 
 **_Type: OpenC2-Response (Map)_**
 
