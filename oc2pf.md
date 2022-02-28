@@ -531,7 +531,7 @@ OpenC2 Consumers that receive 'allow <target>' Commands and support the 'delete 
 
 OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_rule' Command Argument:
 
-* MUST assign the rule number provided if the "insert_rule" : integer option is populated.
+* MUST assign the rule number provided if the "insert_rule" : integer Argument is populated.
 * If the rule number is currently in use, then
     * MUST NOT respond with a OK/200.
     * SHOULD respond with the 500 status code.
