@@ -524,13 +524,13 @@ OpenC2 Consumers that receive and successfully parse 'allow target' Commands but
 
 * MUST NOT respond with a OK/200
 * SHOULD respond with the 501 status code
-* SHOULD respond with 'Rule not updated' in the status text
+* SHOULD respond with 'Rule not implemented' in the status text
 * MAY respond with the 500 status code
 
-OpenC2 Consumers that receive 'allow <target>' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Consumers that receive 'allow target' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
-* Upon successful implementation of the 'allow <target>', MUST return the rule_number associated with the rule if the "response_requested" : "complete" option is populated.
+* Upon successful implementation of the 'allow target', MUST return the rule_number associated with the rule if the "response_requested" : "complete" option is populated.
 
 OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_rule' Command Argument:
 
@@ -623,7 +623,14 @@ OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rul
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
 
 OpenC2 Consumers that receive 'deny target' Commands:
-* MUST respond with Response code 200 upon successful parsing of the 'deny target' Command and subsequent imnplementation of the corresponding rule.    
+* MUST respond with Response code 200 upon successful parsing of the 'deny target' Command and subsequent imnplementation of the corresponding rule. 
+    
+OpenC2 Consumers that receive and successfully parse 'deny target' Commands but cannot implement the 'deny target' :
+
+* MUST NOT respond with a OK/200
+* SHOULD respond with the 501 status code
+* SHOULD respond with 'Rule not implemented' in the status text
+* MAY respond with the 500 status code
     
 OpenC2 Consumers that receive 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
