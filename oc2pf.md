@@ -517,7 +517,7 @@ OpenC2 Producers that send 'allow target' Commands and support the 'delete pf:ru
 * MAY populate the Command Arguments field with the "insert_rule" : <integer> option
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
 
-OpenC2 Consumers that receive and successfully parse 'allow <target>' Commands but cannot implement the 'allow <target>' :
+OpenC2 Consumers that receive and successfully parse 'allow target' Commands but cannot implement the 'allow target' :
 
 * MUST NOT respond with a OK/200
 * SHOULD respond with the 501 status code
@@ -531,12 +531,11 @@ OpenC2 Consumers that receive 'allow <target>' Commands and support the 'delete 
 
 OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_rule' Command Argument:
 
-* MUST assign the rule number provided if the "insert_rule" : <integer> option is populated.
+* MUST assign the rule number provided if the "insert_rule" : integer option is populated.
 * If the rule number is currently in use, then
     * MUST NOT respond with a OK/200.
-    * SHOULD respond with the 501 status code.
+    * SHOULD respond with the 500 status code.
     * SHOULD respond with 'Rule number currently in use' in the status text.
-    * MAY respond with the 500 status code.
 
 The valid Target types, associated Specifiers, and Options are summarized in [Section 2.3.1.1](#2311-allow-ipv4_connection) and [Section 2.3.1.2](#2312-allow-ipv6_connection). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
@@ -627,12 +626,11 @@ OpenC2 Consumers that receive 'deny <target>' Commands and support the 'delete p
 
 OpenC2 Consumers that receive 'deny target' Commands and support the 'insert_rule' Command Argument:
 
-* MUST assign the rule number provided if the "insert_rule" : <integer> Argument is populated
+* MUST assign the rule number provided if the "insert_rule" : integer Argument is populated
 * If the rule number is currently in use, then
     * MUST NOT respond with a OK/200
-    * SHOULD respond with the 501 status code
+    * SHOULD respond with the 500 status code
     * SHOULD respond with 'Rule number currently in use' in the status text
-    * MAY respond with the 500 status code
 
 ### 2.3.3 Query
 The valid Target type, associated Specifiers, and Options are summarized in [Section 2.3.3.1](#2331-query-features). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
