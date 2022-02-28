@@ -292,7 +292,7 @@ Table 2.1.2-1 lists the Targets defined in Version 1.0 of the [OpenC2 Language S
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 9 | **features** | Features | A set of items such as Action/Target pairs, profiles versions, options that are supported by the Actuator. The Target is used with the query Action to determine an Actuator's capabilities. |
+| 9 | **features** | Feature | A set of items such as Action/Target pairs, profiles versions, options that are supported by the Actuator. The Target is used with the query Action to determine an Actuator's capabilities. |
 | 10 | **file** | File | Properties of a file. |
 | 13 | **ipv4_net** | IPv4-Net | The representation of one or a block of IPv4 addresses expressed using CIDR notation. |
 | 14 | **ipv6_net** | IPv6-Net | The representation of one or a block of IPv6 addresses expressed using CIDR notation. |
