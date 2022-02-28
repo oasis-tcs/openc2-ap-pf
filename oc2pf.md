@@ -444,20 +444,20 @@ Table 2.2-1 lists the Response Results properties defined in Version 1.0 of the 
 | :--- | :--- | :--- | :--- |
 | 1024 | **rule_number** | Rule-ID | Rule identifier returned from allow or deny Command. |
 
-### 2.2.3 Response Status Codes
-Table 2.2.1-2 lists the Response Status Codes defined in the OpenC2 Language Specification that are applicable to PF.
+### 2.2.1 Response Status Codes
+Table 2.2.1-1 lists the Response Status Codes defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.2.1-2. Response Status Codes**
+**Table 2.2.1-1 Response Status Codes**
 
 **_Type: Status-Code (Enumerated.ID)_**
 
 | Value | Description |
 | :--- | :--- |
-| 102 | Processing. Command received but action not necessarily complete. |
-| 200 | OK. |
-| 400 | Bad Request. Unable to process Command, parsing error. |
-| 500 | Internal Error. For "response_requested" value "complete", one of the following MAY apply:<br> * Cannot access file or path<br> * Rule number currently in use<br> * Rule not updated |
-| 501 | Not implemented. For "response_requested" value "complete", one of the following MAY apply:<br> * Target not supported<br> * Option not supported<br> * Command not supported |
+| 102 | **Processing** - an interim Response used to inform the Producer that the Consumer has accepted the Command but has not yet completed it. |
+| 200 | **OK** - the Command has succeeded. |
+| 400 | **Bad Request** - the Consumer cannot process the Command due to something that is perceived to be a Producer error (e.g., malformed Command syntax). |
+| 500 | **Internal Error** - for "response_requested" value "complete", one of the following MAY apply:<br> * Cannot access file or path<br> * Rule number currently in use<br> * Rule not updated |
+| 501  |**Not Implemented** - the Consumer does not support the functionality required to perform the Command. For "response_requested" value "complete", one of the following MAY apply:<br> * Target not supported<br> * Option not supported<br> * Command not supported |
 
 ## 2.3 OpenC2 Commands
 
