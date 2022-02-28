@@ -605,8 +605,22 @@ Products that receive but do not implement the 'allow domain_name' Command:
 * SHOULD respond with 'Target type not supported' in the status text
 * MAY respond with the 500 status code
 
+#### 2.3.1.6 'Allow advanced_connection'
+
+The 'allow advanced_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
+The 'allow advanced_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+
+The Command permits traffic that is consistent with the specified advanced_connection. A valid 'allow advanced_connection' Command has at least one property of the advanced_connection populated and may have any combination of the seven properties populated. An unpopulated property, excluding network, within the advanced_connection Target MUST be treated as an 'any'.
+
+Products that receive but do not implement the 'allow advanced_connection' Command:
+
+* MUST NOT respond with a OK/200
+* SHOULD respond with the 501 Response code
+* SHOULD respond with 'Target type not supported' in the status text
+* MAY respond with the 500 status code
+    
 ### 2.3.2 Deny
-'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Actuator-Argument, the Targets, Specifiers, Options and corresponding Responses are identical to the four 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
+'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Actuator-Argument, the Targets, Specifiers, Options and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
 
 Upon receipt of a Command with an Argument that is not supported by the Actuator:
 
