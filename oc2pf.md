@@ -318,7 +318,7 @@ Usage Requirements:
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
-| 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created. Identifies a rule to be deleted. |
+| 1024 | **rule_number** | Rule-ID | Immutable identifier assigned when a packet filtering rule is created. Identifies the rule to be deleted or requests information about the rule.  |
 | 1025 | **advanced_connection** | Array | An advanced connection MUST be a seven tuple intended to support newer and more advanced packet filters. See the description and usage requirement below.|
 
 Usage Requirements:
