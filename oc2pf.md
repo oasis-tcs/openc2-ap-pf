@@ -639,7 +639,7 @@ The valid Target type, associated Specifiers, and Options are summarized in [Sec
 The 'query features' Command MUST be implemented in accordance with Version 1.0 of the [[OpenC2-Lang-v1.0]](#openc2-lang-v10).
 
 #### 2.3.3.1 Query pf:rule_number
-The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
+The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
 
 ### 2.3.4 Delete
 The pf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Options are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
