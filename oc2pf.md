@@ -334,7 +334,7 @@ Usage Requirements:
 | **Rule-ID** | Integer | Access control list rule identifier. |
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this profile. Command Arguments that are defined in this profile (Table 2.1.3-2) are referenced with the `pf` namespace identifier.
+Arguments provide additional precision to a Command by including information such as how, when, or where a Command is to be executed. Table 2.1.3-1 lists the Command Arguments defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) as they relate to PF functionality. Table 2.1.3-2 lists the Command Arguments that are defined in this profile. Command Arguments that are defined in this profile (see Table 2.1.3-2) are referenced with the `pf` namespace identifier.
 
 **Table 2.1.3-1 Common Command Arguments Applicable to PF**
 
