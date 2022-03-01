@@ -269,7 +269,7 @@ This specification identifies the applicable components of an OpenC2 Command. Th
 * Actuator:  A set of Actuator Specifiers defined in this specification that are meaningful in the context of PF.
 
 ### 2.1.1 Actions
-Table 2.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
+Table 2.1.1-1 presents the Actions defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) which are meaningful in the context of PF. The particular Action/Target pairs that are valid combinations are presented in [Section 2.3](#23-openc2-commands).
 
 **Table 2.1.1-1 Common Actions Applicable to PF**
 
