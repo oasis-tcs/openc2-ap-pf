@@ -426,7 +426,7 @@ Response messages originate from the Actuator as a result of a Command.
 Responses associated with REQUIRED Actions MUST be implemented. Implementations that include OPTIONAL Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands). The structure of an OpenC2 Response is defined in Section 3.3.2 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
 
-Table 2.2-1 lists the Response Results properties defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.2-2 extends the list of common Response Results properties and includes additional Response Result properties unique to PF. Response Results properties that are defined in this profile (Table 2.2-2) are referenced with the `pf` namespace identifier.
+Table 2.2-1 lists the Response Results properties defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.2-2 extends the list of common Response Results properties and includes additional properties unique to PF. Response Results properties that are defined in this profile (see Table 2.2-2) are referenced with the `pf` namespace identifier.
 
 **Table 2.2-1. Common Response Results Applicable to PF**
 
