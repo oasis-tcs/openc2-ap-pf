@@ -506,7 +506,7 @@ Hereafter the specification provides details applicable to each Command, also as
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
 
-Upon receipt of an unsupported Command Argument, PF Consumers
+Upon receipt of an unsupported Command Argument, PF Consumers:
 
 * MUST NOT respond with a OK/200.
 * SHOULD respond with the 501 status code.
