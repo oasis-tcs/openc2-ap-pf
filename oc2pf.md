@@ -323,7 +323,7 @@ Usage Requirements:
 
 Usage Requirements:
 * advanced_connection
-    * The seven-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null SHALL be treated as 'any'. When defined, src_port and dst_port MUST be an integer between 0 and 65535. When defined, src_addr and dst_addr SHALL specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls, SHALL be of type string. Network SHALL be of type string being the reference to the name (also known as tag) of logical network to which the rule applies.
+    * The seven-tuple is: src_addr, src_port, dst_addr, dst_port, protocol, network, and application. Any component, excluding network, not specified or specified as null MUST be treated as 'any'. When defined, src_port and dst_port MUST be an integer between 0 and 65535. When defined, src_addr and dst_addr MUST specify either an IPv4 address, IPv6 address, or a tag of type string. Application, typically used by next-generation firewalls, MUST be of type string. Network MUST be of type string being the reference to the name (also known as tag) of logical network to which the rule applies.
 
 **2.1.2.1 Data Type Definitions**
 
