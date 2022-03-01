@@ -464,7 +464,7 @@ Table 2.2.1-1 lists the Response Status Codes defined in Version 1.0 of the [Ope
 
 ## 2.3 OpenC2 Commands
 
-An OpenC2 Command consists of an Action/Target pair and associated Specifiers and Arguments. This section enumerates the allowed Commands and presents the associated Responses. Sections 2.3.1 to 2.3.5 provide details applicable to each Command as influenced by the Argument. 
+An OpenC2 Command consists of an Action/Target pair and associated Specifiers and Arguments. This section enumerates the Commands permitted by this Actuator profile and presents the associated Response behavior. Sections 2.3.1 to 2.3.5 provide details applicable to each Command, also as influenced by Arguments.
 
 Table 2.3-1 defines the Commands that are valid in the context of the PF profile. An Action (the top row in Table 2.3-1) paired with a Target (the first column in Table 2.3-1) defines a valid Command. 
 
@@ -482,7 +482,7 @@ Table 2.3-1 defines the Commands that are valid in the context of the PF profile
 | **pf:rule_number** |   |   | valid | valid |   |
 | **file** |   |   |   |   | valid |
 
-Table 2.3-2 defines the Command Arguments that are allowed for a particular Command by the PF profile. A Command (the top row in Table 2.3-2) paired with an Argument (the first column in Table 2.3-2) defines an allowable combination.
+Table 2.3-2 defines the Command Arguments that are allowed for a particular Command by the PF Actuator profile. A Command (the top row in Table 2.3-2) paired with an Argument (the first column in Table 2.3-2) defines an allowable combination.
 
 **Table 2.3-2. Command Arguments Matrix**
 
@@ -501,7 +501,7 @@ Table 2.3-2 defines the Command Arguments that are allowed for a particular Comm
 | **priority** | [2.3.1](#231-allow) | [2.3.2](#232-deny) |   |   |   |  | 
 
 
-Hereafter the specification provides details applicable to each Command as influenced by the Argument.
+Hereafter the specification provides details applicable to each Command, also as influenced by Arguments.
 
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
