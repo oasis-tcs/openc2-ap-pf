@@ -405,7 +405,7 @@ Note that direction is required by some packet filters. For a host-based or host
 
 
 ### 2.1.4 Actuator Specifiers
-An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the PF and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
+An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the packet filter and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
 
 Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers. The Actuator Specifiers defined in this profile are referenced with the `pf` namespace identifier.
 
