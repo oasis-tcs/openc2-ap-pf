@@ -459,7 +459,7 @@ Table 2.2.1-1 lists the Response Status Codes defined in Version 1.0 of the [Ope
 | 102 | **Processing** - an interim Response used to inform the Producer that the Consumer has accepted the Command but has not yet completed it. |
 | 200 | **OK** - the Command has succeeded. |
 | 400 | **Bad Request** - the Consumer cannot process the Command due to something that is perceived to be a Producer error (e.g., malformed Command syntax). |
-| 500 | **Internal Error** - for "response_requested" value "complete", one of the following MAY apply:<br> * Cannot access file or path<br> * Rule number currently in use<br> * Rule not updated |
+| 500 | **Internal Error** - the Consumer encountered an unexpected condition that prevented it from performing the Command. For "response_requested" value "complete", one of the following MAY apply:<br> * Cannot access file or path<br> * Rule number currently in use<br> * Rule not updated |
 | 501  |**Not Implemented** - the Consumer does not support the functionality required to perform the Command. For "response_requested" value "complete", one of the following MAY apply:<br> * Target not supported<br> * Option not supported<br> * Command not supported |
 
 ## 2.3 OpenC2 Commands
