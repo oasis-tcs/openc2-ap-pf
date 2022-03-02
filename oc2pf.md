@@ -506,7 +506,7 @@ Hereafter the specification provides details applicable to each Command, also as
 ### 2.3.1 Allow
 Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'allow' Action and a valid Target type.
 
-Upon receipt of an unsupported Command Argument, PF Consumers:
+Upon receipt of a 'allow [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
 * MUST NOT respond with a OK/200.
 * SHOULD respond with the 501 status code.
@@ -625,7 +625,7 @@ Products that receive but do not implement the 'allow advanced_connection' Comma
 ### 2.3.2 Deny
 'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Actuator-Argument, the Targets, Specifiers, Options and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
 
-Upon receipt of a Command with an Argument that is not supported by the Actuator:
+Upon receipt of a 'deny [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
 * MUST NOT respond with OK/200
 * SHOULD respond with the 501 status code
@@ -665,6 +665,13 @@ OpenC2 Consumers that receive 'deny target' Commands and support the 'insert_rul
 ### 2.3.3 Query
 The valid Target type, associated Specifiers, and Options are summarized in [Section 2.3.3.1](#2331-query-features). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
+Upon receipt of 'query [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
+
+* MUST NOT respond with OK/200
+* SHOULD respond with the 501 status code
+* SHOULD respond with 'Option not supported' in the status text
+* MAY respond with the 500 status code
+
 #### 2.3.3.1 Query features
 The 'query features' Command MUST be implemented in accordance with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
@@ -674,6 +681,13 @@ The 'query pf:rule_number' Command provides a mechanism to obtain similar inform
 ### 2.3.4 Delete
 The pf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Options are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
+Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not supported by the Actuator, PF Consumers:
+
+* MUST NOT respond with OK/200
+* SHOULD respond with the 501 status code
+* SHOULD respond with 'Option not supported' in the status text
+* MAY respond with the 500 status code
+ 
 #### 2.3.4.1 delete pf:rule_number
 The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
 
@@ -704,6 +718,13 @@ Refer to [Annex A](#annex-a-sample-commands) for sample Commands.
 
 ### 2.3.5 Update
 The 'file' Target as defined in Version 1.0 of the Language Specification is the only valid Target type for the update Action. The associated Specifiers, and Options are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
+    
+Upon receipt of a 'update file' Command with an Argument that is not supported by the Actuator, PF Consumers:
+
+* MUST NOT respond with OK/200
+* SHOULD respond with the 501 status code
+* SHOULD respond with 'Option not supported' in the status text
+* MAY respond with the 500 status code
 
 #### 2.3.5.1 Update file
 The 'update file' Command is used to replace or update files such as configuration files, rule sets, etc. Implementation of the update file Command is OPTIONAL. OpenC2 Consumers that choose to implement the 'update file' Command MUST include all steps that are required for the update file procedure such as retrieving the file(s), install the file(s), restart/ reboot the device etc. The end state shall be that the firewall operates with the new file at the conclusion of the 'update file' Command. The atomic steps that take place are implementation specific.
