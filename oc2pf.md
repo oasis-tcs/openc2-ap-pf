@@ -508,42 +508,42 @@ Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands c
 
 Upon receipt of a 'allow [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
-* MUST NOT respond with a OK/200.
+* MUST NOT respond with the 200 status code.
 * SHOULD respond with the 501 status code.
 * SHOULD respond with "Argument not supported" in the status text.
 * MAY respond with the 500 status code.
 
-OpenC2 Producers that send 'allow target' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Producers that send 'allow [target]' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * SHOULD populate the Command Arguments field with "response_requested" : "complete".
 * MAY populate the Command Arguments field with the "insert_rule" : integer Argument.
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated.
 
-OpenC2 Consumers that receive 'allow target' Commands:
-* MUST respond with Response code 200 upon successful parsing of the 'allow target' Command and subsequent imnplementation of the corresponding rule.
+OpenC2 Consumers that receive 'allow [target]' Commands:
+* MUST respond with the Response code 200 upon successful parsing of the 'allow [target]' Command and subsequent implementation of the corresponding rule.
     
-OpenC2 Consumers that receive and successfully parse 'allow target' Commands but cannot implement the 'allow target' :
+OpenC2 Consumers that receive and successfully parse 'allow [target]' Commands but cannot implement the 'allow [target]' :
 
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 status code
-* SHOULD respond with 'Rule not implemented' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Rule not implemented' in the status text.
+* MAY respond with the 500 status code.
 
-OpenC2 Consumers that receive 'allow target' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Consumers that receive 'allow [target]' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
-* Upon successful implementation of the 'allow target', MUST return the rule_number associated with the rule if the "response_requested" : "complete" option is populated.
+* Upon successful implementation of the 'allow [target]', MUST return the rule_number associated with the rule if the "response_requested" : "complete" Argument is populated.
 
-OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_rule' Command Argument:
+OpenC2 Consumers that receive 'allow [target]' Commands and support the 'insert_rule' Command Argument:
 
-* MUST assign the rule number provided if the "insert_rule" : integer Argument is populated.
+* MUST assign the rule number provided if the 'insert_rule' Argument is populated.
 * If the rule number is currently in use, then
-    * MUST NOT respond with a OK/200.
+    * MUST NOT respond with the 200 status code.
     * SHOULD respond with the 500 status code.
     * SHOULD respond with 'Rule number currently in use' in the status text.
 
-The valid Target types, associated Specifiers, and Arguments are summarized in [Section 2.3.1.1](#2311-allow-ipv4_connection) and [Section 2.3.1.2](#2312-allow-ipv6_connection). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The valid Target types, associated Specifiers, and Arguments are summarized in the following subsections. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
 #### 2.3.1.1 'Allow ipv4_connection'
 
