@@ -717,7 +717,7 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 Refer to [Annex A](#annex-a-sample-commands) for sample Commands.
 
 ### 2.3.5 Update
-The 'file' Target as defined in Version 1.0 of the Language Specification is the only valid Target type for the update Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
+The 'file' Target as defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) is the only valid Target type for the 'update' Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
     
 Upon receipt of a 'update file' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
