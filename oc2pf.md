@@ -576,7 +576,7 @@ Products that receive but do not implement the 'allow ipv6_connection' Command:
 The 'allow ipv4_net' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
 The 'allow ipv4_net' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
-The Command permits traffic as specified by the range of IPv4 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv4 address (i.e., an address range of one element). The address range specified in the ipv4_net MUST be treated as a source OR destination address.
+The Command permits traffic as specified by the range of IPv4 addresses as expressed by CIDR notation. If the mask is unspecified then it MUST be treated as a single IPv4 address (i.e., an address range of one element). The address range specified in the ipv4_net MUST be treated as a source OR destination address.
 
 Products that receive but do not implement the 'allow ipv4_net' Command:
 * MUST NOT respond with the 200 status code.
