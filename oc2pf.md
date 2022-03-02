@@ -460,7 +460,7 @@ Table 2.2.1-1 lists the Response Status Codes defined in Version 1.0 of the [Ope
 | 200 | **OK** - the Command has succeeded. |
 | 400 | **Bad Request** - the Consumer cannot process the Command due to something that is perceived to be a Producer error (e.g., malformed Command syntax). |
 | 500 | **Internal Error** - the Consumer encountered an unexpected condition that prevented it from performing the Command. For "response_requested" value "complete", one of the following MAY apply:<br> * Cannot access file or path<br> * Rule number currently in use<br> * Rule not updated |
-| 501  |**Not Implemented** - the Consumer does not support the functionality required to perform the Command. For "response_requested" value "complete", one of the following MAY apply:<br> * Target not supported<br> * Option not supported<br> * Command not supported |
+| 501  |**Not Implemented** - the Consumer does not support the functionality required to perform the Command. For "response_requested" value "complete", one of the following MAY apply:<br> * Target not supported<br> * Argument not supported<br> * Command not supported |
 
 ## 2.3 OpenC2 Commands
 
@@ -510,7 +510,7 @@ Upon receipt of a 'allow [target]' Command with an Argument that is not supporte
 
 * MUST NOT respond with a OK/200.
 * SHOULD respond with the 501 status code.
-* SHOULD respond with "Option not supported" in the status text.
+* SHOULD respond with "Argument not supported" in the status text.
 * MAY respond with the 500 status code.
 
 OpenC2 Producers that send 'allow target' Commands and support the 'delete pf:rule_number' Command:
@@ -543,7 +543,7 @@ OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_ru
     * SHOULD respond with the 500 status code.
     * SHOULD respond with 'Rule number currently in use' in the status text.
 
-The valid Target types, associated Specifiers, and Options are summarized in [Section 2.3.1.1](#2311-allow-ipv4_connection) and [Section 2.3.1.2](#2312-allow-ipv6_connection). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The valid Target types, associated Specifiers, and Arguments are summarized in [Section 2.3.1.1](#2311-allow-ipv4_connection) and [Section 2.3.1.2](#2312-allow-ipv6_connection). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
 #### 2.3.1.1 'Allow ipv4_connection'
 
@@ -623,13 +623,13 @@ Products that receive but do not implement the 'allow advanced_connection' Comma
 * MAY respond with the 500 status code
     
 ### 2.3.2 Deny
-'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Actuator-Argument, the Targets, Specifiers, Options and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
+'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Actuator-Argument, the Targets, Specifiers, Arguments and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
 
 Upon receipt of a 'deny [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
 * MUST NOT respond with OK/200
 * SHOULD respond with the 501 status code
-* SHOULD respond with 'Option not supported' in the status text
+* SHOULD respond with 'Argument not supported' in the status text
 * MAY respond with the 500 status code
 
 OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rule_number' Command:
@@ -663,13 +663,13 @@ OpenC2 Consumers that receive 'deny target' Commands and support the 'insert_rul
     * SHOULD respond with 'Rule number currently in use' in the status text
 
 ### 2.3.3 Query
-The valid Target type, associated Specifiers, and Options are summarized in [Section 2.3.3.1](#2331-query-features). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The valid Target type, associated Specifiers, and Arguments are summarized in [Section 2.3.3.1](#2331-query-features). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
 Upon receipt of 'query [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
 * MUST NOT respond with OK/200
 * SHOULD respond with the 501 status code
-* SHOULD respond with 'Option not supported' in the status text
+* SHOULD respond with 'Argument not supported' in the status text
 * MAY respond with the 500 status code
 
 #### 2.3.3.1 Query features
@@ -679,13 +679,13 @@ The 'query features' Command MUST be implemented in accordance with Version 1.0 
 The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
 
 ### 2.3.4 Delete
-The pf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Options are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The pf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
 Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
 * MUST NOT respond with OK/200
 * SHOULD respond with the 501 status code
-* SHOULD respond with 'Option not supported' in the status text
+* SHOULD respond with 'Argument not supported' in the status text
 * MAY respond with the 500 status code
  
 #### 2.3.4.1 delete pf:rule_number
@@ -717,13 +717,13 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 Refer to [Annex A](#annex-a-sample-commands) for sample Commands.
 
 ### 2.3.5 Update
-The 'file' Target as defined in Version 1.0 of the Language Specification is the only valid Target type for the update Action. The associated Specifiers, and Options are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
+The 'file' Target as defined in Version 1.0 of the Language Specification is the only valid Target type for the update Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
     
 Upon receipt of a 'update file' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
 * MUST NOT respond with OK/200
 * SHOULD respond with the 501 status code
-* SHOULD respond with 'Option not supported' in the status text
+* SHOULD respond with 'Argument not supported' in the status text
 * MAY respond with the 500 status code
 
 #### 2.3.5.1 Update file
