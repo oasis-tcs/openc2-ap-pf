@@ -515,10 +515,10 @@ Upon receipt of a 'allow [target]' Command with an Argument that is not supporte
 
 OpenC2 Producers that send 'allow target' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
-* SHOULD populate the Command Arguments field with "response_requested" : "complete"
-* MAY populate the Command Arguments field with the "insert_rule" : <integer> option
-* MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
+* MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
+* SHOULD populate the Command Arguments field with "response_requested" : "complete".
+* MAY populate the Command Arguments field with the "insert_rule" : integer Argument.
+* MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated.
 
 OpenC2 Consumers that receive 'allow target' Commands:
 * MUST respond with Response code 200 upon successful parsing of the 'allow target' Command and subsequent imnplementation of the corresponding rule.
@@ -532,7 +532,7 @@ OpenC2 Consumers that receive and successfully parse 'allow target' Commands but
 
 OpenC2 Consumers that receive 'allow target' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
+* MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * Upon successful implementation of the 'allow target', MUST return the rule_number associated with the rule if the "response_requested" : "complete" option is populated.
 
 OpenC2 Consumers that receive 'allow target' Commands and support the 'insert_rule' Command Argument:
@@ -634,7 +634,7 @@ Upon receipt of a 'deny [target]' Command with an Argument that is not supported
 
 OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
+* MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * SHOULD populate the Command Arguments field with '"response_requested" : "complete"
 * MAY populate the Command Arguments field with the "insert_rule" : <integer> option
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
@@ -651,7 +651,7 @@ OpenC2 Consumers that receive and successfully parse 'deny target' Commands but 
     
 OpenC2 Consumers that receive 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
-* MUST support the pf:rule_number Target type as defined in [Section 2.1.2.2](#2122-pf-targets)
+* MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * MUST return the rule number assigned in the pf object if the "response_requested" : "complete" Argument is populated.
 
 OpenC2 Consumers that receive 'deny target' Commands and support the 'insert_rule' Command Argument:
@@ -676,7 +676,7 @@ Upon receipt of 'query [target]' Command with an Argument that is not supported 
 The 'query features' Command MUST be implemented in accordance with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
 #### 2.3.3.1 Query pf:rule_number
-The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
+The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 ### 2.3.4 Delete
 The pf:rule_number is the only valid Target type for the delete Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
@@ -689,7 +689,7 @@ Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not s
 * MAY respond with the 500 status code
  
 #### 2.3.4.1 delete pf:rule_number
-The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in [Section 2.1.2.2](#2122-pf-targets).
+The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 OpenC2 Producers that send the 'delete pf:rule_number' Command:
 
