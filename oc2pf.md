@@ -517,8 +517,8 @@ OpenC2 Producers that send 'allow [target]' Commands and support the 'delete pf:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * SHOULD populate the Command Arguments field with "response_requested" : "complete".
-* MAY populate the Command Arguments field with the "insert_rule" : integer Argument.
-* MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated.
+* MAY populate the Command Arguments field with the 'insert_rule' Argument.
+* MUST populate the Command Arguments field with "response_requested" : "complete" if the 'insert_rule' Argument is populated.
 
 OpenC2 Consumers that receive 'allow [target]' Commands:
 * MUST respond with the Response code 200 upon successful parsing of the 'allow [target]' Command and subsequent implementation of the corresponding rule.
@@ -627,17 +627,17 @@ Products that receive but do not implement the 'allow advanced_connection' Comma
 
 Upon receipt of a 'deny [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
-* MUST NOT respond with OK/200
-* SHOULD respond with the 501 status code
-* SHOULD respond with 'Argument not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with OK/200.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Argument not supported' in the status text.
+* MAY respond with the 500 status code.
 
 OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
-* SHOULD populate the Command Arguments field with '"response_requested" : "complete"
-* MAY populate the Command Arguments field with the "insert_rule" : <integer> option
-* MUST populate the Command Arguments field with "response_requested" : "complete" if the insert_rule Argument is populated
+* SHOULD populate the Command Arguments field with '"response_requested" : "complete"'.
+* MAY populate the Command Arguments field with the 'insert_rule' Argument .
+* MUST populate the Command Arguments field with "response_requested" : "complete" if the 'insert_rule' Argument is populated
 
 OpenC2 Consumers that receive 'deny target' Commands:
 * MUST respond with Response code 200 upon successful parsing of the 'deny target' Command and subsequent imnplementation of the corresponding rule. 
