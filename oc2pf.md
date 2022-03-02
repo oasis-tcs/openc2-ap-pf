@@ -547,8 +547,8 @@ The valid Target types, associated Specifiers, and Arguments are summarized in t
 
 #### 2.3.1.1 'Allow ipv4_connection'
 
-The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
-The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
+The 'allow ipv4_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
 The Command permits traffic that is consistent with the specified ipv4_connection. A valid 'allow ipv4_connection' Command has at least one property of the ipv4_connection populated and may have any combination of the five properties populated. An unpopulated property within the ipv4_connection Target MUST be treated as an 'any'.
 
@@ -560,8 +560,8 @@ Products that receive but do not implement the 'allow ipv4_connection' Command:
 * MAY respond with the 500 status code.
 
 #### 2.3.1.2 'Allow ipv6_connection'
-The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
-The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
+The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
 The Command permits traffic that is consistent with the specified ipv6_connection. A valid 'allow ipv6_connection' Command has at least one property of the ipv6_connection populated and may have any combination of the five properties populated. An unpopulated property within the the ipv4_connection Target MUST be treated as an 'any'.
 
@@ -573,8 +573,8 @@ Products that receive but do not implement the 'allow ipv6_connection' Command:
 * MAY respond with the 500 status code.
 
 #### 2.3.1.3 'Allow ipv4_net'
-The 'allow ipv4_net' Command is OPTIONAL for Openc2 Producers implementing the PF.
-The 'allow ipv4_net' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+The 'allow ipv4_net' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
+The 'allow ipv4_net' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
 The Command permits traffic as specified by the range of IPv4 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv4 address (i.e., an address range of one element). The address range specified in the ipv4_net MUST be treated as a source OR destination address.
 
@@ -585,8 +585,8 @@ Products that receive but do not implement the 'allow ipv4_net' Command:
 * MAY respond with the 500 status code.
 
 #### 2.3.1.4 'Allow ipv6_net'
-The 'allow ipv6_net' Command is OPTIONAL for Openc2 Producers implementing the PF.
-The 'allow ipv6_net' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+The 'allow ipv6_net' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
+The 'allow ipv6_net' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
 The Command permits traffic as specified by the range of IPv6 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv6 address (i.e., an address range of one element). The address range specified in the ipv6_net MUST be treated as a source OR destination address.
 
@@ -597,8 +597,8 @@ Products that receive but do not implement the 'allow ipv6_net' Command:
 * MAY respond with the 500 status code.
 
 #### 2.3.1.5 'Allow domain_name'
-The 'allow domain_name' Command is OPTIONAL for Openc2 Producers implementing the PF.
-The 'allow domain_name' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+The 'allow domain_name' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
+The 'allow domain_name' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
 The Command permits traffic that is consistent with the specified domain name.
 
