@@ -554,10 +554,10 @@ The Command permits traffic that is consistent with the specified ipv4_connectio
 
 Products that receive but do not implement the 'allow ipv4_connection' Command:
 
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 Response code
-* SHOULD respond with 'Target type not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 Response code.
+* SHOULD respond with 'Target type not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.1.2 'Allow ipv6_connection'
 The 'allow ipv6_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
@@ -567,10 +567,10 @@ The Command permits traffic that is consistent with the specified ipv6_connectio
 
 Products that receive but do not implement the 'allow ipv6_connection' Command:
 
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 Response code
-* SHOULD respond with 'Target type not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 Response code.
+* SHOULD respond with 'Target type not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.1.3 'Allow ipv4_net'
 The 'allow ipv4_net' Command is OPTIONAL for Openc2 Producers implementing the PF.
@@ -579,10 +579,10 @@ The 'allow ipv4_net' Command is OPTIONAL for Openc2 Consumers implementing the P
 The Command permits traffic as specified by the range of IPv4 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv4 address (i.e., an address range of one element). The address range specified in the ipv4_net MUST be treated as a source OR destination address.
 
 Products that receive but do not implement the 'allow ipv4_net' Command:
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 Response code
-* SHOULD respond with 'Target type not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 Response code.
+* SHOULD respond with 'Target type not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.1.4 'Allow ipv6_net'
 The 'allow ipv6_net' Command is OPTIONAL for Openc2 Producers implementing the PF.
@@ -591,10 +591,10 @@ The 'allow ipv6_net' Command is OPTIONAL for Openc2 Consumers implementing the P
 The Command permits traffic as specified by the range of IPv6 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv6 address (i.e., an address range of one element). The address range specified in the ipv6_net MUST be treated as a source OR destination address.
 
 Products that receive but do not implement the 'allow ipv6_net' Command:
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 Response code
-* SHOULD respond with 'Target type not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 Response code.
+* SHOULD respond with 'Target type not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.1.5 'Allow domain_name'
 The 'allow domain_name' Command is OPTIONAL for Openc2 Producers implementing the PF.
@@ -603,31 +603,31 @@ The 'allow domain_name' Command is OPTIONAL for Openc2 Consumers implementing th
 The Command permits traffic that is consistent with the specified domain name.
 
 Products that receive but do not implement the 'allow domain_name' Command:
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 Response code
-* SHOULD respond with 'Target type not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 Response code.
+* SHOULD respond with 'Target type not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.1.6 'Allow advanced_connection'
 
-The 'allow advanced_connection' Command is OPTIONAL for Openc2 Producers implementing the PF.
-The 'allow advanced_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF.
+The 'allow advanced_connection' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
+The 'allow advanced_connection' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
 The Command permits traffic that is consistent with the specified advanced_connection. A valid 'allow advanced_connection' Command has at least one property of the advanced_connection populated and may have any combination of the seven properties populated. An unpopulated property, excluding network, within the advanced_connection Target MUST be treated as an 'any'.
 
 Products that receive but do not implement the 'allow advanced_connection' Command:
 
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 Response code
-* SHOULD respond with 'Target type not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 Response code.
+* SHOULD respond with 'Target type not supported' in the status text.
+* MAY respond with the 500 status code.
     
 ### 2.3.2 Deny
 'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Argument, the Targets, Specifiers, Arguments and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
 
 Upon receipt of a 'deny [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
-* MUST NOT respond with OK/200.
+* MUST NOT respond with the 200 status code.
 * SHOULD respond with the 501 status code.
 * SHOULD respond with 'Argument not supported' in the status text.
 * MAY respond with the 500 status code.
@@ -640,37 +640,37 @@ OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rul
 * MUST populate the Command Arguments field with "response_requested" : "complete" if the 'insert_rule' Argument is populated
 
 OpenC2 Consumers that receive 'deny target' Commands:
-* MUST respond with Response code 200 upon successful parsing of the 'deny target' Command and subsequent imnplementation of the corresponding rule. 
+* MUST respond with Response status code 200 upon successful parsing of the 'deny [target]' Command and subsequent imnplementation of the corresponding rule. 
     
-OpenC2 Consumers that receive and successfully parse 'deny target' Commands but cannot implement the 'deny target' :
+OpenC2 Consumers that receive and successfully parse 'deny [target]' Commands but cannot implement the 'deny [target]' :
 
-* MUST NOT respond with a OK/200
-* SHOULD respond with the 501 status code
-* SHOULD respond with 'Rule not implemented' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Rule not implemented' in the status text.
+* MAY respond with the 500 status code.
     
 OpenC2 Consumers that receive 'deny target' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * MUST return the rule number assigned in the pf object if the "response_requested" : "complete" Argument is populated.
 
-OpenC2 Consumers that receive 'deny target' Commands and support the 'insert_rule' Command Argument:
+OpenC2 Consumers that receive 'deny [target]' Commands and support the 'insert_rule' Command Argument:
 
 * MUST assign the rule number provided if the "insert_rule" : integer Argument is populated
 * If the rule number is currently in use, then
-    * MUST NOT respond with a OK/200
-    * SHOULD respond with the 500 status code
-    * SHOULD respond with 'Rule number currently in use' in the status text
+    * MUST NOT respond with the 200 status code.
+    * SHOULD respond with the 500 status code.
+    * SHOULD respond with 'Rule number currently in use' in the status text.
 
 ### 2.3.3 Query
 The valid Target type, associated Specifiers, and Arguments are summarized in [Section 2.3.3.1](#2331-query-features). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
 Upon receipt of 'query [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
-* MUST NOT respond with OK/200
-* SHOULD respond with the 501 status code
-* SHOULD respond with 'Argument not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Argument not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.3.1 Query features
 The 'query features' Command MUST be implemented in accordance with Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
@@ -683,10 +683,10 @@ The pf:rule_number is the only valid Target type for the delete Action. The asso
 
 Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
-* MUST NOT respond with OK/200
-* SHOULD respond with the 501 status code
-* SHOULD respond with 'Argument not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Argument not supported' in the status text.
+* MAY respond with the 500 status code.
  
 #### 2.3.4.1 delete pf:rule_number
 The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
@@ -700,19 +700,19 @@ OpenC2 Producers that send the 'delete pf:rule_number' Command:
 OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 
 * but cannot parse or process the 'delete pf:rule_number' Command:
-    * MUST NOT respond with a OK/200
-    * SHOULD respond with status code 400
-    * MAY respond with the 500 status code
+    * MUST NOT respond with the 200 status code.
+    * SHOULD respond with the 400 status code.
+    * MAY respond with the 500 status code.
 * but do not support the pf:rule_number Target type:
-    * MUST NOT respond with a OK/200
-    * SHOULD respond with the 501 status code
-    * SHOULD respond with 'target not supported' in the status text
-    * MAY respond with the 500 status code
+    * MUST NOT respond with the 200 status code.
+    * SHOULD respond with the 501 status code.
+    * SHOULD respond with 'Target not supported' in the status text.
+    * MAY respond with the 500 status code.
 * MUST respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule
 * upon successful parsing but failure to remove the corresponding rule:
-    * MUST NOT respond with OK/200
-    * MUST respond with Response code 500
-    * SHOULD respond with 'firewall rule not removed or updated' in the status text
+    * MUST NOT respond with the 200 status code.
+    * MUST respond with the 500 status code.
+    * SHOULD respond with 'Firewall rule not removed or updated' in the status text.
 
 Refer to [Annex A](#annex-a-sample-commands) for sample Commands.
 
@@ -721,10 +721,10 @@ The 'file' Target as defined in Version 1.0 of the Language Specification is the
     
 Upon receipt of a 'update file' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
-* MUST NOT respond with OK/200
-* SHOULD respond with the 501 status code
-* SHOULD respond with 'Argument not supported' in the status text
-* MAY respond with the 500 status code
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Argument not supported' in the status text.
+* MAY respond with the 500 status code.
 
 #### 2.3.5.1 Update file
 The 'update file' Command is used to replace or update files such as configuration files, rule sets, etc. Implementation of the update file Command is OPTIONAL. OpenC2 Consumers that choose to implement the 'update file' Command MUST include all steps that are required for the update file procedure such as retrieving the file(s), install the file(s), restart/ reboot the device etc. The end state shall be that the firewall operates with the new file at the conclusion of the 'update file' Command. The atomic steps that take place are implementation specific.
@@ -733,27 +733,27 @@ Table 2.3-2 presents the valid options for the 'update file' Command. OpenC2 Pro
 
 OpenC2 Producers that send the 'update file' Command:
 
-* MAY populate the arguments field with the "response_requested" argument. Valid values for "response_requested" for 'update file' are "complete", "ack", and "none"
-* MUST NOT include other Command Arguments
-* MUST populate the name Specifier in the Target
-* SHOULD populate the path Specifier in the Target
+* MAY populate the arguments field with the "response_requested" Argument. Valid values for "response_requested" for 'update file' are "complete", "ack", and "none".
+* MUST NOT include other Command Arguments.
+* MUST populate the name Specifier in the Target.
+* SHOULD populate the path Specifier in the Target.
 
 OpenC2 Consumers that receive the 'update file' Command:
 
-* but cannot parse or process the Command
-    * MUST NOT respond with a OK/200
-    * SHOULD respond with status code 400
-    * MAY respond with the 500 status code
-* but do not support the 'update file' Command
-    * MUST NOT respond with a OK/200
-    * SHOULD respond with status code 501
+* but cannot parse or process the Command:
+    * MUST NOT respond with the 200 status code.
+    * SHOULD respond with the 400 status code.
+    * MAY respond with the 500 status code.
+* but do not support the 'update file' Command:
+    * MUST NOT respond with the 200 status code.
+    * SHOULD respond with the 501 status code.
     * SHOULD respond with 'Command not supported' in the status text
-    * MAY respond with status code 500
-* but cannot access the file specified in the file Target
-    * MUST respond with status code 500
-    * SHOULD respond with 'cannot access file' in the status text
-* upon successful parsing and initiating the processing of the 'update file' Command, OpenC2 Consumers MAY respond with Response code 102
-* upon completion of all the steps necessary to complete the update and the Actuator commences operations functioning with the new file, OpenC2 Consumers SHOULD respond with Response code 200
+    * MAY respond with the 500 status code.
+* but cannot access the file specified in the file Target:
+    * MUST respond with the 500 status code.
+    * SHOULD respond with 'Cannot access file' in the status text.
+* upon successful parsing and initiating the processing of the 'update file' Command, OpenC2 Consumers MAY respond with Response status code 102.
+* upon completion of all the steps necessary to complete the update and the Actuator commences operations functioning with the new file, OpenC2 Consumers SHOULD respond with Response status code 200.
 
 Refer to [Annex A](#annex-a-sample-commands) for sample Commands.
 
