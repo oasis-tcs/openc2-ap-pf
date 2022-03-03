@@ -521,7 +521,7 @@ OpenC2 Producers that send 'allow [target]' Commands and support the 'delete pf:
 * MUST populate the Command Arguments field with '"response_requested" : "complete"' if the insert_rule Argument is populated.
 
 OpenC2 Consumers that receive 'allow [target]' Commands:
-* MUST respond with the Response status code 200 upon successful parsing of the 'allow [target]' Command and subsequent implementation of the corresponding rule.
+* SHOULD respond with the Response status code 200 upon successful parsing of the 'allow [target]' Command and subsequent implementation of the corresponding rule.
     
 OpenC2 Consumers that receive and successfully parse 'allow [target]' Commands but cannot implement the 'allow [target]':
 
@@ -640,7 +640,7 @@ OpenC2 Producers that send 'deny [target]' Commands and support the 'delete pf:r
 * MUST populate the Command Arguments field with '"response_requested" : "complete"' if the insert_rule Argument is populated.
 
 OpenC2 Consumers that receive 'deny [target]' Commands:
-* MUST respond with Response status code 200 upon successful parsing of the 'deny [target]' Command and subsequent implementation of the corresponding rule. 
+* SHOULD respond with Response status code 200 upon successful parsing of the 'deny [target]' Command and subsequent implementation of the corresponding rule. 
     
 OpenC2 Consumers that receive and successfully parse 'deny [target]' Commands but cannot implement the 'deny [target]' :
 
@@ -707,7 +707,7 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
     * SHOULD respond with the 501 status code.
     * SHOULD respond with 'Target not supported' in the status text.
     * MAY respond with the 500 status code.
-* MUST respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule.
+* SHOULD respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule.
 * upon successful parsing but failure to remove the corresponding rule:
     * MUST NOT respond with the 200 status code.
     * MUST respond with the 500 status code.
