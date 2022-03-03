@@ -588,7 +588,7 @@ Products that receive but do not implement the 'allow ipv4_net' Command:
 The 'allow ipv6_net' Command is OPTIONAL for Openc2 Producers implementing the PF profile.
 The 'allow ipv6_net' Command is OPTIONAL for Openc2 Consumers implementing the PF profile.
 
-The Command permits traffic as specified by the range of IPv6 addresses as expressed by CIDR notation. If the mask is absent (or unspecified) then it MUST be treated as a single IPv6 address (i.e., an address range of one element). The address range specified in the ipv6_net MUST be treated as a source OR destination address.
+The Command permits traffic as specified by the range of IPv6 addresses as expressed by CIDR notation. If the mask is unspecified then it MUST be treated as a single IPv6 address (i.e., an address range of one element). The address range specified in the ipv6_net MUST be treated as a source OR destination address.
 
 Products that receive but do not implement the 'allow ipv6_net' Command:
 * MUST NOT respond with the 200 status code.
