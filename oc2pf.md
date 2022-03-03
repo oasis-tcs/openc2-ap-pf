@@ -675,17 +675,17 @@ Upon receipt of 'query [target]' Command with an Argument that is not supported 
 OpenC2 Consumers that receive 'query [target]' Commands:
 * SHOULD respond with the Response status code 200 upon successful parsing and execution of the Command.
 
-#### 2.3.3.1 Query features
+#### 2.3.3.1 'Query features'
 The 'query features' Command MUST be implemented in accordance with Section 4.1, Implementation of 'query features' Command, of Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
 
-#### 2.3.3.2 Query pf:rule_number
+#### 2.3.3.2 'Query pf:rule_number'
 The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'query pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 ### 2.3.4 Delete
 The pf:rule_number is the only valid Target type for the delete Action. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
  
-#### 2.3.4.1 delete pf:rule_number
+#### 2.3.4.1 'Delete pf:rule_number'
 The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 OpenC2 Producers that send the 'delete pf:rule_number' Command:
@@ -721,7 +721,7 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 ### 2.3.5 Update
 The file Target as defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) is the only valid Target type for the update Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
 
-#### 2.3.5.1 Update file
+#### 2.3.5.1 'Update file'
 The 'update file' Command is used to replace or update files such as configuration files, rule sets, etc. Implementation of the update file Command is OPTIONAL. OpenC2 Consumers that choose to implement the 'update file' Command MUST include all steps that are required for the update file procedure such as retrieving the file(s), install the file(s), restart/ reboot the device etc. The end state MUST be that the firewall operates with the new file at the conclusion of the 'update file' Command. The atomic steps that take place are implementation specific.
 
 Table 2.3-2, Command Arguments Matrix, presents the valid Arguments for the 'update file' Command. OpenC2 Producers and Consumers that choose to implement the 'update file' Command MUST NOT include Arguments other than the one identified in Table 2.3-2.
