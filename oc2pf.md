@@ -679,14 +679,7 @@ The 'query features' Command MUST be implemented in accordance with Section 4.1,
 The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'query pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 ### 2.3.4 Delete
-The 'pf:rule_number' is the only valid Target type for the 'delete' Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.4.1](#2341-delete-pfrule_number). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
-
-Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not supported by the Actuator, PF Consumers:
-
-* MUST NOT respond with the 200 status code.
-* SHOULD respond with the 501 status code.
-* SHOULD respond with 'Argument not supported' in the status text.
-* MAY respond with the 500 status code.
+The pf:rule_number is the only valid Target type for the delete Action. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
  
 #### 2.3.4.1 delete pf:rule_number
 The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
@@ -697,8 +690,14 @@ OpenC2 Producers that send the 'delete pf:rule_number' Command:
 * MUST NOT include other Command Arguments.
 * MUST include exactly one rule number.
 
-OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
+Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
+* MUST NOT respond with the 200 status code.
+* SHOULD respond with the 501 status code.
+* SHOULD respond with 'Argument not supported' in the status text.
+* MAY respond with the 500 status code.
+
+OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 * but cannot parse or process the 'delete pf:rule_number' Command:
     * MUST NOT respond with the 200 status code.
     * SHOULD respond with the 400 status code.
