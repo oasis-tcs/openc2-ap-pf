@@ -767,10 +767,10 @@ An OpenC2 Producer satisfies Baseline OpenC2 Producer conformance if:
 * 3.1.1.1 **MUST** support JSON serialization of OpenC2 Commands that are syntactically valid in accordance with the property tables presented in [Section 2.1](#21-openc2-command-components).
 * 3.1.1.2 All serializations **MUST** be implemented in a manner such that the serialization validates against and provides a one-to-one mapping to the property tables in [Section 2.1](#21-openc2-command-components) of this specification.
 * 3.1.1.3 **MUST** support the use of a Transfer Specification that is capable of delivering authenticated, ordered, lossless and uniquely identified OpenC2 messages.
-* 3.1.1.4 **SHOULD** support the use of one or more published OpenC2 Transfer Specifications which identify underlying transport protocols such that an authenticated, ordered, lossless, delivery of uniquely identified OpenC2 messages is provided.
+* 3.1.1.4 **SHOULD** support the use of one or more published OpenC2 Transfer Specifications which identify underlying transport protocols such that an authenticated, ordered, lossless, delivery of uniquely identified OpenC2 messages is provided as referenced in [Section 1](#1-introduction) of this specification.
 * 3.1.1.5 **MUST** be conformant with Version 1.0 of the OpenC2 Language Specification.
 * 3.1.1.6 **MUST** implement the 'query features' Command in accordance with the normative text provided in Version 1.0 of the OpenC2 Language Specification.
-* 3.1.1.7 **MUST** implement the response_requested Command Argument as a valid option for any Command.
+* 3.1.1.7 **MUST** implement the 'response_requested' Command Argument as a valid option for any Command.
 * 3.1.1.8 **MUST** conform to at least one of the following conformance clauses in this specification:
    * Conformance Clause 2
    * Conformance Clause 3
@@ -876,86 +876,111 @@ All OpenC2 Consumers that are conformant to this specification MUST satisfy Conf
 
 ### 3.2.1 Conformance Clause 19: Baseline OpenC2 Consumer
 An OpenC2 Consumer satisfies Baseline OpenC2 Consumer conformance if:
-* 3.2.1.1 **MUST** support JSON serialization of OpenC2 Commands that are syntactically valid in accordance with the property tables presented in [Section 2.1](#21-openc2-command-components)
-* 3.2.1.2 All serializations **MUST** be implemented in a manner such that the serialization validates against and provides a one-to-one mapping to the property tables in [Section 2.1](#21-openc2-command-components) of this specification
-* 3.2.1.3 **MUST** support the use of a Transfer Specification that is capable of delivering authenticated, ordered, lossless and uniquely identified OpenC2 messages
-* 3.2.1.4 **SHOULD** support the use of one or more published OpenC2 Transfer Specifications which identify underlying transport protocols such that an authenticated, ordered, lossless, delivery of uniquely identified OpenC2 messages is provided.
-* 3.2.1.5 **MUST** be conformant with Version 1.0 of the OpenC2 Language Specification.
-* 3.2.1.6 **MUST** implement the 'query features' Command in accordance with the normative text provided in Version 1.0 of the OpenC2 Language Specification.
-* 3.2.1.7 **MUST** implement the 'response_requested' Command Argument as a valid option for any Command.
-    * 3.2.1.7.1 All Commands received with a response_requested Argument set to "none" **MUST** process the Command and **MUST NOT** send a Response. This criteria supersedes all other normative text as it pertains to Responses.
-    * 3.2.1.7.2 All Commands received without the response_requested Argument **MUST** process the Command and Response in a manner that is consistent with '"response_requested":"complete"'.
+* 3.2.1.1 **MUST** support JSON serialization of OpenC2 Commands that are syntactically valid in accordance with the property tables presented in [Section 2.1](#21-openc2-command-components).
+* 3.2.1.2 All serializations **MUST** be implemented in a manner such that the serialization validates against and provides a one-to-one mapping to the property tables in [Section 2.1](#21-openc2-command-components) of this specification.
+* 3.2.1.3 **MUST** support the use of a Transfer Specification that is capable of delivering authenticated, ordered, lossless and uniquely identified OpenC2 messages.
+* 3.2.1.4 **SHOULD** support the use of one or more published OpenC2 Transfer Specifications which identify underlying transport protocols such that an authenticated, ordered, lossless, delivery of uniquely identified OpenC2 messages is provided as referenced in [Section 1](#1-introduction) of this specification
+* 3.2.1.5 **MUST** be conformant with Version 1.0 of the OpenC2 Language Specification
+* 3.2.1.6 **MUST** implement the 'query features' Command in accordance with the normative text provided in Version 1.0 of the OpenC2 Language Specification
+* 3.2.1.7 **MUST** implement the 'response_requested' Command Argument as a valid option for any Command
+    * 3.2.1.7.1 All Commands received with a 'response_requested' argument set to 'none' **MUST** process the Command and **MUST NOT** send a Response. This criteria supersedes all other normative text as it pertains to Responses
+    * 3.2.1.7.2 All Commands received without the 'response_requested' argument **MUST** process the Command and Response in a manner that is consistent with "response_requested":"complete"
 * 3.2.1.8 **MUST** conform to at least one of the following conformance clauses in this specification:
-    * Conformance Clause 13
-    * Conformance Clause 14
-    * Conformance Clause 15
-    * Conformance Clause 16
+    * Conformance Clause 20
+    * Conformance Clause 
+    * Conformance Clause 
+    * Conformance Clause 
 
-### 3.2.2 Conformance Clause 13: IP Version 4 Connection Consumer
+### 3.2.2 Conformance Clause 20: IP Version 4 Connection Consumer
 An OpenC2 Consumer satisfies 'IP Version 4 Connection Consumer' conformance if:
-* 3.2.2.1 **MUST** meet all of conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.2.2 **MUST** implement the 'allow ipv4_connection' Command in accordance with [Section 2.3.1](#231-allow) of this specification
-* 3.2.2.3 **MUST** implement the 'deny ipv4_connection' Command in accordance with [Section 2.3.2](#232-deny) of this specification
+* 3.2.2.1 **MUST** meet all of conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.2.2 **MUST** implement the 'allow ipv4_connection' Command in accordance with [Section 2.3.1](#231-allow) of this specification.
+* 3.2.2.3 **MUST** implement the 'deny ipv4_connection' Command in accordance with [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.3 Conformance Clause 14: IP Version 6 Connection Consumer
+### 3.2.3 Conformance Clause 21: IP Version 6 Connection Consumer
 An OpenC2 Consumer satisfies 'IP Version 6 Connection Consumer' conformance if:
-* 3.2.3.1 **MUST** meet all of conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.3.2 **MUST** implement the 'allow ipv6_connection' Command in accordance with [Section 2.3.1](#231-allow) of this specification
-* 3.2.3.3 **MUST** implement the 'deny ipv6_connection' Command in accordance with [Section 2.3.2](#232-deny) of this specification
+* 3.2.3.1 **MUST** meet all of conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.3.2 **MUST** implement the 'allow ipv6_connection' Command in accordance with [Section 2.3.1](#231-allow) of this specification.
+* 3.2.3.3 **MUST** implement the 'deny ipv6_connection' Command in accordance with [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.4 Conformance Clause 15: IP Version 4 Net Consumer
+### 3.2.4 Conformance Clause 22: IP Version 4 Net Consumer
 An OpenC2 Consumer satisfies 'IP Version 4 Net Consumer' conformance if:
-* 3.2.4.1 **MUST** meet all of conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.4.2 **MUST** implement the 'allow ipv4_net' Command in accordance with [Section 2.3.1](#231-allow) of this specification
-* 3.2.4.3 **MUST** implement the 'deny ipv4_net' Command in accordance with [Section 2.3.2](#232-deny) of this specification
+* 3.2.4.1 **MUST** meet all of conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.4.2 **MUST** implement the 'allow ipv4_net' Command in accordance with [Section 2.3.1](#231-allow) of this specification.
+* 3.2.4.3 **MUST** implement the 'deny ipv4_net' Command in accordance with [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.5 Conformance Clause 16: IP Version 6 Net Consumer
+### 3.2.5 Conformance Clause 23: IP Version 6 Net Consumer
 An OpenC2 Consumer satisfies 'IP Version 6 Net Consumer' conformance if:
-* 3.2.5.1 **MUST** meet all of conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.5.2 **MUST** implement the 'allow ipv6_net' Command in accordance with [Section 2.3.1](#231-allow) of this specification
-* 3.2.5.3 **MUST** implement the 'deny ipv6_net' Command in accordance with [Section 2.3.2](#232-deny) of this specification
+* 3.2.5.1 **MUST** meet all of conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.5.2 **MUST** implement the 'allow ipv6_net' Command in accordance with [Section 2.3.1](#231-allow) of this specification.
+* 3.2.5.3 **MUST** implement the 'deny ipv6_net' Command in accordance with [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.6 Conformance Clause 17: Domain Name Consumer
+### 3.2.6 Conformance Clause 24: Domain Name Consumer
 An OpenC2 Consumer satisfies 'Domain Name Consumer' conformance if:
-* 3.2.6.1 **MUST** meet all of conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.6.2 **MUST** implement the 'allow domain_name' Command in accordance with [Section 2.3.1](#231-allow) of this specification
-* 3.2.6.3 **MUST** implement the 'deny domain_name' Command in accordance with [Section 2.3.2](#232-deny) of this specification
+* 3.2.6.1 **MUST** meet all of conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.6.2 **MUST** implement the 'allow domain_name' Command in accordance with [Section 2.3.1](#231-allow) of this specification.
+* 3.2.6.3 **MUST** implement the 'deny domain_name' Command in accordance with [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.7 Conformance Clause 18: Update File Consumer
+### 3.2.7 Conformance Clause 25: Advanced Connection Consumer
+An OpenC2 Consumer satisfies 'Advanced Connection Consumer' conformance if:
+* 3.2.7.1 **MUST** meet all of conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.7.2 **MUST** implement the 'allow pf:advanced_connection' Command in accordance with [Section 2.3.1](#231-allow) of this specification.
+* 3.2.7.3 **MUST** implement the 'deny pf:advanced_connection' Command in accordance with [Section 2.3.2](#232-deny) of this specification. 
+
+### 3.2.8 Conformance Clause 26: Update File Consumer
 An OpenC2 Consumer satisfies 'Update File Consumer' conformance if:
-* 3.2.7.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.7.2 **MUST** implement the 'update file' Command in accordance with [Section 2.3.5.1](#2351-update-file) of this specification
+* 3.2.8.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.8.2 **MUST** implement the 'update file' Command in accordance with [Section 2.3.5.1](#2351-update-file) of this specification.
 
-### 3.2.8 Conformance Clause 19: delete rule number Consumer
-An OpenC2 Consumer satisfies 'delete rule Consumer' conformance if:
-* 3.2.8.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.8.2 **MUST** implement the 'delete pf:rule_number' in accordance with [Section 2.3.4.1](#2341-delete-pfrule_number) of this specification
+### 3.2.9 Conformance Clause 27: Delete Rule Number Consumer
+An OpenC2 Consumer satisfies 'Delete Rule Number Consumer' conformance if:
+* 3.2.9.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.9.2 **MUST** implement the 'delete pf:rule_number' in accordance with [Section 2.3.4.1](#2341-delete-pfrule_number) of this specification.
 
-### 3.2.9 Conformance Clause 20: Persistent Consumer
+### 3.2.10 Conformance Clause 28: Query Rule Number Consumer
+An OpenC2 Consumer satisfies 'Query Rule Number Consumer' conformance if:
+* 3.2.10.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.10.2 **MUST** implement the 'query pf:rule_number' in accordance with [Section 2.3.3.2](#2341-delete-slpfrule_number) of this specification.
+
+### 3.2.11 Conformance Clause 29: Persistent Consumer
 An OpenC2 Consumer satisfies 'Persistent Consumer' conformance if:
-* 3.2.9.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.9.2 **MUST** implement the 'persistent' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification
+* 3.2.11.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.11.2 **MUST** implement the 'persistent' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.10 Conformance Clause 21: Direction Consumer
+### 3.2.12 Conformance Clause 30: Direction Consumer
 An OpenC2 Consumer satisfies 'Direction Consumer' conformance if:
-* 3.2.10.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.10.2 **MUST** implement the 'direction' Command argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification
+* 3.2.12.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.12.2 **MUST** implement the 'direction' Command argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.11 Conformance Clause 22: drop-process Consumer
-An OpenC2 Consumer satisfies 'drop-process Consumer' conformance if:
-* 3.2.11.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.2.11.2 **MUST** implement the 'drop_process' Command Argument as a valid option for any Command associated with the 'deny' Action in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification
+### 3.2.13 Conformance Clause 31: Drop Process Consumer
+An OpenC2 Consumer satisfies 'Drop Process Consumer' conformance if:
+* 3.2.13.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.13.2 **MUST** implement the 'drop_process' Command Argument as a valid option for any Command associated with the 'deny' Action in accordance with [Section 2.3.2](#232-deny) of this specification of this specification.
 
-### 3.2.12 Conformance Clause 23: Temporal Consumer
+### 3.2.14 Conformance Clause 32: Temporal Consumer
 An OpenC2 Consumer satisfies 'Temporal Consumer' conformance if:
-* 3.2.12.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification.
-* 3.2.12.2 **MUST** implement the 'start_time' Command Argument as a valid option for any Command other than 'query features'
-* 3.2.12.3 **MUST** implement the 'stop_time' and 'duration' Command Arguments as a valid option for any Command other than 'query features' or 'update file'
+* 3.2.14.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.14.2 **MUST** implement the 'start_time', 'stop_time', and 'duration' Command Arguments as valid options for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
 
-### 3.2.13 Conformance Clause 24: Logging Consumer
+### 3.2.15 Conformance Clause 33: Logging Consumer
 An OpenC2 Consumer satisfies 'Logging Consumer' conformance if:
-* 3.1.13.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 12 of this specification
-* 3.1.13.2 **MUST** implement the 'logged' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification
+* 3.2.15.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.15.2 **MUST** implement the 'logged' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
+
+### 3.2.16 Conformance Clause 34: Stateful Consumer
+An OpenC2 Consumer satisfies 'Stateful Consumer' conformance if:
+* 3.2.16.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.16.2 **MUST** implement the 'stateful' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
+
+### 3.2.17 Conformance Clause 35: Priority Consumer
+An OpenC2 Consumer satisfies 'Priority Consumer' conformance if:
+* 3.2.17.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.17.2 **MUST** implement the 'priority' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
+
+### 3.2.18 Conformance Clause 36: Insert Rule Consumer
+An OpenC2 Consumer satisfies 'Insert Rule Consumer' conformance if:
+* 3.2.18.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 19 of this specification.
+* 3.2.18.2 **MUST** implement the 'insert_rule' Command Argument as a valid option for any Command associated with the 'deny' or 'allow' Actions in accordance with [Section 2.3.1](#231-allow) and [Section 2.3.2](#232-deny) of this specification.
 
 ---
 
