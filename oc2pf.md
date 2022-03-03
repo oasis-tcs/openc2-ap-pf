@@ -504,7 +504,7 @@ Table 2.3-2 defines the Command Arguments that are allowed for a particular Comm
 Hereafter the specification provides details applicable to each Command, also as influenced by the Arguments.
 
 ### 2.3.1 Allow
-Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the allow Action and a valid Target type.
+Table 2.3-2, Command Arguments Matrix, summarizes the Command Arguments that apply to all Commands consisting of the allow Action and a valid Target type.
 
 Upon receipt of a 'allow [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
@@ -623,7 +623,7 @@ Products that receive but do not implement the 'allow advanced_connection' Comma
 * MAY respond with the 500 status code.
     
 ### 2.3.2 Deny
-'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Argument, the Targets, Specifiers, Arguments and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2 summarizes the Command Arguments that apply to all of the Commands consisting of the 'deny' Action and valid Target types.
+'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Argument, the Targets, Specifiers, Arguments and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2, Command Arguments Matrix, summarizes the Command Arguments that apply to all Commands consisting of the 'deny' Action and valid Target types.
 
 Upon receipt of a 'deny [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
@@ -663,7 +663,7 @@ OpenC2 Consumers that receive 'deny [target]' Commands and support the insert_ru
     * SHOULD respond with 'Rule number currently in use' in the status text.
 
 ### 2.3.3 Query
-The valid Target type, associated Specifiers, and Arguments are summarized in [Section 2.3.3.1](#2331-query-features). Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The valid Target types and Arguments for the query Action are summarized in Table 2.3-2 Command Arguments Matrix. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
 
 Upon receipt of 'query [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
@@ -729,7 +729,7 @@ Upon receipt of a 'update file' Command with an Argument that is not supported b
 #### 2.3.5.1 Update file
 The 'update file' Command is used to replace or update files such as configuration files, rule sets, etc. Implementation of the update file Command is OPTIONAL. OpenC2 Consumers that choose to implement the 'update file' Command MUST include all steps that are required for the update file procedure such as retrieving the file(s), install the file(s), restart/ reboot the device etc. The end state shall be that the firewall operates with the new file at the conclusion of the 'update file' Command. The atomic steps that take place are implementation specific.
 
-Table 2.3-2 presents the valid options for the 'update file' Command. OpenC2 Producers and Consumers that choose to implement the 'update file' Command MUST NOT include options other than the options identified in Table 2.3-2.
+Table 2.3-2, Command Arguments Matrix, presents the valid Arguments for the 'update file' Command. OpenC2 Producers and Consumers that choose to implement the 'update file' Command MUST NOT include Arguments other than the one identified in Table 2.3-2.
 
 OpenC2 Producers that send the 'update file' Command:
 
