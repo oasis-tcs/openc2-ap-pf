@@ -707,13 +707,12 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
     * SHOULD respond with the 501 status code.
     * SHOULD respond with 'Target not supported' in the status text.
     * MAY respond with the 500 status code.
-* MUST respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule
+* MUST respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule.
 * upon successful parsing but failure to remove the corresponding rule:
     * MUST NOT respond with the 200 status code.
     * MUST respond with the 500 status code.
     * SHOULD respond with 'Firewall rule not removed or updated' in the status text.
 
-Refer to [Annex A](#annex-a-sample-commands) for sample Commands.
 
 ### 2.3.5 Update
 The 'file' Target as defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) is the only valid Target type for the 'update' Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
