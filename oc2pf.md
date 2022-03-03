@@ -189,7 +189,7 @@ The remaining of [Section One](#1-introduction) includes infomation about the IP
 
 [Section Two](#2-openc2-language-binding) (normative) binds this particular profile to Version 1.0 of the OpenC2 Language Specification ([[OpenC2-Lang-v1.0]](#openc2-lang-v10)). Section Two enumerates the components of the Language Specification that are meaningful in the context of PF and defines components that are applicable to this distinct profile. Section Two also defines the Commands (i.e., the Action/Target pairs) that are permitted in the context of PF.
 
-[Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with OpenC2.
+[Section Three](#3-conformance-statements) (normative) presents definitive criteria for conformance so that cyber security stakeholders can be assured that their products, instances and/or integrations are compatible with this profile (OpenC2 Actuator Profile for Packet Filtering Version 1.0).
 
 [Annex A](#annex-a-sample-commands) (non-normative) provides multiple examples of Commands and associated Responses (JSON serialization).
 
