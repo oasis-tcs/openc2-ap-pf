@@ -756,7 +756,8 @@ OpenC2 Consumers that receive the 'update file' Command:
 
 # 3 Conformance statements
 _This section is normative_
-This section identifies the requirements for twenty-two conformance profiles as they pertain to two conformance targets. The two conformance targets are OpenC2 Producers and OpenC2 Consumers (as defined in [Section 1.8](#18-purpose-and-scope) of this specification).
+
+This section identifies the requirements for twenty-two conformance profiles as they pertain to two conformance targets. The two conformance targets are OpenC2 Producers and OpenC2 Consumers.
 
 ## 3.1 Clauses Pertaining to the OpenC2 Producer Conformance Target
 All OpenC2 Producers that are conformant to this specification MUST satisfy Conformance Clause 1 and MAY satisfy one or more of Conformance Clauses 2 through 11.
