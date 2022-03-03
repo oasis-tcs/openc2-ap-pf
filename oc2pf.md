@@ -632,15 +632,15 @@ Upon receipt of a 'deny [target]' Command with an Argument that is not supported
 * SHOULD respond with 'Argument not supported' in the status text.
 * MAY respond with the 500 status code.
 
-OpenC2 Producers that send 'deny target' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Producers that send 'deny [target]' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * SHOULD populate the Command Arguments field with '"response_requested" : "complete"'.
 * MAY populate the Command Arguments field with the insert_rule Argument .
 * MUST populate the Command Arguments field with '"response_requested" : "complete"' if the insert_rule Argument is populated.
 
-OpenC2 Consumers that receive 'deny target' Commands:
-* MUST respond with Response status code 200 upon successful parsing of the 'deny [target]' Command and subsequent imnplementation of the corresponding rule. 
+OpenC2 Consumers that receive 'deny [target]' Commands:
+* MUST respond with Response status code 200 upon successful parsing of the 'deny [target]' Command and subsequent implementation of the corresponding rule. 
     
 OpenC2 Consumers that receive and successfully parse 'deny [target]' Commands but cannot implement the 'deny [target]' :
 
@@ -649,15 +649,15 @@ OpenC2 Consumers that receive and successfully parse 'deny [target]' Commands bu
 * SHOULD respond with 'Rule not implemented' in the status text.
 * MAY respond with the 500 status code.
     
-OpenC2 Consumers that receive 'deny target' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Consumers that receive 'deny [target]' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
-* MUST return the rule number assigned in the pf object if the "response_requested" : "complete" Argument is populated.
+* MUST return the rule number assigned in the pf object if the '"response_requested" : "complete"' Argument is populated.
 
-OpenC2 Consumers that receive 'deny [target]' Commands and support the 'insert_rule' Command Argument:
+OpenC2 Consumers that receive 'deny [target]' Commands and support the insert_rule Command Argument:
 
-* MUST assign the rule number provided if the "insert_rule" : integer Argument is populated
-* If the rule number is currently in use, then
+* MUST assign the rule number provided if the insert_rule Argument is populated.
+* If the rule number is currently in use, then:
     * MUST NOT respond with the 200 status code.
     * SHOULD respond with the 500 status code.
     * SHOULD respond with 'Rule number currently in use' in the status text.
@@ -689,11 +689,11 @@ Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not s
 * MAY respond with the 500 status code.
  
 #### 2.3.4.1 delete pf:rule_number
-The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the 'pf:rule_number' Target type described in Table 2.1.2-2.
+The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 OpenC2 Producers that send the 'delete pf:rule_number' Command:
 
-* MAY populate the Command Arguments field with "response_requested" : "complete".
+* MAY populate the Command Arguments field with '"response_requested" : "complete"'.
 * MUST NOT include other Command Arguments.
 * MUST include exactly one rule number.
 
