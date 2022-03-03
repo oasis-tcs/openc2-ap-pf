@@ -672,10 +672,14 @@ Upon receipt of 'query [target]' Command with an Argument that is not supported 
 * SHOULD respond with 'Argument not supported' in the status text.
 * MAY respond with the 500 status code.
 
+OpenC2 Consumers that receive 'query [target]' Commands:
+* SHOULD respond with the Response status code 200 upon successful parsing and execution of the Command.
+
 #### 2.3.3.1 Query features
 The 'query features' Command MUST be implemented in accordance with Section 4.1, Implementation of 'query features' Command, of Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
-#### 2.3.3.1 Query pf:rule_number
+
+#### 2.3.3.2 Query pf:rule_number
 The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'query pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 ### 2.3.4 Delete
