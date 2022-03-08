@@ -75,7 +75,6 @@ For complete copyright information please see the Notices section in the Appendi
     -   [1.3 Document Conventions](#13-document-conventions)
         -   [1.3.1 Naming Conventions](#131-naming-conventions)
         -   [1.3.2 Font Colors and Style](#132-font-colors-and-style)
-    -   [1.4 Purpose and Scope](#14-purpose-and-scope)
 -   [2 OpenC2 Language Binding](#2-openc2-language-binding)
     -   [2.1 OpenC2 Command Components](#21-openc2-command-components)
         -   [2.1.1 Actions](#211-actions)
