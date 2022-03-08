@@ -346,7 +346,7 @@ Arguments provide additional precision to a Command by including information suc
 | 3 | **duration** | Duration | 0..1 | The length of time for a Command to be in effect. |
 | 4 | **response_requested** | Response-Type | 0..1 | The type of Response required for the Command: `none`, `ack`, `status`, `complete`. |
 
-**Table 2.1.3-2. Command Arguments Unique to PF**
+**Table 2.1.3-2 Command Arguments Unique to PF**
 
 **_Type: Args (Map)_**
 
@@ -408,7 +408,7 @@ An Actuator is the entity that provides the functionality and performs the Actio
 
 Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers. The Actuator Specifiers defined in this profile are referenced with the `pf` namespace identifier.
 
-**Table 2.1.4-1. PF Specifiers**
+**Table 2.1.4-1 PF Specifiers**
 
 **_Type: Specifiers (Map)_**
 
@@ -419,15 +419,17 @@ Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Anne
 | 3 | **asset_id** | String | 0..1 | Unique identifier for a particular PF. |
 | 4 | **asset_tuple** | String | 0..10 | Unique tuple identifier for a particular PF consisting of a list of up to 10 strings. |
 
+
 ## 2.2 OpenC2 Response Components
 Response messages originate from the Actuator as a result of a Command.
 
 Responses associated with REQUIRED Actions MUST be implemented. Implementations that include OPTIONAL Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands). The structure of an OpenC2 Response is defined in Section 3.3.2 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
+### 2.2.1 OpenC2 Response Results 
 
-Table 2.2-1 lists the Response Results properties defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF. Table 2.2-2 extends the list of common Response Results properties and includes additional properties unique to PF. Response Results properties that are defined in this profile (see Table 2.2-2) are referenced with the `pf` namespace identifier.
+Table 2.2.1-1 lists the Response Results properties defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF and associated with the 'query features' Command. Table 2.2.1-2 extends the list of common Response Results properties and includes additional properties unique to PF. Response Results properties that are defined in this profile (see Table 2.2.1-2) are referenced with the `pf` namespace identifier.
 
-**Table 2.2-1. Common Response Results Applicable to PF**
+**Table 2.2.1-1 Common Response Results Applicable to PF**
 
 **_Type: Results (Map [1..*])_**
 
@@ -438,18 +440,18 @@ Table 2.2-1 lists the Response Results properties defined in Version 1.0 of the 
 | 3 | **pairs** | Action-Targets | 0..* | List of targets applicable to each supported Action. |
 | 4 | **rate_limit** | Number | 0..1 | Maximum number of requests per minute supported by design or policy. |
 
-**Table 2.2-2. Response Results Unique to PF**
+**Table 2.2.1-2 Response Results Unique to PF**
 
-**_Type: OpenC2-Response (Map)_**
+**_Type: Results (Map)_**
 
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
 | 1024 | **rule_number** | Rule-ID | Rule identifier returned from allow or deny Command. |
 
-### 2.2.1 Response Status Codes
-Table 2.2.1-1 lists the Response Status Codes defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF.
+### 2.2.2 Response Status Codes
+Table 2.2.2-1 lists the Response Status Codes defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF.
 
-**Table 2.2.1-1 Response Status Codes**
+**Table 2.2.2-1 Response Status Codes**
 
 **_Type: Status-Code (Enumerated.ID)_**
 
