@@ -82,9 +82,8 @@ For complete copyright information please see the Notices section in the Appendi
         -   [2.1.3 Command Arguments](#213-command-arguments)
         -   [2.1.4 Actuator Specifiers](#214-actuator-specifiers)
     -   [2.2 OpenC2 Response Components](#22-openc2-response-components)
-        -   [2.2.1 Common Results](#221-common-results)
-        -   [2.2.2 SLPF Results](#222-slpf-results)
-        -   [2.2.3 Response Status Codes](#223-response-status-codes)
+        -   [2.2.1 Response Results](#221-response-results)
+        -   [2.2.2 Response Status Codes](#222-response-status-codes)
     -   [2.3 OpenC2 Commands](#23-openc2-commands)
         -   [2.3.1 Allow](#231-allow)
         -   [2.3.2 Deny](#232-deny)
@@ -425,7 +424,7 @@ Response messages originate from the Actuator as a result of a Command.
 
 Responses associated with REQUIRED Actions MUST be implemented. Implementations that include OPTIONAL Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands). The structure of an OpenC2 Response is defined in Section 3.3.2 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
-### 2.2.1 OpenC2 Response Results 
+### 2.2.1 Response Results 
 
 Table 2.2.1-1 lists the Response Results properties defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) that are applicable to PF and associated with the 'query features' Command. Table 2.2.1-2 extends the list of common Response Results properties and includes additional properties unique to PF. Response Results properties that are defined in this profile (see Table 2.2.1-2) are referenced with the `pf` namespace identifier.
 
@@ -755,7 +754,7 @@ OpenC2 Consumers that receive the 'update file' Command:
 * upon successful parsing and initiating the processing of the 'update file' Command, OpenC2 Consumers MAY respond with Response status code 102.
 * upon completion of all the steps necessary to complete the update and the Actuator commences operations functioning with the new file, OpenC2 Consumers SHOULD respond with Response status code 200.
 
-# 3 Conformance statements
+# 3 Conformance Statements
 _This section is normative_
 
 This section identifies the requirements for twenty-two conformance profiles as they pertain to two conformance targets. The two conformance targets are OpenC2 Producers and OpenC2 Consumers.
