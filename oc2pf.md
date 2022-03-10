@@ -234,7 +234,7 @@ Example:
 
 # 2 OpenC2 Language Binding
 
-_This section is normative_
+_This section is normative._
 
 This section defines the set of Actions, Targets, Arguments, and Actuator Specifiers that are meaningful in the context of PF and the appropriate statuses and properties of a Response message. In addition, this section defines the Commands allowed by the profile. This section is organized into three major subsections; [Command Components](2.1-openc2-command-components), [Response Components](2.2-openc2-response-components), and [Commands](2.3-openc2-commands).
 
