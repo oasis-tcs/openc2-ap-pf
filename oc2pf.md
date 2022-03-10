@@ -90,78 +90,69 @@ For complete copyright information please see the Notices section in the Appendi
         -   [2.3.3 Query](#233-query)
         -   [2.3.4 Delete](#234-delete)
         -   [2.3.5 Update](#235-update)
--   [3 Conformance statements](#3-conformance-statements)
+-   [3 Conformance Statements](#3-conformance-statements)
     -   [3.1 Clauses Pertaining to the OpenC2 Producer Conformance
         Target](#31-clauses-pertaining-to-the-openc2-producer-conformance-target)
-        -   [3.1.1 Conformance Clause 1: Baseline OpenC2
-            Producer](#311-conformance-clause-1-baseline-openc2-producer)
-        -   [3.1.2 Conformance Clause 2: IP Version 4 Connection
-            Producer](#312-conformance-clause-2-ip-version-4-connection-producer)
-        -   [3.1.3 Conformance Clause 3: IP Version 6 Connection
-            Producer](#313-conformance-clause-3-ip-version-6-connection-producer)
-        -   [3.1.4 Conformance Clause 4: IP Version 4 Net
-            Producer](#314-conformance-clause-4-ip-version-4-net-producer)
-        -   [3.1.5 Conformance Clause 5: IP Version 6 Net
-            Producer](#315-conformance-clause-5-ip-version-6-net-producer)
-        -   [3.1.6 Conformance Clause 6: Update File
-            Producer](#316-conformance-clause-6-update-file-producer)
-        -   [3.1.7 Conformance Clause 7: delete rule number
-            Producer](#317-conformance-clause-7-delete-rule-number-producer)
-        -   [3.1.8 Conformance Clause 8: Persistent
-            Producer](#318-conformance-clause-8-persistent-producer)
-        -   [3.1.9 Conformance Clause 9: Direction
-            Producer](#319-conformance-clause-9-direction-producer)
-        -   [3.1.10 Conformance Clause 10: drop-process
-            Producer](#3110-conformance-clause-10-drop-process-producer)
-        -   [3.1.11 Conformance Clause 11: Temporal
-            Producer](#3111-conformance-clause-11-temporal-producer)
+        -   [3.1.1 Conformance Clause 1: Baseline OpenC2 Producer](#311-conformance-clause-1-baseline-openc2-producer)
+        -   [3.1.2 Conformance Clause 2: IP Version 4 Connection Producer](#312-conformance-clause-2-ip-version-4-connection-producer)
+        -   [3.1.3 Conformance Clause 3: IP Version 6 Connection Producer](#313-conformance-clause-3-ip-version-6-connection-producer)
+        -   [3.1.4 Conformance Clause 4: IP Version 4 Net Producer](#314-conformance-clause-4-ip-version-4-net-producer)
+        -   [3.1.5 Conformance Clause 5: IP Version 6 Net Producer](#315-conformance-clause-5-ip-version-6-net-producer)
+        -   [3.1.6 Conformance Clause 6: Domain Name Producer](#316-conformance-clause-6-domain-name-producer)
+        -   [3.1.7 Conformance Clause 7: Advanced Connection Producer](#317-conformance-clause-7-advanced-connection-producer)
+        -   [3.1.8 Conformance Clause 8: Update File Producer](#318-conformance-clause-8-update-file-producer)   
+        -   [3.1.9 Conformance Clause 9: Delete Rule Number Producer](#319-conformance-clause-9-delete-rule-number-producer) 
+        -   [3.1.10 Conformance Clause 10: Query Rule Number Producer](#3110-conformance-clause-10-query-rule-number-producer)
+        -   [3.1.11 Conformance Clause 11: Persistent Producer](#3111-conformance-clause-11-persistent-producer) 
+        -   [3.1.12 Conformance Clause 12: Direction Producer](#3112-conformance-clause-12-direction-producer)     
+        -   [3.1.13 Conformance Clause 13: Drop Process Producer](#3113-conformance-clause-13-drop-process-producer)
+        -   [3.1.14 Conformance Clause 14: Temporal Producer](#3114-conformance-clause-14-temporal-producer)
+        -   [3.1.15 Conformance Clause 15: Logging Producer](#3115-conformance-clause-15-logging-producer)
+        -   [3.1.16 Conformance Clause 16: Stateful Producer](#3116-conformance-clause-16-stateful-producer)
+        -   [3.1.17 Conformance Clause 17: Priority Producer](#3117-conformance-clause-17-priority-producer)
+        -   [3.1.18 Conformance Clause 18: Insert Rule Producer](#3118-conformance-clause-18-insert-rule-producer)
     -   [3.2 Clauses Pertaining to the OpenC2 Consumer Conformance
         Target](#32-clauses-pertaining-to-the-openc2-consumer-conformance-target)
-        -   [3.2.1 Conformance Clause 12: Baseline OpenC2
-            Consumer](#321-conformance-clause-12-baseline-openc2-consumer)
-        -   [3.2.2 Conformance Clause 13: IP Version 4 Connection
-            Consumer](#322-conformance-clause-13-ip-version-4-connection-consumer)
-        -   [3.2.3 Conformance Clause 14: IP Version 6 Connection
-            Consumer](#323-conformance-clause-14-ip-version-6-connection-consumer)
-        -   [3.2.4 Conformance Clause 15: IP Version 4 Net
-            Consumer](#324-conformance-clause-15-ip-version-4-net-consumer)
-        -   [3.2.5 Conformance Clause 16: IP Version 6 Net
-            Consumer](#325-conformance-clause-16-ip-version-6-net-consumer)
-        -   [3.2.6 Conformance Clause 17: Update File
-            Consumer](#326-conformance-clause-17-update-file-consumer)
-        -   [3.2.7 Conformance Clause 18: delete rule number
-            Consumer](#327-conformance-clause-18-delete-rule-number-consumer)
-        -   [3.2.8 Conformance Clause 19: Persistent
-            Consumer](#328-conformance-clause-19-persistent-consumer)
-        -   [3.2.9 Conformance Clause 20: Direction
-            Consumer](#329-conformance-clause-20-direction-consumer)
-        -   [3.2.10 Conformance Clause 21: drop-process
-            Consumer](#3210-conformance-clause-21-drop-process-consumer)
-        -   [3.2.11 Conformance Clause 22: Temporal
-            Consumer](#3211-conformance-clause-22-temporal-consumer)
--   [Annex A: Sample Commands](#annex-a-sample-commands)
-    -   [A.1 Deny and Allow](#a1-deny-and-allow)
-        -   [A.1.1 Deny a particular
-            connection](#a11-deny-a-particular-connection)
-        -   [A.1.2 Deny all outbound ftp
-            transfers](#a12-deny-all-outbound-ftp-transfers)
-        -   [A.1.3 Block all inbound traffic from a particular
-            source.](#a13-block-all-inbound-traffic-from-a-particular-source)
-        -   [A.1.4 Permit ftp transfers to a particular
-            destination.](#a14-permit-ftp-transfers-to-a-particular-destination)
-    -   [A.2 Delete Rule](#a2-delete-rule)
-    -   [A.3 Update file](#a3-update-file)
-    -   [A.4 Query features](#a4-query-features)
-        -   [A.4.1 No query items set](#a41-no-query-items-set)
-        -   [A.4.2 Version of Language specification
-            supported](#a42-version-of-language-specification-supported)
-        -   [A.4.3 Actuator profiles
-            supported](#a43-actuator-profiles-supported)
-        -   [A.4.4 Specific Commands
-            Supported](#a44-specific-commands-supported)
--   [Annex B: Acronyms](#annex-b-acronyms)
--   [Annex C: Acknowledgments](#annex-c-acknowledgments)
--   [Annex D: Revision History](#annex-d-revision-history)
+        -   [3.2.1 Conformance Clause 19: Baseline OpenC2 Consumer](#321-conformance-clause-19-baseline-openc2-consumer)
+        -   [3.2.2 Conformance Clause 20: IP Version 4 Connection Consumer](#322-conformance-clause-20-ip-version-4-connection-consumer)
+        -   [3.2.3 Conformance Clause 21: IP Version 6 Connection Consumer](#323-conformance-clause-21-ip-version-6-connection-consumer)
+        -   [3.2.4 Conformance Clause 22: IP Version 4 Net Consumer](#324-conformance-clause-22-ip-version-4-net-consumer)
+        -   [3.2.5 Conformance Clause 23: IP Version 6 Net Consumer](#325-conformance-clause-23-ip-version-6-net-consumer)
+        -   [3.2.6 Conformance Clause 24: Domain Name Consumer](#326-conformance-clause-24-domain-name-consumer)
+        -   [3.2.7 Conformance Clause 25: Advanced Connection Consumer](#327-conformance-clause-25-advanced-connection-consumer)
+        -   [3.2.8 Conformance Clause 26: Update File Consumer](#328-conformance-clause-26-update-file-consumer)   
+        -   [3.2.9 Conformance Clause 27: Delete Rule Number Consumer](#329-conformance-clause-27-delete-rule-number-consumer) 
+        -   [3.2.10 Conformance Clause 28: Query Rule Number Consumer](#3210-conformance-clause-28-query-rule-number-consumer)
+        -   [3.2.11 Conformance Clause 29: Persistent Consumer](#3211-conformance-clause-29-persistent-consumer) 
+        -   [3.2.12 Conformance Clause 30: Direction Consumer](#3212-conformance-clause-30-direction-consumer)     
+        -   [3.2.13 Conformance Clause 31: Drop Process Consumer](#3213-conformance-clause-31-drop-process-consumer)
+        -   [3.2.14 Conformance Clause 32: Temporal Consumer](#3214-conformance-clause-32-temporal-consumer)
+        -   [3.2.15 Conformance Clause 33: Logging Consumer](#3215-conformance-clause-33-logging-consumer)
+        -   [3.2.16 Conformance Clause 34: Stateful Consumer](#3216-conformance-clause-34-stateful-consumer)
+        -   [3.2.17 Conformance Clause 35: Priority Consumer](#3217-conformance-clause-35-priority-consumer)
+        -   [3.2.18 Conformance Clause 36: Insert Rule Consumer](#3218-conformance-clause-36-insert-rule-consumer)
+-   [Appendix A. References](#appendix-a-references)
+    -   [A.1 Normative References](#a1-normative-references)
+    -   [A.2 Informative References](#a2-informative-references)
+-   [Appendix B. Safety, Security and Privacy Considerations](#appendix-b-safety-security-and-privacy-considerations)
+-   [Appendix C. Acknowledgments](#appendix-c-acknowledgments)
+-   [Appendix D. Revision History](#appendix-d-revision-history)
+-   [Appendix E. Sample Commands](#appendix-e-sample-commands)
+    -   [E.1 Deny and Allow](#e1-deny-and-allow)
+         -   [E.1.1 Deny a particular connection](#e11-deny-a-particular-connection)
+         -   [E.1.2 Deny all outbound ftp transfers](#e12-deny-all-outbound-ftp-transfers)
+         -   [E.1.3 Block all inbound traffic from a particular source](#e13-block-all-inbound-traffic-from-a-particular-source)
+         -   [E.1.4 Statefully permit ftp transfers to a particular destination](#e14-statefully-permit-ftp-transfers-to-a-particular-destination)
+         -   [E.1.5 Deny outbound Network Time Protocol (NTP)](#e15-deny-outbound-network-time-protocol-ntp)
+    -   [E.2 Delete rule](#e2-delete-rule)
+    -   [E.3 Update file](#e3-update-file)
+    -   [E.4 Query features](#e4-query-features)
+         -   [E.4.1 No features specified](#e41-no-features-specified)
+         -   [E.4.2 Version of OpenC2 Language Specification supported](#e42-version-of-openc2-language-specification-supported)
+         -   [E.4.3 Actuator profiles supported](#e43-actuator-profiles-supported)
+         -   [A.4.4 Specific Commands supported](#e44-specific-commands-supported)
+         -   [A.4.5 Rule details](#e45-rule-details)
+-   [Appendix F. Notices](#appendix-f-notices)
 
 -------
 
