@@ -1004,6 +1004,9 @@ Bray, T., Ed., "The JavaScript Object Notation (JSON) Data Interchange Format", 
 ###### [OpenC2-Lang-v1.0]
 _Open Command and Control (OpenC2) Language Specification Version 1.0_. Edited by Jason Romano and Duncan Sparrell. 24 November 2019. OASIS Committee Specification 02. <https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html>. Latest stage: <https://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html>.
 
+###### [OpenC2-SLPF-v1.0]
+_Open Command and Control (OpenC2) Profile for Stateless Packet Filtering Version 1.0_. Edited by Joe Brule, Duncan Sparrell and Alex Everett. 11 July 2019. Committee Specification 01. https://docs.oasis-open.org/openc2/oc2slpf/v1.0/cs01/oc2slpf-v1.0-cs01.html. Latest version: https://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html.
+
 ## A.2 Informative References
 
 ###### [RFC3339]
