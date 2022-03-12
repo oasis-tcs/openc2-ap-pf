@@ -728,6 +728,8 @@ Upon receipt of a 'update file' Command with an Argument that is not supported b
 * MAY respond with the 500 status code.
 
 OpenC2 Consumers that receive the 'update file' Command:
+* upon successful parsing and initiating the processing of the 'update file' Command, OpenC2 Consumers MAY respond with Response status code 102.
+* upon completion of all the steps necessary to complete the update and the Actuator commences operations functioning with the new file, OpenC2 Consumers SHOULD respond with Response status code 200.
 * but cannot parse or process the 'update file' Command:
     * MUST NOT respond with the 200 status code.
     * SHOULD respond with the 400 status code.
@@ -740,8 +742,6 @@ OpenC2 Consumers that receive the 'update file' Command:
 * but cannot access the file specified in the file Target:
     * MUST respond with the 500 status code.
     * SHOULD respond with 'Cannot access file' in the status text.
-* upon successful parsing and initiating the processing of the 'update file' Command, OpenC2 Consumers MAY respond with Response status code 102.
-* upon completion of all the steps necessary to complete the update and the Actuator commences operations functioning with the new file, OpenC2 Consumers SHOULD respond with Response status code 200.
 
 # 3 Conformance Statements
 _This section is normative_
