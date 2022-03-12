@@ -395,7 +395,7 @@ Note that direction is required by some packet filters. For a host-based or host
 ### 2.1.4 Actuator Specifiers
 An Actuator is the entity that provides the functionality and performs the Action. The Actuator executes the Action on the Target. In the context of this profile, the Actuator is the packet filter and the presence of one or more Specifiers further refine which Actuator(s) shall execute the Action.
 
-Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Annex A](#annex-a-sample-commands) provides sample Commands with the use of Specifiers. The Actuator Specifiers defined in this profile are referenced with the `pf` namespace identifier.
+Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Appendix E](#appendix-e-sample-commands) provides sample Commands with the use of Specifiers. The Actuator Specifiers defined in this profile are referenced with the `pf` namespace identifier.
 
 **Table 2.1.4-1 PF Specifiers**
 
@@ -412,7 +412,7 @@ Table 2.1.4-1 lists the Specifiers that are applicable to the PF Actuator. [Anne
 ## 2.2 OpenC2 Response Components
 Response messages originate from the Actuator as a result of a Command.
 
-Responses associated with REQUIRED Actions MUST be implemented. Implementations that include OPTIONAL Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Annex A](#annex-a-sample-commands). The structure of an OpenC2 Response is defined in Section 3.3.2 of the [OpenC2 Language Specification](#openc2-lang-v10).
+Responses associated with REQUIRED Actions MUST be implemented. Implementations that include OPTIONAL Actions MUST implement the Responses associated with the implemented Action. Additional details regarding Commands and associated Responses are captured in [Section 2.3](#23-openc2-commands). Examples are provided in [Appendix E](#appendix-e-sample-commands). The structure of an OpenC2 Response is defined in Section 3.3.2 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
 ### 2.2.1 Response Results 
 
@@ -533,7 +533,7 @@ OpenC2 Consumers that receive 'allow [target]' Commands and support the insert_r
     * SHOULD respond with the 500 status code.
     * SHOULD respond with 'Rule number currently in use' in the status text.
 
-The valid Target types, associated Specifiers, and Arguments are summarized in the following subsections. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The valid Target types, associated Specifiers, and Arguments are summarized in the following subsections. Sample Commands are presented in [Appendix E](#appendix-e-sample-commands).
 
 #### 2.3.1.1 'Allow ipv4_connection'
 
@@ -653,7 +653,7 @@ OpenC2 Consumers that receive 'deny [target]' Commands and support the insert_ru
     * SHOULD respond with 'Rule number currently in use' in the status text.
 
 ### 2.3.3 Query
-The valid Target types and Arguments for the query Action are summarized in Table 2.3-2 Command Arguments Matrix. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The valid Target types and Arguments for the query Action are summarized in Table 2.3-2 Command Arguments Matrix. Sample Commands are presented in [Appendix E](#appendix-e-sample-commands).
 
 Upon receipt of 'query [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
@@ -673,7 +673,7 @@ The 'query features' Command MUST be implemented in accordance with Section 4.1,
 The 'query pf:rule_number' Command provides a mechanism to obtain similar information to that provided by creating a firewall rule. Implementation of the 'query pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'query pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
 
 ### 2.3.4 Delete
-The pf:rule_number is the only valid Target type for the delete Action. Sample Commands are presented in [Annex A](#annex-a-sample-commands).
+The pf:rule_number is the only valid Target type for the delete Action. Sample Commands are presented in [Appendix E](#appendix-e-sample-commands).
  
 #### 2.3.4.1 'Delete pf:rule_number'
 The 'delete pf:rule_number' Command is used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL. Products that choose to implement the 'delete pf:rule_number' Command MUST implement the pf:rule_number Target type described in Table 2.1.2-2.
@@ -709,7 +709,7 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
 
 
 ### 2.3.5 Update
-The file Target as defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) is the only valid Target type for the update Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Annex A](#annex-a-sample-Commands).
+The file Target as defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) is the only valid Target type for the update Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Appendix E](#appendix-e-sample-commands).
 
 #### 2.3.5.1 'Update file'
 The 'update file' Command is used to replace or update files such as configuration files, rule sets, etc. Implementation of the update file Command is OPTIONAL. OpenC2 Consumers that choose to implement the 'update file' Command MUST include all steps that are required for the update file procedure such as retrieving the file(s), install the file(s), restart/ reboot the device etc. The end state MUST be that the firewall operates with the new file at the conclusion of the 'update file' Command. The atomic steps that take place are implementation specific.
@@ -1366,7 +1366,7 @@ From a tagged set of webservers in the default virtual network traffic requests 
 ## E.2 Delete Rule
 Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL.
 
-In this case the rule number assigned in a previous allow will be removed (refer to the final example in [Annex A.1](#a1-deny-and-allow)
+In this case the rule number assigned in a previous allow will be removed (refer to the final example in [Appendix E.1](#e1-deny-and-allow).
 
 **Command:**
 
