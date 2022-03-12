@@ -503,7 +503,7 @@ Upon receipt of a 'allow [target]' Command with an Argument that is not supporte
 * SHOULD respond with "Argument not supported" in the status text.
 * MAY respond with the 500 status code.
 
-OpenC2 Producers that send 'allow [target]' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Producers that send 'allow [target]' Commands and support the 'delete pf:rule_number' Command or/and the 'query pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * SHOULD populate the Command Arguments field with '"response_requested" : "complete"'.
@@ -520,7 +520,7 @@ OpenC2 Consumers that receive and successfully parse 'allow [target]' Commands b
 * SHOULD respond with 'Rule not implemented' in the status text.
 * MAY respond with the 500 status code.
 
-OpenC2 Consumers that receive 'allow [target]' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Consumers that receive 'allow [target]' Commands and support the 'delete pf:rule_number' Command or/and the 'query pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * Upon successful implementation of the 'allow [target]', MUST return the rule_number associated with the rule if the '"response_requested" : "complete"' Argument is populated.
@@ -622,7 +622,7 @@ Upon receipt of a 'deny [target]' Command with an Argument that is not supported
 * SHOULD respond with 'Argument not supported' in the status text.
 * MAY respond with the 500 status code.
 
-OpenC2 Producers that send 'deny [target]' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Producers that send 'deny [target]' Commands and support the 'delete pf:rule_number' Command or/and the 'query pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * SHOULD populate the Command Arguments field with '"response_requested" : "complete"'.
@@ -639,7 +639,7 @@ OpenC2 Consumers that receive and successfully parse 'deny [target]' Commands bu
 * SHOULD respond with 'Rule not implemented' in the status text.
 * MAY respond with the 500 status code.
     
-OpenC2 Consumers that receive 'deny [target]' Commands and support the 'delete pf:rule_number' Command:
+OpenC2 Consumers that receive 'deny [target]' Commands and support the 'delete pf:rule_number' Command or/and the 'query pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
 * MUST return the rule number assigned in the pf object if the '"response_requested" : "complete"' Argument is populated.
