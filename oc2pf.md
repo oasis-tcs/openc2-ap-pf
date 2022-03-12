@@ -506,7 +506,7 @@ Upon receipt of a 'allow [target]' Command with an Argument that is not supporte
 OpenC2 Producers that send 'allow [target]' Commands and support the 'delete pf:rule_number' Command:
 
 * MUST support the pf:rule_number Target type as defined in Table 2.1.2-2.
-* SHOULD populate the Command Arguments field with "response_requested" : "complete".
+* SHOULD populate the Command Arguments field with '"response_requested" : "complete"'.
 * MAY populate the Command Arguments field with the insert_rule Argument.
 * MUST populate the Command Arguments field with '"response_requested" : "complete"' if the insert_rule Argument is populated.
 
