@@ -666,7 +666,7 @@ OpenC2 Consumers that receive 'query [target]' Commands:
 * SHOULD respond with the Response status code 200 upon successful parsing and execution of the Command.
 
 #### 2.3.3.1 'Query features'
-The 'query features' Command MUST be implemented in accordance with Section 4.1, Implementation of 'query features' Command, of Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
+Implementation of the 'query features' Command is REQUIRED and MUST be implemented in accordance with Section 4.1, Implementation of 'query features' Command, of Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10).
 
 
 #### 2.3.3.2 'Query pf:rule_number'
@@ -692,6 +692,11 @@ Upon receipt of a 'delete pf:rule_number' Command with an Argument that is not s
 * MAY respond with the 500 status code.
 
 OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
+* SHOULD respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule.
+* upon successful parsing but failure to remove the corresponding rule:
+    * MUST NOT respond with the 200 status code.
+    * MUST respond with the 500 status code.
+    * SHOULD respond with 'Firewall rule not removed or updated' in the status text.
 * but cannot parse or process the 'delete pf:rule_number' Command:
     * MUST NOT respond with the 200 status code.
     * SHOULD respond with the 400 status code.
@@ -701,12 +706,6 @@ OpenC2 Consumers that receive the 'delete pf:rule_number' Command:
     * SHOULD respond with the 501 status code.
     * SHOULD respond with 'Target not supported' in the status text.
     * MAY respond with the 500 status code.
-* SHOULD respond with Response code 200 upon successful parsing of the 'delete pf:rule_number' Command and subsequent removal of the corresponding rule.
-* upon successful parsing but failure to remove the corresponding rule:
-    * MUST NOT respond with the 200 status code.
-    * MUST respond with the 500 status code.
-    * SHOULD respond with 'Firewall rule not removed or updated' in the status text.
-
 
 ### 2.3.5 Update
 The file Target as defined in Version 1.0 of the [OpenC2 Language Specification](#openc2-lang-v10) is the only valid Target type for the update Action. The associated Specifiers, and Arguments are summarized in [Section 2.3.5.1](#2351-update-file). Sample Commands are presented in [Appendix E](#appendix-e-sample-commands).
