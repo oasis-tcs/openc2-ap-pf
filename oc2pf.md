@@ -728,7 +728,7 @@ Upon receipt of a 'update file' Command with an Argument that is not supported b
 * MAY respond with the 500 status code.
 
 OpenC2 Consumers that receive the 'update file' Command:
-* but cannot parse or process the Command:
+* but cannot parse or process the 'update file' Command:
     * MUST NOT respond with the 200 status code.
     * SHOULD respond with the 400 status code.
     * MAY respond with the 500 status code.
