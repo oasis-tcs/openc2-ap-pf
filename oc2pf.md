@@ -613,7 +613,7 @@ Products that receive but do not implement the 'allow advanced_connection' Comma
 * MAY respond with the 500 status code.
     
 ### 2.3.2 Deny
-'Deny' can be treated as the mathematical complement to 'allow'. With the exception of the additional 'drop_process' Argument, the Targets, Specifiers, Arguments and corresponding Responses are identical to the six 'allow' Commands. Table 2.3-2, Command Arguments Matrix, summarizes the Command Arguments that apply to all Commands consisting of the 'deny' Action and valid Target types.
+Deny can be treated as the mathematical complement to allow. With the exception of the additional drop_process Argument, the Targets, Specifiers, Arguments and corresponding Responses are identical to the six allow Commands. Table 2.3-2, Command Arguments Matrix, summarizes the Command Arguments that apply to all Commands consisting of the deny Action and valid Target types.
 
 Upon receipt of a 'deny [target]' Command with an Argument that is not supported by the Actuator, PF Consumers:
 
