@@ -1042,94 +1042,81 @@ Substantial contributions to this document from the following individuals are gr
 | First Name | Last Name | Company |
 | :--- | :--- | :--- |
 David | Lemire | National Security Agency
+Vasileios | Mavroeidis | University of Oslo
 Duncan | Sparrell | sFractal Consulting LLC 
 
 ## C.2 Participants
 
 The following individuals were members of the OASIS OpenC2 Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
-**OpenC2 TC Members:**
-
 | First Name | Last Name | Company |
 | :--- | :--- | :--- |
-Robert | Roll | Arizona Supreme Court
-Michelle | Barry | AT&T
-Blake | Essing | AT&T
-Anthony | Librera | AT&T
-Patrick | Maroney | AT&T
-Dan | Solero | AT&T
-Michael | Stair | AT&T
-Bill | Trost | AT&T
-Sean | Welsh | AT&T
-Radu | Marian | Bank of America
-Wende | Peters | Bank of America
-Alexandre | Dulaunoy | CIRCL
-Andras | Iklody | CIRCL
-Omar | Santos | Cisco Systems
-Sam | Taghavi Zargar | Cisco Systems
-Jyoti | Verma | Cisco Systems
-Tim | Hudson | Cryptsoft Pty Ltd.
-Ryan | Joyce | DarkLight, Inc.
-Paul | Patrick | DarkLight, Inc.
-Juan | Gonzalez | DHS Office of Cybersecurity and Communications (CS&C)
-Raymon | van der Velde | EclecticIQ
-Ben | Sooter | Electric Power Research Institute (EPRI)
-Chris | Ricard | Financial Services Information Sharing and Analysis Center (FS-ISAC)
-Gerald | Stueve | Fornetix
-Charles | White | Fornetix
-Ryusuke | Masuoka | Fujitsu Limited
-Koji | Yamada | Fujitsu Limited
-Jason | Callaway | Google Inc.
-David | Webber | Huawei Technologies Co., Ltd.
-Stephanie | Hazlewood | IBM
-Emily | Ratliff | IBM
-Michele | Drgon | Individual
-Joerg | Eschweiler | Individual
-Terry | MacDonald | Individual
-Anthony | Rutkowski | Individual
-Himanshu | Kesar | LookingGlass
-Paolo | Zaino | LookingGlass
-Sudeep | Das | McAfee
-Kent | Landfield | McAfee
-Jonathan | Baker | Mitre Corporation
-Joe | Brule | National Security Agency
-Jessica | Fitzgerald-McKay | National Security Agency
-Zachary | Gorak | National Security Agency
-David | Kemp | National Security Agency
-David | Lemire | National Security Agency
-Michael | Rosa | National Security Agency
-Daichi | Hasumi | NEC Corporation
-Takahiro | Kakumaru | NEC Corporation
-Lauri | Korts-Pärn | NEC Corporation
-John-Mark | Gurney | New Context Services, Inc.
-Christian | Hunt | New Context Services, Inc.
-Daniel | Riedel | New Context Services, Inc.
-Andrew | Storms | New Context Services, Inc.
-Drew | Varner | NineFX, Inc.
 Stephen | Banghart | NIST
-David | Waltermire | NIST
-James | Crossland | Northrop Grumman
-Jason | Liu | Northrop Grumman
+Michelle | Barry | AT&T
+David | Bizeul | SEKOIA
+Jason | Callaway | Google Inc.
+Marco | Caselli | Siemens AG
+Toby | Considine | University of North Carolina at Chapel Hill
+Sudeep | Das | McAfee
+Alexandre | Dulaunoy | CIRCL
+Blake | Essing | AT&T
+Martin | Evandt | University of Oslo
+Alex | Everett | University of North Carolina at Chapel Hill
+Jessica | Fitzgerald-McKay | National Security Agency
+Jane | Ginn | Cyber Threat Intelligence Network, Inc. (CTIN)
+David | Girard | Trend Micro
+Zachary | Gorak | National Security Agency
+John-Mark | Gurney | Copado
+Daichi | Hasumi | NEC Corporation
+Stephanie | Hazlewood | IBM
+Shoko | Honda | Trend Micro
+Tim | Hudson | Cryptsoft Pty Ltd.
+Christian | Hunt | Copado
+Andras | Iklody | CIRCL
+Sridhar | Jayanthi | EclecticIQ
+Ryan | Joyce | DarkLight, Inc.
+Takahiro | Kakumaru | NEC Corporation
+David | Kemp | National Security Agency
+Lauri | Korts-Pärn | NEC Corporation
+Kent | Landfield | McAfee
+Cheolho | Lee | NSR
+David | Lemire | National Security Agency
+Anthony | Librera | AT&T
+Jason | Liu	Northrop | Grumman
+Terry | MacDonald | Individual
+Radu | Marian | Bank of America
+Patrick | Maroney | AT&T
+Vasileios | Mavroeidis | University of Oslo
+Paul | Patrick | DarkLight, Inc.
+Andrew | Pendergast | ThreatConnect, Inc.
+Alexandre | Cabrol Perales | Sopra Steria Group
+Wende | Peters | Bank of America
+Dmitry | Raidman | Cybeats
+Chris | Ricard | Financial Services Information Sharing and Analysis Center (FS-ISAC)
+Daniel | Riedel | Copado
+Christopher | Robinson | Cyber Threat Intelligence Network, Inc. (CTIN)
+Michael | Rosa | National Security Agency
+Omar | Santos | Cisco Systems
+Aleksandra | Scalco | US Department of Defense (DoD)
+Randall | Sharo | US Department of Defense (DoD)
 Duane | Skeen | Northrop Grumman
 Calvin | Smith | Northrop Grumman
-Cheolho | Lee | NSR
-David | Bizeul | SEKOIA
-Dan | Johnson | sFractal Consulting LLC
+Dan | Solero | AT&T
+Ben | Sooter | Electric Power Research Institute (EPRI)
 Duncan | Sparrell | sFractal Consulting LLC
-Marco | Caselli | Siemens AG
-Tom | Maier | Siemens AG
-Andrew | Pendergast | ThreatConnect, Inc.
-Joe | Reese | ThreatConnect, Inc.
-Ryan | Trost | ThreatQuotient, Inc.
-David | Girard | Trend Micro
-Shoko | Honda | Trend Micro
+Michael | Stair | AT&T
+Andrew | Storms | Copado
+Gerald | Stueve | Fornetix
 Takayuki | Tachihara | Trend Micro
-Toby | Considine | University of North Carolina at Chapel Hill
-Alex | Everett | University of North Carolina at Chapel Hill
-Martin | Evandt | University of Oslo
-Vasileios | Mavroeidis | University of Oslo
-Aleksandra | Scalco | US Department of Defense (DoD)
-Randall | Sharo | US Department of Defense
+Bill | Trost | AT&T
+Drew | Varner | NineFX, Inc.
+Jyoti | Verma | Cisco Systems
+David | Waltermire | NIST
+Russ | Warren | IBM
+Sean | Welsh | AT&T
+Charles | White | Fornetix
+Sam | Taghavi Zargar | Cisco Systems
+
 
 -------
 
@@ -1139,12 +1126,13 @@ Randall | Sharo | US Department of Defense
 | 01 | 2021-05-03 | Alex Everett and Vasileios Mavroeidis| Populated Initial working draft |
 | 02 | -- | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar
 fixes.|
-
+| 03 | 2022-03-15 | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar
+fixes. Major update of the conformance section.|
 -------
 
 # Appendix E. Sample Commands
 
-_This section is non-normative_
+_This section is non-normative_.
 
 This section will summarize and provide examples of OpenC2 Commands as they pertain to packet filters. The sample Commands will be encoded in verbose JSON, however other encodings are possible provided the Command is validated against the property tables defined in [Section 2](#2-openc2-language-binding) of this specification. Examples of corresponding Responses are provided where appropriate.
 
