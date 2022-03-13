@@ -833,7 +833,7 @@ An OpenC2 Producer satisfies 'Direction Producer' conformance if:
 ### 3.1.13 Conformance Clause 13: Drop Process Producer
 An OpenC2 Producer satisfies 'Drop Process Producer' conformance if:
 * 3.1.13.1 **MUST** meet all of the conformance criteria identified in Conformance Clause 1 of this specification.
-* 3.1.13.2 **MUST** implement the 'drop_process' Command Argument as a valid option for any Command associated with the 'deny' Actions in accordance with [Section 2.3.2](#232-deny) of this specification.
+* 3.1.13.2 **MUST** implement the 'drop_process' Command Argument as a valid option for any Command associated with the 'deny' Action in accordance with [Section 2.3.2](#232-deny) of this specification.
 
 ### 3.1.14 Conformance Clause 14: Temporal Producer
 An OpenC2 Producer satisfies 'Temporal Producer' conformance if:
