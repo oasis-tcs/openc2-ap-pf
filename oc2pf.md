@@ -1123,11 +1123,9 @@ Sam | Taghavi Zargar | Cisco Systems
 # Appendix D. Revision History
 | Revision | Date | Editors | Changes Made |
 | :--- | :--- | :--- | :--- |
-| 01 | 2021-05-03 | Alex Everett and Vasileios Mavroeidis| Populated Initial working draft |
-| 02 | -- | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar
-fixes.|
-| 03 | 2022-03-15 | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar
-fixes. Major update of the conformance section.|
+| 01 | 2021-05-03 | Alex Everett and Vasileios Mavroeidis| Populated Initial working draft. |
+| 02 | -- | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar fixes.|
+| 03 | 2022-03-15 | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar fixes. Major update of the conformance section.|
 -------
 
 # Appendix E. Sample Commands
