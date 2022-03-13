@@ -744,7 +744,7 @@ OpenC2 Consumers that receive the 'update file' Command:
     * SHOULD respond with 'Cannot access file' in the status text.
 
 # 3 Conformance Statements
-_This section is normative_
+_This section is normative_.
 
 This section identifies the requirements for twenty-two conformance profiles as they pertain to two conformance targets. The two conformance targets are OpenC2 Producers and OpenC2 Consumers.
 
