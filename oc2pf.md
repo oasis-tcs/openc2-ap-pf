@@ -1126,13 +1126,14 @@ Sam | Taghavi Zargar | Cisco Systems
 | 01 | 2021-05-03 | Alex Everett and Vasileios Mavroeidis| Populated Initial working draft. |
 | 02 | -- | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar fixes.|
 | 03 | 2022-03-15 | Alex Everett and Vasileios Mavroeidis| Multiple editorial, style, and grammar fixes. Major update of the conformance section.|
+
 -------
 
 # Appendix E. Sample Commands
 
 _This section is non-normative_.
 
-This section will summarize and provide examples of OpenC2 Commands as they pertain to packet filters. The sample Commands will be encoded in verbose JSON, however other encodings are possible provided the Command is validated against the property tables defined in [Section 2](#2-openc2-language-binding) of this specification. Examples of corresponding Responses are provided where appropriate.
+This section will summarize and provide examples of OpenC2 Commands as they pertain to packet filters. The sample Commands will be encoded in verbose JSON, however other encodings are possible provided the Command is validated against the property tables defined in [Section 2.1](#21-openc2-command-components) of this specification. Examples of corresponding Responses are provided where appropriate.
 
 The samples provided in this section are for illustrative purposes only and are not to be interpreted as operational examples for actual systems.
 
@@ -1156,33 +1157,33 @@ The examples include Integer Date-Time fields; the conversion of Integer values 
 Deny and allow can be treated as mathematical complements of each other. Unless otherwise stated, the example Targets, Specifiers, Arguments and corresponding Responses are applicable to both Actions.
 
 ### E.1.1 Deny a particular connection
-Block a particular connection within the domain and do not send a host unreachable. Note, the "pf":{"drop_process"} argument does not apply to the allow Action.
+Block a particular connection within the domain and do not send a host unreachable. Note that the drop_process argument does not apply to the allow Action.
 
 **Command:**
 
 ~~~
 {
-  "action": "deny",
-  "target": {
-    "ipv4_connection": {
-      "protocol": "tcp",
-      "src_addr": "1.2.3.4",
-      "src_port": 10996,
-      "dst_addr": "198.2.3.4",
-      "dst_port": 80
-    }
-  },
-  "args": {
-    "start_time": 1534775460000,
-    "duration": 500,
-    "response_requested": "ack",
-    "pf": {
-       "drop_process": "none"
-       }
-  },
-  "actuator": {
-        "pf": {
-            "asset_id": "30"
+    "action":"deny",
+    "target":{
+        "ipv4_connection":{
+            "protocol":"tcp",
+            "src_addr":"1.2.3.4",
+            "src_port":10996,
+            "dst_addr":"198.2.3.4",
+            "dst_port":80
+        }
+    },
+    "args":{
+        "start_time":1534775460000,
+        "duration":500,
+        "response_requested":"ack",
+        "pf":{
+            "drop_process":"none"
+        }
+    },
+    "actuator":{
+        "pf":{
+            "asset_id":"30"
         }
     }
 }
@@ -1192,89 +1193,91 @@ Block a particular connection within the domain and do not send a host unreachab
 
 ~~~
 {
-  "status": 102
+    "status":102
 }
 ~~~
 
 ### E.1.2 Deny all outbound ftp transfers 
-Block all outbound ftp data transfers, send false acknowledgment. Note that the five-tuple is incomplete. Note that the response_requested field was not populated therefore will be 'complete'. Also note that the Actuator called out was PF with no additional Specifiers, therefore all endpoints that can execute the Command should. Note, the "pf":{"drop_process"} argument does not apply to the allow Action.
+Block all outbound ftp data transfers, send false acknowledgment. Note that the five-tuple is incomplete. Note that the response_requested field was not populated therefore will be 'complete'. Also note that the Actuator called out was PF with no additional Specifiers, therefore all endpoints that can execute the Command should. Note that the drop_process argument does not apply to the allow Action.
 
 **Command:**
 
 ~~~
 {
-  "action": "deny",
-  "target": {
-    "ipv4_connection": {
-      "protocol": "tcp",
-      "src_port": 21
+    "action":"deny",
+    "target":{
+        "ipv4_connection":{
+            "protocol":"tcp",
+            "src_port":21
+        }
+    },
+    "args":{
+        "pf":{
+            "drop_process":"false_ack",
+            "direction":"egress"
+        }
+    },
+    "actuator":{
+        "pf":{
+            
+        }
     }
-  },
-  "args": {
-    "pf": {
-      "drop_process": "false_ack",
-      "direction": "egress"
-    }
-  },
-  "actuator": {
-    "pf": {}
-  }
 }
 ~~~
 
 **Responses:**
 
-Case One: the Actuator successfully issued the deny.
+Case 1: the Actuator successfully issued the deny.
 
 ~~~
 {
-  "status": 200
+    "status":200
 }
 ~~~
 
-Case Two: the Command failed due to a syntax error in the Command. Optional status text is ignored by the Producer, but may be added to provide error details for debugging or logging.
+Case 2: the Command failed due to a syntax error in the Command. Optional status text is ignored by the Producer, but may be added to provide error details for debugging or logging.
 
 ~~~
 {
-  "status": 400,
-  "status_text": "Validation Error: Target: ip_conection"
+    "status":400,
+    "status_text":"Validation Error: Target: ip_conection"
 }
 ~~~
 
-Case Three: the Command failed because an Argument was not supported.
+Case 3: the Command failed because an Argument was not supported.
 
 ~~~
 {
-  "status": 501
+    "status":501
 }
 ~~~
 
-### E.1.3 Block all inbound traffic from a particular source.
-Block all inbound traffic from the specified ipv6 network and do not respond. In this case the ipv6_net Target and the direction argument was used. In this case only the perimeter filters should update the rule.
+### E.1.3 Block all inbound traffic from a particular source
+Block all inbound traffic from the specified ipv6 network and do not send any response back to the producer. In this case the ipv6_net Target and the direction argument was used. In this case only the perimeter filters should update the rule.
 
 **Command:**
 
 ~~~
 {
-  "action": "deny",
-  "target": {
-    "ipv6_net": "3ffe:1900:4545:3:200:f8ff:fe21:67cf"
-  },
-  "args": {
-    "response_requested": "none",
-    "pf": {
-      "direction": "ingress"
+    "action":"deny",
+    "target":{
+        "ipv6_net":"3ffe:1900:4545:3:200:f8ff:fe21:67cf"
+    },
+    "args":{
+        "response_requested":"none",
+        "pf":{
+            "direction":"ingress"
+        }
+    },
+    "actuator":{
+        "pf":{
+            "named_group":"perimeter"
+        }
     }
-  },
-  "actuator": {
-    "pf": {
-      "named_group": "perimeter"
-    }
-  }
 }
 ~~~
 
-### E.1.4 Statefully permit ftp transfers to a particular destination.
+### E.1.4 Statefully permit ftp transfers to a particular destination
 Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiating source and allow needed return traffic. (Note that an actual application may also need to allow ftp-data (port 20) in order for transfers to be permitted depending on the ftp connection type and the firewall technology).
 
 
@@ -1282,23 +1285,24 @@ Permit ftp data transfers to 3ffe:1900:4545:3::f8ff:fe21:67cf from any initiatin
 
 ~~~
 {
-  "action": "allow",
-  "target": {
-    "ipv6_connection": {
-      "protocol": "tcp",
-      "dst_addr": "3ffe:1900:4545:3::f8ff:fe21:67cf",
-      "src_port": 21
+    "action":"allow",
+    "target":{
+        "ipv6_connection":{
+            "protocol":"tcp",
+            "dst_addr":"3ffe:1900:4545:3::f8ff:fe21:67cf",
+            "src_port":21
+        }
+    },
+    "args":{
+        "pf":{
+            "stateful":true
+        }
+    },
+    "actuator":{
+        "pf":{
+            
+        }
     }
-  },
-  "args": {
-    "pf": {
-      "stateful": true
-    }
-  },
-  "actuator": {
-    "pf": {
-    }
-  }
 }
 ~~~
 
@@ -1308,135 +1312,138 @@ In this case the Actuator returned a rule number associated with the allow.
 
 ~~~
 {
-  "status": 200,
-  "results": {
-    "pf": {
-      "rule_number": 1234
+    "status":200,
+    "results":{
+        "pf":{
+            "rule_number":1234
+        }
     }
-  }
 }
 ~~~
     
 ### E.1.5 Deny outbound Network Time Protocol (NTP)
-From a tagged set of webservers in the default virtual network traffic requests from these servers to timekeeping services will be denied.
+From a tagged set of webservers in the default virtual network, traffic requests from these servers to timekeeping services will be denied.
 
 
 **Command:**
 
 ~~~
 {
-  "action": "deny",
-  "target": {
-    "pf": {
-      "advanced_connection": {
-        "src_addr": "webservers",
-        "network": "default",
-        "protocol": "udp",
-        "dst_port": 123
-      }
+    "action":"deny",
+    "target":{
+        "pf":{
+            "advanced_connection":{
+                "src_addr":"webservers",
+                "network":"default",
+                "protocol":"udp",
+                "dst_port":123
+            }
+        }
+    },
+    "args":{
+        "pf":{
+            "direction":"egress",
+            "priority":500
+        }
+    },
+    "actuator":{
+        "pf":{
+            
+        }
     }
-  },
-  "args": {
-    "pf": {
-      "direction": "egress",
-      "priority": 500
-    }
-  },
-  "actuator": {
-    "pf": {
-    }
-  }
 }
 ~~~
     
 ## E.2 Delete Rule
-Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. Implementation of the 'delete pf:rule_number' Command is OPTIONAL.
-
-In this case the rule number assigned in a previous allow will be removed (refer to the final example in [Appendix E.1](#e1-deny-and-allow).
+Used to remove a firewall rule rather than issue an allow or deny to counteract the effect of an existing rule. In this case the rule number assigned by the actuator in a previous allow will be removed (refer to the example [E.1.4](e14-statefully-permit-ftp-transfers-to-a-particular-destination).
 
 **Command:**
 
 ~~~
 {
-  "action": "delete",
-  "target": {
-    "pf:rule_number": 1234
-  },
-  "args": {
-    "response_requested": "complete"
-  },
-  "actuator": {
-    "pf": {}
-  }
+    "action":"delete",
+    "target":{
+        "pf:rule_number":1234
+    },
+    "args":{
+        "response_requested":"complete"
+    },
+    "actuator":{
+        "pf":{
+            
+        }
+    }
 }
 ~~~
 
 ## E.3 Update file
-Implementation of the Update Action is optional. Update is intended for the device to process new configuration files. The update Action is a compound Action in that all of the steps required for a successful update (such as download the new file, install the file, reboot etc.) are implied. File is the only valid Target type for Update.
+Update is intended for the device to process new configuration files. The update Action is a compound Action in that all of the steps required for a successful update (such as download the new file, install the file, reboot etc.) are implied. File is the only valid Target type for Update.
 
-Instructs the firewalls to acquire a new configuration file. Note that all network based firewalls will install the new update because no particular firewall was identified. Host based firewalls will not act on this because network firewalls were identified as the Actuator.
+The command below instructs the firewalls to acquire a new configuration file. Note that all network based firewalls will install the new update because no particular firewall was identified. Host based firewalls will not act on this because network firewalls were identified as the Actuator.
 
 **Command:**
 
 ~~~
 {
-  "action": "update",
-  "target": {
-    "file": {
-      "path": "\\\\someshared-drive\\somedirectory\\configurations",
-      "name": "firewallconfiguration.txt"
+    "action":"update",
+    "target":{
+        "file":{
+            "path":"\\\\someshared-drive\\somedirectory\\configurations",
+            "name":"firewallconfiguration.txt"
+        }
+    },
+    "actuator":{
+        "pf":{
+            "named_group":"network"
+        }
     }
-  },
-  "actuator": {
-    "pf": {
-      "named_group": "network"
-    }
-  }
 }
 ~~~
 
 **Responses:**
 
-Successful update of the configuration
+Case 1: successful update of the configuration.
 
 ~~~
 {
-  "status": 200
+    "status":200
 }
 ~~~
 
-This Actuator does not support the update file Command
+Case 2: this Actuator does not support the update file Command.
 
 ~~~
 {
-  "status": 501,
-  "status_text": "Update-File Not Implemented"
+    "status":501,
+    "status_text":"Update-File Not Implemented"
 }
 ~~~
 
-This Actuator could not access the file
+Case 3: this Actuator could not access the file.
 
 ~~~
 {
-  "status": 500,
-  "status_text": "Server error, Cannot access file"
+    "status":500,
+    "status_text":"Server error. Cannot access file"
 }
 ~~~
 
 ## E.4 Query features
-Implementation of query Openc2 is required. The query features Command is intended to enable the Openc2 Producer to determine the capabilities of the Actuator. The query features Command can also be used to check the status of the Actuator.
+The 'query features' Command is intended to enable the Openc2 Producer to determine the capabilities of the Actuator. The 'query features' Command can also be used to check the status of the Actuator.
 
 ### E.4.1 No query items set
-This Command uses query features with no query items to verify that the Actuator is functioning.
+This Command uses 'query features' with no query items to verify that the Actuator is functioning.
 
 **Command:**
 
 ~~~
 {
-  "action": "query",
-  "target": {
-    "features": []
-  }
+    "action":"query",
+    "target":{
+        "features":[
+            
+        ]
+    }
 }
 ~~~
 
@@ -1446,33 +1453,37 @@ The Actuator is alive.
 
 ~~~
 {
-  "status": 200
+    "status":200
 }
 ~~~
 
 ### E.4.2 Version of Language specification supported
-This Command queries the Actuator to determine which version(s) of the language specification are supported. The language specifications use semantic versioning ("major.minor"); for each supported major version the Actuator need only report the highest supported minor version.
+This Command queries the Actuator to determine which version(s) of the Language Specification are supported. The Language Specifications use semantic versioning ("major.minor"). For each supported major version, the Actuator needs only to report the highest supported minor version.
 
 **Command:**
 
 ~~~
 {
-    "action": "query",
-    "target": {
-        "features": ["versions"]
+    "action":"query",
+    "target":{
+        "features":[
+            "versions"
+        ]
     }
 }
 ~~~
 
 **Response:**
 
-The Actuator supports language specification version 1.0.
+The Actuator supports Language Specification Version 1.0.
 
 ~~~
 {
-    "status": 200,
-    "results": {
-        "versions": ["1.0"]
+    "status":200,
+    "results":{
+        "versions":[
+            "1.0"
+        ]
     }
 }
 ~~~
@@ -1484,10 +1495,13 @@ This Command queries the Actuator to determine both the language versions and th
 
 ~~~
 {
-  "action": "query",
-  "target": {
-    "features": ["versions", "profiles"]
-  }
+    "action":"query",
+    "target":{
+        "features":[
+            "versions",
+            "profiles"
+        ]
+    }
 }
 ~~~
 
@@ -1497,16 +1511,21 @@ The Actuator device is apparently a smart front-door-lock for which an extension
 
 ~~~
 {
-  "status": 200,
-  "results": {
-    "versions": ["1.3"],
-    "profiles": ["pf", "iot-front-door-lock"]
-  }
+    "status":200,
+    "results":{
+        "versions":[
+            "1.3"
+        ],
+        "profiles":[
+            "pf",
+            "iot-front-door-lock"
+        ]
+    }
 }
 ~~~
 
 ### E.4.4 Specific Commands Supported
-This Command queries the Actuator to determine which Action/Target pairs are supported. Not all Targets are meaningful in the context of a specific Action, and although a Command such as "update ipv4_connection" may be syntactically valid, the combination does not specify an operation supported by the Actuator.
+This Command queries the Actuator to determine which Action/Target pairs are supported. Not all Targets are meaningful in the context of a specific Action, and although a Command such as "update ipv4_connection" may be syntactically valid, the combination does not specify an operation supported by the Actuator profile.
 
 **Command:**
 
@@ -1514,34 +1533,48 @@ For each supported Action list the Targets supported by this Actuator.
 
 ~~~
 {
-  "action": "query",
-  "target": {
-    "features": ["pairs"]
-  }
+    "action":"query",
+    "target":{
+        "features":[
+            "pairs"
+        ]
+    }
 }
 ~~~
 
 **Response:**
 
-The Actuator supports all Action/Target pairs shown in Table 2.3-1 - Command Matrix.
+The Actuator supports the following Action/Target pairs.
 
 ~~~
 {
-  "status": 200,
-  "results": {
-    "pairs": {
-      "allow": ["ipv6_net", "ipv6_connection"],
-      "deny": ["ipv6_net", "ipv6_connection"],
-      "query": ["features"],
-      "delete": ["pf:rule_number"],
-      "update": ["file"]
+    "status":200,
+    "results":{
+        "pairs":{
+            "allow":[
+                "ipv6_net",
+                "ipv6_connection"
+            ],
+            "deny":[
+                "ipv6_net",
+                "ipv6_connection"
+            ],
+            "query":[
+                "features"
+            ],
+            "delete":[
+                "pf:rule_number"
+            ],
+            "update":[
+                "file"
+            ]
+        }
     }
-  }
 }
 ~~~
 
 ### E.4.5 Rule Details
-This Command queries the Actuator to determine the Target and Argument values for a particular rule. 
+This Command queries the Actuator to determine the Action, Target, and Argument values for a particular rule.
 
 **Command:**
 
@@ -1549,15 +1582,15 @@ For each supported Action list the Targets supported by this Actuator.
 
 ~~~
 {
-  "action": "query",
-  "target": {
-    "pf:rule_number": 20
-  }
-  "actuator": {
-    "pf": {
-     "asset_id": "30"
+    "action":"query",
+    "target":{
+        "pf:rule_number":20
+    },
+    "actuator":{
+        "pf":{
+            "asset_id":"30"
+        }
     }
-  }
 }
 ~~~
 
@@ -1567,23 +1600,24 @@ The Actuator returns information that could be used to reconstruct the rule.
 
 ~~~
 {
-  "status": 200,
-  "results": {
-    "pf": {
-      "rule_number": 20,
-      "ipv4_connection": {
-      "protocol": "tcp",
-      "src_addr": "1.2.3.4",
-      "src_port": 10996,
-      "dst_addr": "198.2.3.4",
-      "dst_port": 80
+    "status":200,
+    "results":{
+        "pf":{
+            "rule_number":20,
+            "action":"deny",
+            "ipv4_connection":{
+                "protocol":"tcp",
+                "src_addr":"1.2.3.4",
+                "src_port":10996,
+                "dst_addr":"198.2.3.4",
+                "dst_port":80
+            },
+            "args":{
+                "drop_process":"false_ack",
+                "direction":"egress"
+            }
+        }
     }
-    "args": {
-      "drop_process": "false_ack",
-      "direction": "egress"
-    }
-    }
-  }
 }
 ~~~
 
